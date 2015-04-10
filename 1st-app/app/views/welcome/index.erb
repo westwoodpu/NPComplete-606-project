@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<caption align="top">Pet Information</caption>
 <form action="demo_form.asp">
   Name: <input type="text" name="fullname"><br>
-  Email: <input type="text" name="email"><br>
+  Pet Type: <input type="text" name="Pet Type"><br>
+  <!--Gender: <input type="text" name="Gender"><br>-->
+  <select>  
+  <option value ="1">Male</option>  
+  <option value ="2">Female</option>  
+  </select>  
+  <br>
+  Age: <input type="text" name="Age"><br>
+  Body Condition Score: <input type="text" name="Body Condition Score"><br>
+  Body weight: <input type="text" name="Body weight"><br> 
+  Activity Level (indoor / backyard): <input type="text" name="Activity Level"><br>
+  Sterilization Time: <input type="text" name="Sterilization Time"><br>
+  Vaccination History in Vivo: <input type="text" name="Vaccination History in Vivo"><br>
+  Anthelmintic Time: <input type="text" name="Anthelmintic Time"><br> 
+  Vitro Flea Flooding Time: <input type="text" name="Vitro Flea Flooding Time"><br>
+  <!--Diet(optional homemade, canned food, cat food, snacks): <input type="text" name="Diet"><br>-->
+  <select>  
+  <option value ="1">optional homemade</option>  
+  <option value ="2">canned food</option>  
+  <option value="3">cat food</option>  
+  <option value="4">snacks</option>  
+  </select>
+  <br>
   <input type="submit" value="Submit">
 </form>
 
