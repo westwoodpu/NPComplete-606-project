@@ -1,0 +1,21 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/saasbook/Documents/NPComplete-606-project/features/step_definitions/first_steps.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1428789437
+  }
+}
