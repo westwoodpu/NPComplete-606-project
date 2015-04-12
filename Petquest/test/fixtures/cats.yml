@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  Pet: MyString
+  Type: MyString
+  Gender: MyString
+  Age: 1
+  Body: MyString
+  Condition: MyString
+  Score: 1
+  Body: MyString
+  Weight: 1
+  Activity: MyString
+  Level: 1
+  Sterilization: MyString
+  Time: MyString
+  Vaccination: MyString
+  History: MyString
+  Anthelmintic: MyString
+  Time: MyString
+  Vitro: MyString
+  Flea: MyString
+  Flooding: MyString
+  Time: MyString
+
+two:
+  name: MyString
+  Pet: MyString
+  Type: MyString
+  Gender: MyString
+  Age: 1
+  Body: MyString
+  Condition: MyString
+  Score: 1
+  Body: MyString
+  Weight: 1
+  Activity: MyString
+  Level: 1
+  Sterilization: MyString
+  Time: MyString
+  Vaccination: MyString
+  History: MyString
+  Anthelmintic: MyString
+  Time: MyString
+  Vitro: MyString
+  Flea: MyString
+  Flooding: MyString
+  Time: MyString
