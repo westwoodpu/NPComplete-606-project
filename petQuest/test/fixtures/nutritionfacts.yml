@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  foodname: MyString
+  unit: MyString
+  water: MyString
+  energy: MyString
+  protein: MyString
+  fat: MyString
+  cho: MyString
+  dietaryFiber: MyString
+  ash: MyString
+
+two:
+  foodname: MyString
+  unit: MyString
+  water: MyString
+  energy: MyString
+  protein: MyString
+  fat: MyString
+  cho: MyString
+  dietaryFiber: MyString
+  ash: MyString

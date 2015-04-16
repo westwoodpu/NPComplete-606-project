@@ -1,0 +1,53 @@
+<h1>New Nutritionfacts</h1>
+<%= form_for :nutritionfact, url: nutritionfacts_path do |f| %>
+  <p>
+    <%= f.label :foodname %><br>
+    <%= f.text_field :foodname %>
+  </p>
+ 
+  <p>
+    <%= f.label :unit %><br>
+    <%= f.text_area :unit %>
+  </p>
+
+  <p>
+    <%= f.label :water %><br>
+    <%= f.text_area :water %>
+  </p>
+  
+  <p>
+    <%= f.label :energy %><br>
+    <%= f.text_area :energy %>
+  </p>
+ 
+  <p>
+    <%= f.label :protein %><br>
+    <%= f.text_area :protein %>
+  </p>
+
+  <p>
+    <%= f.label :fat %><br>
+    <%= f.text_area :fat %>
+  </p>
+
+  <p>
+    <%= f.label :cho %><br>
+    <%= f.text_area :cho %>
+  </p>
+
+  <p>
+    <%= f.label :dietaryFiber %><br>
+    <%= f.text_area :dietaryFiber %>
+  </p>
+
+  <p>
+    <%= f.label :ash %><br>
+    <%= f.text_area :ash %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', nutritionfacts_path %>
