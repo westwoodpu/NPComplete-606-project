@@ -41,4 +41,19 @@ ActiveRecord::Schema.define(version: 20150416181442) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "pets", force: :cascade do |t|
+    t.string   "name"
+    t.string   "age"
+    t.string   "pet_type"
+    t.string   "body_condition_score"
+    t.string   "weight"
+    t.string   "sterilization_time"
+    t.text     "vaccination_history"
+    t.string   "vivo_anthelmintic_time"
+    t.string   "vitro_flea_flooding_time"
+    t.text     "description"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
 end
