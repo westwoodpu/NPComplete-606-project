@@ -1,0 +1,40 @@
+<h1>Check All You Pets Here!</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Pet Type</th>
+    <th>Body Condition Score</th>
+    <th>Weight</th>
+    <th>Sterilization Time</th>
+    <th>Vaccination History</th>
+    <th>Vivo Anthelmintic Time</th>
+    <th>Vitro Flea Flooding Time</th>
+    <th>Description</th>
+    <th>Weight</th>
+  </tr>
+ 
+  <% @pets.each do |pet| %>
+    <tr>
+      <td><%= pet.name %></td>
+      <td><%= pet.age %></td>
+      <td><%= pet.pet_type %></td>
+      <td><%= pet.body_condition_score %></td>
+      <td><%= pet.weight %></td>
+      <td><%= pet.sterilization_time %></td>
+      <td><%= pet.vaccination_history %></td>
+      <td><%= pet.vivo_anthelmintic_time %></td>
+      <td><%= pet.vitro_flea_flooding_time %></td>
+      <td><%= pet.description %></td>
+    </tr>
+
+  <% end %>
+</table>
+
+
+<%= link_to 'Add a new pet', new_pet_path %>  <br>
+
+<%= link_to 'Select food for pets', foods_path %> <br>
+
+<a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
