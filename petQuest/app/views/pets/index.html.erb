@@ -13,6 +13,7 @@
     <th>Vitro Flea Flooding Time</th>
     <th>Description</th>
     <th>Weight</th>
+    <th colspan="2"></th>
   </tr>
  
   <% @pets.each do |pet| %>
@@ -31,9 +32,6 @@
 
   <% end %>
 </table>
-
-
-<%= link_to 'Add a new pet', new_pet_path %>  <br>
 
 <%= link_to 'Select food for pets', foods_path %> <br>
 

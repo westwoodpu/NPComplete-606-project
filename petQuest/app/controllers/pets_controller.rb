@@ -1,16 +1,39 @@
 class PetsController < ApplicationController
-	def show
-        @pet=Pet.find(params[:id])
+	def index
+    @pets = Pet.all
     end
     
 	def new
 	end
-    def create
+
+  def create
 		@pet = Pet.new(pet_params)
 
-  	    @pet.save
-        redirect_to @pet
+  	if @pet.save
+       redirect_to @pet
+    else
+      render 'new'
+    end
 	end
+
+  def edit
+  @pet = Pet.find(params[:id])
+  end
+
+  def show
+        @pet=Pet.find(params[:id])
+  end
+
+def update
+  @pet = Pet.find(params[:id])
+ 
+  if @pet.update(pet_params)
+    redirect_to @pet
+  else
+    render 'edit'
+  end
+end
+ 
 
 
 private
@@ -20,11 +43,4 @@ private
 
   end
 
-
-    
-
-	#def index
-	#end
-	
-	
 end
