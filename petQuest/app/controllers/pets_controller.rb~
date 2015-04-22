@@ -2,17 +2,12 @@ require 'csv'
 
 class PetsController < ApplicationController
     def index
-	csv_text = File.read('idealcatweight.csv')
-
-	csv = CSV.parse(csv_text, :headers => true)
-	csv.each do |row|
- 	Idealcatweight.create!(row.to_hash)
-end
+	
     @pets = Pet.all
     end
     
 	def new
-Rails.logger.debug("test")
+        @pet=Pet.create[params[:pet]]
 	end
 
   def create

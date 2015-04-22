@@ -7,7 +7,7 @@ class PetsController < ApplicationController
     end
     
 	def new
-Rails.logger.debug("test")
+        @pet=Pet.new
 	end
 
   def create
