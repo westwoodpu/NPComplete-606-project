@@ -1,4 +1,7 @@
-<%= form_for :pet, url: pets_path do |f| %>
+<%= form_for :pet, url: pets_path() do |f| %>
+
+
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -41,7 +44,7 @@
 
   <p>
     <%= f.label "weight in Kg" %><br>
-    <%= f.text_field :weight %>
+    <%= f.text_field :body_weight %>
   </p>
 
   <p>

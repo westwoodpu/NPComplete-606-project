@@ -30,19 +30,10 @@
     <%= f.text_field :age %>
   </p>
 
-<p>
-   <%= f.label "Pet Type" %><br>
-<%= 
-  f.select :pet_type,options_for_select([["Cat", "Cat"], ['Dog',"Dog"]]),{:include_blank=>true}, :id=>"first_select", 
-      :'data-remote' => 'true', # important for UJS
-      :'data-url' => url_for(:controller => 'pets', :action => 'getdata'), # we get the data from here!
-      :'data-type' => 'json' # tell jQuery to parse the response as JSON!
-%>
-</p>
-<%= f.label :Breed %><br>
-<%= 
-  f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
-%> 
+  <p>
+    <%= f.label :pet_type %><br>
+    <%= f.text_field :pet_type %>
+  </p>
 
   <p>
     <%= f.label :body_condition_score %><br>
@@ -54,6 +45,10 @@
     <%= f.text_field :body_weight %>
   </p>
 
+	<p>
+    <%= f.label :breed %><br>
+    <%= f.text_field :breed %>
+  </p>
 
 <p>
     <%= f.label :weight %><br>
