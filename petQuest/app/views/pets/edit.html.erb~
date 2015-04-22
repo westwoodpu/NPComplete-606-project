@@ -1,0 +1,72 @@
+<h1>Editing pet</h1>
+ 
+<%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
+ 
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@pet.errors.count, "error") %> prohibited
+        this pet from being saved:
+      </h2>
+      <ul>
+        <% @pet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :gender %><br>
+    <select name="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    
+</select>
+  </p>
+
+  <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </p>
+
+  <p>
+    <%= f.label :pet_type %><br>
+    <%= f.text_field :pet_type %>
+  </p>
+
+  <p>
+    <%= f.label :body_condition_score %><br>
+    <%= f.text_field :body_condition_score %>
+  </p>
+
+  <p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :body_weight %>
+  </p>
+
+	<p>
+    <%= f.label :breed %><br>
+    <%= f.text_field :breed %>
+  </p>
+
+<p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :body_weight %>
+  </p>
+
+  <p>
+    <%= f.label :activity_level %><br>
+    <select name="activity_level">
+    <option value="indoor">Indoor</option>
+    <option value="outdoor">Outdoor</option>
+    </select>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', new_pet_path %>

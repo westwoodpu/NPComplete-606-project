@@ -2,17 +2,13 @@
  
 <table>
   <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Pet Type</th>
-    <th>Body Condition Score</th>
-    <th>Weight</th>
-    <th>Sterilization Time</th>
-    <th>Vaccination History</th>
-    <th>Vivo Anthelmintic Time</th>
-    <th>Vitro Flea Flooding Time</th>
-    <th>Description</th>
-    <th>Weight</th>
+    <th>Name&nbsp</th>
+    <th>Age&nbsp</th> 
+    <th>Gender&nbsp</th>
+    <th>Pet Type&nbsp</th>
+    <th>Body Condition Score&nbsp</th>
+    <th>Weight&nbsp</th>
+    <th>Activity Level&nbsp</th>
     <th colspan="2"></th>
   </tr>
  
@@ -20,14 +16,12 @@
     <tr>
       <td><%= pet.name %></td>
       <td><%= pet.age %></td>
+      <td><%= pet.gender %></td>
       <td><%= pet.pet_type %></td>
       <td><%= pet.body_condition_score %></td>
-      <td><%= pet.weight %></td>
-      <td><%= pet.sterilization_time %></td>
-      <td><%= pet.vaccination_history %></td>
-      <td><%= pet.vivo_anthelmintic_time %></td>
-      <td><%= pet.vitro_flea_flooding_time %></td>
-      <td><%= pet.description %></td>
+      <td><%= pet.body_weight %></td>
+      <td><%= pet.activity %></td>
+
     </tr>
 
   <% end %>

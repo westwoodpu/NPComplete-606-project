@@ -1,0 +1,32 @@
+<h1>Check All You Pets Here!</h1>
+ 
+<table>
+  <tr>
+    <th>Name&nbsp</th>
+    <th>Age</th> 
+    <th>Gender</th>
+    <th>Pet Type</th>
+    <th>Body Condition Score</th>
+    <th>Weight</th>
+    <th>Activity Level</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @pets.each do |pet| %>
+    <tr>
+      <td><%= pet.name %></td>
+      <td><%= pet.age %></td>
+      <td><%= pet.gender %></td>
+      <td><%= pet.pet_type %></td>
+      <td><%= pet.body_condition_score %></td>
+      <td><%= pet.body_weight %></td>
+      <td><%= pet.activity %></td>
+
+    </tr>
+
+  <% end %>
+</table>
+
+<%= link_to 'Select food for pets', foods_path %> <br>
+
+<a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>

@@ -30,10 +30,19 @@
     <%= f.text_field :age %>
   </p>
 
-  <p>
-    <%= f.label :pet_type %><br>
-    <%= f.text_field :pet_type %>
-  </p>
+<p>
+   <%= f.label "Pet Type" %><br>
+<%= 
+  f.select :pet_type,options_for_select([["Cat", "Cat"], ['Dog',"Dog"]]),{:include_blank=>true}, :id=>"first_select", 
+      :'data-remote' => 'true', # important for UJS
+      :'data-url' => url_for(:controller => 'pets', :action => 'getdata'), # we get the data from here!
+      :'data-type' => 'json' # tell jQuery to parse the response as JSON!
+%>
+</p>
+<%= f.label :Breed %><br>
+<%= 
+  f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
+%> 
 
   <p>
     <%= f.label :body_condition_score %><br>
@@ -42,7 +51,13 @@
 
   <p>
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+    <%= f.text_field :body_weight %>
+  </p>
+
+
+<p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :body_weight %>
   </p>
 
   <p>
@@ -53,41 +68,6 @@
     </select>
   </p>
 
-  <p>
-    <%= f.label :sterilization_time %><br>
-    <%= f.text_field :sterilization_time %>
-  </p>
-
-  <p>
-    <%= f.label :vaccination_history %><br>
-    <%= f.text_area :vaccination_history %>
-  </p>
-
-  <p>
-    <%= f.label :vivo_anthelmintic_time %><br>
-    <%= f.text_field :vivo_anthelmintic_time %>
-  </p>
-
-  <p>
-    <%= f.label :vitro_flea_flooding_time %><br>
-    <%= f.text_field :vitro_flea_flooding_time %>
-  </p>
-
-  <p>
-    <%= f.label :diet %><br>
-    <select name="diet">
-    <option value="homemade">Homemade</option>
-    <option value="canned_food">Canned Food</option>
-    <option value="cat_food">Cat Food</option>
-    <option value="snacks">snacks</option>
-    </select>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
- 
   <p>
     <%= f.submit %>
   </p>

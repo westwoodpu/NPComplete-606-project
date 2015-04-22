@@ -1,0 +1,12 @@
+require 'csv'
+
+class BreedidealweightsController < ApplicationController
+
+def index
+	csv_text = File.read('idealbreedweight.csv')
+
+	csv = CSV.parse(csv_text, :headers => true)
+	csv.each do |row|
+ 	breedidealweights.create!(row.to_hash)
+	end
+end

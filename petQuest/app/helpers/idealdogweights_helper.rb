@@ -1,0 +1,2 @@
+module IdealdogweightsHelper
+end

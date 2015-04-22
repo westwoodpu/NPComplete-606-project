@@ -1,0 +1,10 @@
+Feature: As a petquest customer, 
+	I want to see food
+         so that I can add them to my recipe
+
+
+Scenario: See food
+	  Given I am on the petinput 
+	  When I press "our homepage"
+	  Then the page should have food "salmon"
+	

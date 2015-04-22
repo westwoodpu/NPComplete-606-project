@@ -27,6 +27,22 @@ ActiveRecord::Schema.define(version: 20150422091503) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "idealcatweights", force: :cascade do |t|
+    t.string   "english_name"
+    t.integer  "min_kg"
+    t.integer  "max_kg"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "idealdogweights", force: :cascade do |t|
+    t.string   "english_name"
+    t.integer  "min_kg"
+    t.integer  "max_kg"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "nutritionfacts", force: :cascade do |t|
     t.string   "category"
     t.string   "foodname"
@@ -98,19 +114,14 @@ ActiveRecord::Schema.define(version: 20150422091503) do
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.string   "gender"
-    t.string   "age"
     t.string   "pet_type"
+    t.string   "age"
+    t.integer  "body_weight"
+    t.string   "breed"
     t.string   "body_condition_score"
-    t.string   "weight"
-    t.string   "activity_level"
-    t.string   "sterilization_time"
-    t.text     "vaccination_history"
-    t.string   "vivo_anthelmintic_time"
-    t.string   "vitro_flea_flooding_time"
-    t.string   "diet"
-    t.text     "description"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "activity"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end

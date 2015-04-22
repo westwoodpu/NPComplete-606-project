@@ -1,0 +1,2 @@
+class IdealdogweightsController < ApplicationController
+end

@@ -1,0 +1,14 @@
+FactoryGirl.define do
+  factory :pet do
+    name "MyString"
+pet type.to_sym "MyString"
+body "MyString"
+weight "MyString"
+breed "MyString"
+body "MyString"
+condition "MyString"
+score "MyString"
+activity "MyString"
+  end
+
+end
