@@ -11,26 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418054135) do
+ActiveRecord::Schema.define(version: 20150421164349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "athletes", force: :cascade do |t|
-    t.integer  "scid"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "age"
-    t.string   "gender"
-    t.string   "classification"
-    t.string   "questionnaire"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "password_digest"
-  end
-
-  add_index "athletes", ["email"], name: "index_athletes_on_email", unique: true, using: :btree
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +25,22 @@ ActiveRecord::Schema.define(version: 20150418054135) do
     t.string   "foodCategory"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "idealcatweights", force: :cascade do |t|
+    t.string   "english_name"
+    t.integer  "min_kg"
+    t.integer  "max_kg"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "idealdogweights", force: :cascade do |t|
+    t.string   "english_name"
+    t.integer  "min_kg"
+    t.integer  "max_kg"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "nutritionfacts", force: :cascade do |t|
@@ -60,19 +60,14 @@ ActiveRecord::Schema.define(version: 20150418054135) do
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.string   "gender"
-    t.string   "age"
     t.string   "pet_type"
+    t.string   "age"
+    t.integer  "body_weight"
+    t.string   "breed"
     t.string   "body_condition_score"
-    t.string   "weight"
-    t.string   "activity_level"
-    t.string   "sterilization_time"
-    t.text     "vaccination_history"
-    t.string   "vivo_anthelmintic_time"
-    t.string   "vitro_flea_flooding_time"
-    t.string   "diet"
-    t.text     "description"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "activity"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end

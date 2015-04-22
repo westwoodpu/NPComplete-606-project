@@ -1,0 +1,49 @@
+<p>
+  <strong>Name:</strong>
+  <%= @pet.name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @pet.gender %>
+</p>
+ 
+<p>
+  <strong>Age:</strong>
+  <%= @pet.age %>
+</p>
+
+<p>
+  <strong>Pet Type:</strong>
+  <%= @pet.pet_type %>
+</p>
+
+<p>
+  <strong>Body Condition Score:</strong>
+  <%= @pet.body_condition_score %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @pet.body_weight %>
+</p>
+
+<p>
+  <strong>Activity Level:</strong>
+  <%= @pet.activity_level %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<%= link_to 'Back', pets_path %> <br>
+
+<%= link_to 'Add a new pet', new_pet_path %>  <br>
+
+<%= link_to 'Select food for pets', foods_path %> <br>
+
+<a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
+
+
+
+

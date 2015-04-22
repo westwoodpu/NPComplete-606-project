@@ -1,0 +1,67 @@
+<%= form_for :pet, url: pets_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+	<%= f.label "Gender" %><br>
+	<%= f.select(:gender,options_for_select([['Male',"Male"],	 
+        ['Female',"Female"]])) %>
+  </p>
+
+  <p>
+    <%= f.label "Age (in years)" %><br>
+    <%= f.text_field :age %>
+  </p>
+
+  
+
+
+
+<p>
+   <%= f.label "Pet Type" %><br>
+<%= 
+  f.select :pet_type,options_for_select([["Cat", "Cat"], ['Dog',"Dog"]]),{:include_blank=>true}, :id=>"first_select", 
+      :'data-remote' => 'true', # important for UJS
+      :'data-url' => url_for(:controller => 'pets', :action => 'getdata'), # we get the data from here!
+      :'data-type' => 'json' # tell jQuery to parse the response as JSON!
+%>
+</p>
+<%= f.label :Breed %><br>
+<%= 
+  f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
+%> 
+
+
+  <p>
+    <%= f.label :body_condition_score %><br>
+    <%= f.select(:body_condition_score,options_for_select([['Slim/Normal',"Normal"],   	   	  	['Fat',"Fat"]])) %>
+  </p>
+
+  <p>
+    <%= f.label "weight in Kg" %><br>
+    <%= f.text_field :weight %>
+  </p>
+
+  <p>
+    <%= f.label :activity_level %><br>
+   <%= f.select(:activity,options_for_select([['Active',"Active"],   	   	  	['Inactive',"Inactive"]])) %>
+  </p>
+
+ 
+
+ 
+ 
+
+
+
+
+  <!--pet type, gender, date of birth (age), body condition score, body weight, activity level (indoor / backyard), sterilization time, vaccination history in vivo anthelmintic time vitro flea flooding time, diet (optional homemade, canned food, cat food, snacks)-->
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+   <a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
+<% end %>

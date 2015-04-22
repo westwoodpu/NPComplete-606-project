@@ -25,45 +25,15 @@
 
 <p>
   <strong>Weight:</strong>
-  <%= @pet.weight %>
+  <%= @pet.body_weight %>
 </p>
 
 <p>
   <strong>Activity Level:</strong>
-  <%= @pet.activity_level %>
+  <%= @pet.activity%>
 </p>
 
 
-<p>
-  <strong>Sterilization Time:</strong>
-  <%= @pet.sterilization_time %>
-</p>
-
-
-<p>
-  <strong>Vaccination History:</strong>
-  <%= @pet.vaccination_history %>
-</p>
-
-<p>
-  <strong>Vivo Anthelmintic Time:</strong>
-  <%= @pet.vivo_anthelmintic_time %>
-</p>
-
-<p>
-  <strong>Vitro Flea Flooding Time:</strong>
-  <%= @pet.vitro_flea_flooding_time %>
-</p>
-
-<p>
-  <strong>Diet:</strong>
-  <%= @pet.diet %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @pet.description %>
-</p>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %> <br>

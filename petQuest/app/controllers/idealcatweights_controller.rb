@@ -1,0 +1,2 @@
+class IdealcatweightsController < ApplicationController
+end
