@@ -28,6 +28,7 @@ one:
   selenium: 9.99
   copper: 9.99
   manganese: 9.99
+  food_id: 1
 
 two:
   category: MyString
@@ -57,3 +58,4 @@ two:
   selenium: 9.99
   copper: 9.99
   manganese: 9.99
+  food_id: 1

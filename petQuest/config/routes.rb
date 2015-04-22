@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :nutritions do
+    collection {post :import }
+  end
+
+
   get 'welcome/index'
   get 'welcome/about'
   get 'welcome/contact'

@@ -1,0 +1,67 @@
+<h1>nutritionFact list here:</h1>
+<%= link_to 'Add nutritionfacts', new_nutritionfact_path %>
+<table>
+  <tr>
+      <th>category</th>
+      <th>foodname</th>
+      <th>nutritionfact.weight</th>
+      <th>nutritionfact.edible</th>
+      <th>nutritionfact.energy</th>
+      <th>nutritionfact.protein</th>
+      <th>nutritionfact.fat</th>
+      <th>nutritionfact.cho</th>
+      <th>nutritionfact.dietaryfiber</th>
+      <th>nutritionfact.ash</th>
+      <th>nutritionfact.cholesterol</th>
+      <th>nutritionfact.vitaminA</th>
+      <th>nutritionfact.retinol</th>
+      <th>nutritionfact.vitaminE</th>
+      <th>nutritionfact.vitaminB1</th>
+      <th>nutritionfact.vitaminB2</th>
+      <th>nutritionfact.vitaminB3</th>
+      <th>nutritionfact.calcium</th>
+      <th>nutritionfact.phoshorous</th>
+      <th>nutritionfact.potassium</th>
+      <th>nutritionfact.sodium</th>
+      <th>nutritionfact.magnesium</th>
+      <th>nutritionfact.iron</th>
+      <th>nutritionfact.zinc</th>
+      <th>nutritionfact.selenium</th>
+      <th>nutritionfact.copper</th>
+      <th>nutritionfact.manganese</th>
+    <th colspan="1"></th>
+  </tr>
+ 
+  <% @nutritionfacts.each do |nutritionfact| %>
+    <tr>
+      <td><%= category %></td>
+      <td><%= foodname %></td>
+      <td><%= nutritionfact.weight %></td>
+      <td><%= nutritionfact.edible %></td>
+      <td><%= nutritionfact.energy %></td>
+      <td><%= nutritionfact.protein %></td>
+      <td><%= nutritionfact.fat %></td>
+      <td><%= nutritionfact.cho %></td>
+      <td><%= nutritionfact.dietaryfiber %></td>
+      <td><%= nutritionfact.ash %></td>
+      <td><%= nutritionfact.cholesterol %></td>
+      <td><%= nutritionfact.vitaminA %></td>
+      <td><%= nutritionfact.retinol %></td>
+      <td><%= nutritionfact.vitaminE %></td>
+      <td><%= nutritionfact.vitaminB1 %></td>
+      <td><%= nutritionfact.vitaminB2 %></td>
+      <td><%= nutritionfact.vitaminB3 %></td>
+      <td><%= nutritionfact.calcium %></td>
+      <td><%= nutritionfact.phoshorous %></td>
+      <td><%= nutritionfact.potassium %></td>
+      <td><%= nutritionfact.sodium %></td>
+      <td><%= nutritionfact.magnesium %></td>
+      <td><%= nutritionfact.iron %></td>
+      <td><%= nutritionfact.zinc %></td>
+      <td><%= nutritionfact.selenium %></td>
+      <td><%= nutritionfact.copper %></td>
+      <td><%= nutritionfact.manganese %></td>
+      <td><%= link_to 'Add into Recipe', recipes_path%></td>
+    </tr>
+  <% end %>
+</table>

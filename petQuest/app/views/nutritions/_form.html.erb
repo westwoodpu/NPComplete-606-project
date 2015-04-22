@@ -1,0 +1,129 @@
+<%= form_for(@nutrition) do |f| %>
+  <% if @nutrition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nutrition.errors.count, "error") %> prohibited this nutrition from being saved:</h2>
+
+      <ul>
+      <% @nutrition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :foodname %><br>
+    <%= f.text_field :foodname %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :edible %><br>
+    <%= f.text_field :edible %>
+  </div>
+  <div class="field">
+    <%= f.label :energy %><br>
+    <%= f.text_field :energy %>
+  </div>
+  <div class="field">
+    <%= f.label :protein %><br>
+    <%= f.text_field :protein %>
+  </div>
+  <div class="field">
+    <%= f.label :fat %><br>
+    <%= f.text_field :fat %>
+  </div>
+  <div class="field">
+    <%= f.label :cho %><br>
+    <%= f.text_field :cho %>
+  </div>
+  <div class="field">
+    <%= f.label :dietaryfiber %><br>
+    <%= f.text_field :dietaryfiber %>
+  </div>
+  <div class="field">
+    <%= f.label :ash %><br>
+    <%= f.text_field :ash %>
+  </div>
+  <div class="field">
+    <%= f.label :cholesterol %><br>
+    <%= f.text_field :cholesterol %>
+  </div>
+  <div class="field">
+    <%= f.label :vitaminA %><br>
+    <%= f.text_field :vitaminA %>
+  </div>
+  <div class="field">
+    <%= f.label :retinol %><br>
+    <%= f.text_field :retinol %>
+  </div>
+  <div class="field">
+    <%= f.label :vitaminE %><br>
+    <%= f.text_field :vitaminE %>
+  </div>
+  <div class="field">
+    <%= f.label :vitaminB1 %><br>
+    <%= f.text_field :vitaminB1 %>
+  </div>
+  <div class="field">
+    <%= f.label :vitaminB2 %><br>
+    <%= f.text_field :vitaminB2 %>
+  </div>
+  <div class="field">
+    <%= f.label :vitaminB3 %><br>
+    <%= f.text_field :vitaminB3 %>
+  </div>
+  <div class="field">
+    <%= f.label :calcium %><br>
+    <%= f.text_field :calcium %>
+  </div>
+  <div class="field">
+    <%= f.label :phoshorous %><br>
+    <%= f.text_field :phoshorous %>
+  </div>
+  <div class="field">
+    <%= f.label :potassium %><br>
+    <%= f.text_field :potassium %>
+  </div>
+  <div class="field">
+    <%= f.label :sodium %><br>
+    <%= f.text_field :sodium %>
+  </div>
+  <div class="field">
+    <%= f.label :magnesium %><br>
+    <%= f.text_field :magnesium %>
+  </div>
+  <div class="field">
+    <%= f.label :iron %><br>
+    <%= f.text_field :iron %>
+  </div>
+  <div class="field">
+    <%= f.label :zinc %><br>
+    <%= f.text_field :zinc %>
+  </div>
+  <div class="field">
+    <%= f.label :selenium %><br>
+    <%= f.text_field :selenium %>
+  </div>
+  <div class="field">
+    <%= f.label :copper %><br>
+    <%= f.text_field :copper %>
+  </div>
+  <div class="field">
+    <%= f.label :manganese %><br>
+    <%= f.text_field :manganese %>
+  </div>
+  <div class="field">
+    <%= f.label :food_id %><br>
+    <%= f.number_field :food_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

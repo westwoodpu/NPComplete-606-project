@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Nutritions</h1>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Category</th>
+        <th>Foodname</th>
+        <th>Weight</th>
+        <th>Edible</th>
+        <th>Energy</th>
+        <th>Protein</th>
+        <th>Fat</th>
+        <th>Cho</th>
+        <th>Dietaryfiber</th>
+        <th>Ash</th>
+        <th>Cholesterol</th>
+        <th>Vitamina</th>
+        <th>Retinol</th>
+        <th>Vitamine</th>
+        <th>Vitaminb1</th>
+        <th>Vitaminb2</th>
+        <th>Vitaminb3</th>
+        <th>Calcium</th>
+        <th>Phosphorous</th>
+        <th>Potassium</th>
+        <th>Sodium</th>
+        <th>Magnesium</th>
+        <th>Iron</th>
+        <th>Zinc</th>
+        <th>Selenium</th>
+        <th>Copper</th>
+        <th>Manganese</th>
+        <th>Food</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <% @nutritions.each do |nutrition| %>
+          <tr>
+            <td><%= nutrition.category %></td>
+            <td><%= nutrition.foodname %></td>
+            <td><%= nutrition.weight %></td>
+            <td><%= nutrition.edible %></td>
+            <td><%= nutrition.energy %></td>
+            <td><%= nutrition.protein %></td>
+            <td><%= nutrition.fat %></td>
+            <td><%= nutrition.cho %></td>
+            <td><%= nutrition.dietaryfiber %></td>
+            <td><%= nutrition.ash %></td>
+            <td><%= nutrition.cholesterol %></td>
+            <td><%= nutrition.vitaminA %></td>
+            <td><%= nutrition.retinol %></td>
+            <td><%= nutrition.vitaminE %></td>
+            <td><%= nutrition.vitaminB1 %></td>
+            <td><%= nutrition.vitaminB2 %></td>
+            <td><%= nutrition.vitaminB3 %></td>
+            <td><%= nutrition.calcium %></td>
+            <td><%= nutrition.phosphorous %></td>
+            <td><%= nutrition.potassium %></td>
+            <td><%= nutrition.sodium %></td>
+            <td><%= nutrition.magnesium %></td>
+            <td><%= nutrition.iron %></td>
+            <td><%= nutrition.zinc %></td>
+            <td><%= nutrition.selenium %></td>
+            <td><%= nutrition.copper %></td>
+            <td><%= nutrition.manganese %></td>
+            <td><%= nutrition.food_id %></td>
+            <td><%= link_to 'Show', nutrition %></td>
+            <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
+            <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<h3>Import Nutritions</h3>
+<%= form_tag import_nutritions_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload nutritions" %>
+<% end %>
+
+<%= link_to 'New Nutrition', new_nutrition_path %>

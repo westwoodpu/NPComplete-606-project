@@ -1,3 +1,3 @@
 class Food < ActiveRecord::Base
-	belongs_to :nutritionfact
+	has_one :nutritionfact, :dependent => :destory
 end

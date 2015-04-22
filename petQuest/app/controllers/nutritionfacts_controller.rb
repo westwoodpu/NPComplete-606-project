@@ -23,6 +23,34 @@ class NutritionfactsController < ApplicationController
 
 	private
 		def nutritionfact_params
-			params.require(:nutritionfact).permit(:foodname, :unit, :water, :energy, :protein, :fat, :cho, :dietaryFiber, :ash)
+			params.require(:nutritionfact).permit(
+		       :category,
+		       :foodname,
+		       :weight,
+		       :edible,
+		       :energy,
+		       :protein,
+		       :fat,
+		       :cho,
+		       :dietaryfiber,
+		       :ash,
+		       :cholesterol,
+		       :vitaminA,
+		       :retinol,
+		       :vitaminE,
+		       :vitaminB1,
+		       :vitaminB2,
+		       :vitaminB3,
+		       :calcium,
+		       :phoshorous,
+		       :potassium,
+		       :sodium,
+		       :magnesium,
+		       :iron,
+		       :zinc,
+		       :selenium,
+		       :copper,
+		       :manganese
+			)
 		end
 end
