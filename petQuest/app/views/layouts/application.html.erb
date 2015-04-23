@@ -8,20 +8,22 @@
 </head>
 <body>
 
-<div class="container">
-	<ul class = "nav nav-tabs">
-		<li><%= link_to "Home", welcome_index_path %></li>
-		<li><%= link_to "About Us", welcome_about_path %></li>
-		<li><%= link_to "Contact", welcome_contact_path %></li>
-		<li><%= link_to "Features", welcome_features_path %></li>
-		<li><%= link_to "Pricing", welcome_pricing_path %></li>
-		<li><%= link_to "FAQs", welcome_faqs_path %></li>
-		<li><%= link_to "Login", welcome_login_path %></li>
-	</ul>
+<nav class="navbar navbar">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"> Petfood Calculator</a>
 
+			<ul class = "nav navbar-nav">
+				<li><%= link_to "Home", welcome_index_path %></li>
+				<li><%= link_to "About Us", welcome_about_path %></li>
+				<li><%= link_to "Contact", welcome_contact_path %></li>
+				<li><%= link_to "Features", welcome_features_path %></li>
+				<li><%= link_to "Pricing", welcome_pricing_path %></li>
+				<li><%= link_to "FAQs", welcome_faqs_path %></li>
+				<li><%= link_to "Login", welcome_login_path %></li>
+			</ul>
+	</div>
 	<%= yield %>
-
-</div>
+</nav>
 
 </body>
 </html>
