@@ -1,6 +1,6 @@
 class CreateNutritionfacts < ActiveRecord::Migration
   def change
-
+   drop_table :nutritionfacts
     create_table :nutritionfacts do |t|
       t.string :category
       t.string :foodname
