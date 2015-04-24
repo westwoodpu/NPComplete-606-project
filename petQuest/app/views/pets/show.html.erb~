@@ -3,6 +3,7 @@
   <%= @pet.name %>
 </p>
 
+
 <p>
   <strong>Gender:</strong>
   <%= @pet.gender %>
@@ -11,6 +12,13 @@
 <p>
   <strong>Age:</strong>
   <%= @pet.age %>
+</p>
+
+
+
+<p>
+  <strong>Pet Type:</strong>
+  <%= @pet.pet_type %>
 </p>
 
 <p>
@@ -30,7 +38,7 @@
 
 <p>
   <strong>Activity Level:</strong>
-  <%= @pet.activity_level %>
+  <%= @pet.activity%>
 </p>
 
 

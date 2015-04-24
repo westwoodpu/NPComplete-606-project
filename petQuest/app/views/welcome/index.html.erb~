@@ -4,5 +4,5 @@
 
 <%= link_to 'See Food', controller: 'foods' %>
 <%= link_to 'Input Pets', new_pet_path  %>
-<%= link_to 'Show Pets', pets_path  %>
+<%= link_to 'Show Pets', pet_path  %>
 

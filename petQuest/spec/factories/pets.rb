@@ -1,13 +1,14 @@
 FactoryGirl.define do
   factory :pet do
-    name "MyString"
-gender "MyString"
-pet_type "MyString"
-age "MyString"
-body_weight 1
-breed "MyString"
-body_condition_score "MyString"
-activity "MyString"
+  name 'Cindy'
+  gender 'Male'
+  age 10
+  pet_type 'Cat'
+  breed 'Afghan'
+  body_condition_score 'Normal'
+  body_weight 10
+  activity 'Active'
+    
   end
 
 end
