@@ -1,0 +1,64 @@
+<%= form_for(@food) do |f| %>
+  <% if @food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+      <% @food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :reference_price %><br>
+    <%= f.text_field :reference_price %>
+  </div>
+  <div class="field">
+    <%= f.label :cook_method %><br>
+    <%= f.text_field :cook_method %>
+  </div>
+
+  <div class="field">
+    <%= f.label :food_category %><br>
+    <%= f.text_field :food_category %>
+      <div class="controls">
+        <%= f.select(:food_category, options_for_select([
+          ['Meat&Meat Products','Meat&Meat Products'],
+          ['Poultry&Poultry Products','Poultry&Poultry Products'],
+          ['Milk & Eggs','Milk & Eggs'],
+          ['Fish_Shelfish&Mollusc','Fish_Shelfish&Mollusc'],
+          ['Seed_Fat&Oils','Seed_Fat&Oils'],
+          ['Condiments','Condiments'],
+          ['Cereal&Cereal Products','Cereal&Cereal Products'],
+          ['Tubers_Starches&Products','Tubers_Starches&Products'],
+          ['root vegetables','root vegetables'],
+          ['leguminous vegetables_Legume products','leguminous vegetables_Legume products'],
+          ['solanaceous_melon&fruit vegetables','solanaceous_melon&fruit vegetables'],
+          ['leafy_flower vegetables','leafy_flower vegetables'],
+          ['aquatic_tuber vegetable','aquatic_tuber vegetable'],
+          ['fungi&Algae','fungi&Algae']]), { include_blank: true }) %>
+      </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :img_dir %><br>
+    <%= f.text_field :img_dir %>
+  </div>
+  <div class="field">
+    <%= f.label :food_id %><br>
+    <%= f.number_field :food_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

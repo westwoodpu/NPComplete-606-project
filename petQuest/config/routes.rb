@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+
+  resources :foods do
+    collection {post :import }
+  end
+
   resources :nutritions do
     collection {post :import }
   end
 
+  resources :recipes, except: :add
+
+
+  get 'recipes/:id/add(.:format)' => 'foods#add', :as => :add
 
   get 'welcome/index'
   get 'welcome/about'
@@ -17,10 +26,7 @@ Rails.application.routes.draw do
   get 'getdata' => 'pets#getdata'
    resources :pets
   # You can have the root of your site routed with "root"
-   resources :nutritionfacts
-   resources :foods
-   resources :recipes
-   resources :idealdogweights
+    resources :idealdogweights
    resources :idealcatweights
 
    root 'welcome#index'

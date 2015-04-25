@@ -1,0 +1,61 @@
+
+<div class="container">
+  <h1>Input New Food Here</h1>
+<%= form_for :food, url: foods_path do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :referencePrice %><br>
+    <%= f.text_field :referencePrice %>
+  </p>
+  
+  <p>
+    <%= f.label :ediblePercentage %><br>
+    <%= f.text_field :ediblePercentage %>
+  </p>
+ 
+ <div class="control-group">
+    <%= f.label :cookMethod %><br>
+    <%= f.text_field :cookMethod %>
+    <div class="controls">
+      <%= f.select(:cookMethod, options_for_select([['bake','bake'],['grill','grill']]), { include_blank: true }) %>
+    </div>
+</div>
+
+  <p>
+    <%= f.label :foodCategory %><br>
+    <%= f.text_field :foodCategory %>
+    <div class="controls">
+      <%= f.select(:foodCategory, options_for_select([
+        ['Meat&Meat Products','Meat&Meat Products'],
+        ['Poultry&Poultry Products','Poultry&Poultry Products'],
+        ['Milk & Eggs','Milk & Eggs'],
+        ['Fish_Shelfish&Mollusc','Fish_Shelfish&Mollusc'],
+        ['Seed_Fat&Oils','Seed_Fat&Oils'],
+        ['Condiments','Condiments'],
+        ['Cereal&Cereal Products','Cereal&Cereal Products'],
+        ['Tubers_Starches&Products','Tubers_Starches&Products'],
+        ['root vegetables','root vegetables'],
+        ['leguminous vegetables_Legume products','leguminous vegetables_Legume products'],
+        ['solanaceous_melon&fruit vegetables','solanaceous_melon&fruit vegetables'],
+        ['leafy_flower vegetables','leafy_flower vegetables'],
+        ['aquatic_tuber vegetable','aquatic_tuber vegetable'],
+        ['fungi&Algae','fungi&Algae']]), { include_blank: true }) %>
+    </div>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', foods_path %>
+</div>

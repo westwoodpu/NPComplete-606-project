@@ -1,31 +1,54 @@
-<p>
-  <strong>name:</strong>
-  <%= @food.name %>
-</p>
- 
-<p>
-  <strong>description:</strong>
-  <%= @food.description %>
-</p>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>referencePrice:</strong>
-  <%= @food.referencePrice %>
-</p>
 
-<p>
-  <strong>ediblePercentage:</strong>
-  <%= @food.ediblePercentage %>
-</p>
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Reference price</th>
+          <th>Cook method</th>
+          <th>Food category</th>
+          <th>Img dir</th>
+          <th>Food id</th>
+        </tr>
+      </thead>
 
-<p>
-  <strong>cookMethod:</strong>
-  <%= @food.cookMethod %>
-</p>
+      <tbody>
+          <tr>
+            <td><%= @food.name %></td>
+            <td><%= @food.description %></td>
+            <td><%= @food.reference_price %></td>
+            <td><%= @food.cook_method %></td>
+            <td><%= @food.food_category %></td>
+            <td><%= @food.img_dir %></td>
+            <td><%= @food.food_id %></td>
+          </tr>
+      </tbody>
+    </table>
+</div>
 
-<p>
-  <strong>foodCategory:</strong>
-  <%= @food.foodCategory %>
-</p>
 
+
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Weight</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+            <td><%= @weight %></td>
+          </tr>
+      </tbody>
+    </table>
+</div>
+
+
+<%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>
+

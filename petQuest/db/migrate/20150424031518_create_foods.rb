@@ -3,10 +3,11 @@ class CreateFoods < ActiveRecord::Migration
     create_table :foods do |t|
       t.string :name
       t.text :description
-      t.decimal :referencePrice
-      t.integer :ediblePercentage
-      t.text :cookMethod
-      t.string :foodCategory
+      t.decimal :reference_price
+      t.string :cook_method
+      t.string :food_category
+      t.string :img_dir
+      t.integer :food_id
 
       t.timestamps null: false
     end
