@@ -1,32 +1,36 @@
 <h1>Check All You Pets Here!</h1>
  
 <table>
-  <tr>
-    <th>Name&nbsp</th>
-    <th>Age</th> 
-    <th>Gender</th>
-    <th>Pet Type</th>
-    <th>Body Condition Score</th>
-    <th>Weight</th>
-    <th>Activity Level</th>
+  
+<tr>
+    <th style ="text-align:center">Name&nbsp</th>
+    <th style ="text-align:center">&nbspAge&nbsp</th> 
+    <th style ="text-align:center">&nbspGender&nbsp</th>
+    <th style ="text-align:center">&nbspPet_Type&nbsp</th>
+    <th style ="text-align:center">&nbspBreed&nbsp</th>
+    <th style ="text-align:center">&nbspBody_Condition_Score&nbsp</th>
+    <th style ="text-align:center">&nbspWeight&nbsp</th>
+    <th style ="text-align:center">&nbspActivity_Level&nbsp</th>
     <th colspan="2"></th>
   </tr>
  
   <% @pets.each do |pet| %>
     <tr>
-      <td><%= pet.name %></td>
-      <td><%= pet.age %></td>
-      <td><%= pet.gender %></td>
-      <td><%= pet.pet_type %></td>
-      <td><%= pet.body_condition_score %></td>
-      <td><%= pet.body_weight %></td>
-      <td><%= pet.activity %></td>
+      <td><%= pet.name %>&nbsp<br></td>
+      <td>&nbsp<%= pet.age %>&nbsp</td>
+      <td>&nbsp<%= pet.gender %>&nbsp</td>
+      <td>&nbsp<%= pet.pet_type %>&nbsp</td>
+      <td>&nbsp<%= pet.breed %>&nbsp</td>
+      <td>&nbsp<%= pet.body_condition_score %>&nbsp</td>
+      <td>&nbsp<%= pet.body_weight %>&nbsp</td>
+      <td>&nbsp<%= pet.activity %>&nbsp</td>
 
     </tr>
 
   <% end %>
 </table>
 
+<%= link_to 'Input pets', foods_path %> <br>
 <%= link_to 'Select food for pets', foods_path %> <br>
 
 <a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
