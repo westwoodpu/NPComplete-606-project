@@ -22,6 +22,8 @@ class RecipesController < ApplicationController
   end
 
   def add_weight
+    @recipe = Recipe.find(params[:id])
+
   end
 
 
@@ -64,6 +66,11 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def save
+
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
