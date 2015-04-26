@@ -4,7 +4,7 @@ class PetsController < ApplicationController
     def index
     require 'csv'    
 
-    csv_text = File.read('idealcatweight.csv')
+    csv_text = File.read('csv_files/idealcatweight.csv')
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
     Idealcatweight.create!(row.to_hash)
