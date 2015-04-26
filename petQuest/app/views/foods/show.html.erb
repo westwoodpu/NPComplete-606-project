@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid"><p id="notice"><%= notice %></p>
 
 
 <div class="table-responsive">
-    <table class="table">
+    <table>
       <thead>
         <tr>
           <th>Name</th>
@@ -29,13 +29,13 @@
     </table>
 </div>
 
-
+<div class="ctn0"><p>  </p></div>
 
 <div class="table-responsive">
-    <table class="table">
+    <div class="col-md-12"><table >
       <thead>
         <tr>
-          <th>Weight</th>
+          <th id="th1">Weight</th>
 
         </tr>
       </thead>
@@ -46,9 +46,12 @@
           </tr>
       </tbody>
     </table>
+    <div class="ctn0"><p>  </p></div>
 </div>
 
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
+<div class="ctn0"><p>  </p></div>
+<div align="center"><%= link_to 'Edit', edit_food_path(@food) %> 
+<a href="http://localhost:3000/foods/1" class="btn2">Edit</a>
+<a href="http://localhost:3000/foods" class="btn2">Back</a></div></div>
+</div>
 

@@ -1,4 +1,4 @@
-<h1>Editing pet</h1>
+<div class='container-fluid'><h1>Editing pet</h1>
  
 <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
@@ -15,7 +15,7 @@
       </ul>
     </div>
   <% end %>
- 
+  <div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
   <p>
     <%= f.label :gender %><br>
     <select name="gender">
@@ -69,9 +69,9 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit nil, :class => 'btn2'%>
   </p>
  
 <% end %>
  
-<%= link_to 'Back', new_pet_path %>
+<a href="http://localhost:3000/pets" class="btn2">Back</a></div></div>

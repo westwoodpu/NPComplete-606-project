@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 
-<h1>Listing Foods</h1>
+<h1>Food Lists</h1>
 
 <div class="table-responsive">
     <table class="table">
       <thead>
-        <tr>
+        <tr id="tr1">
           <th>Name</th>
           <th>Description</th>
           <th>Reference price</th>
@@ -36,15 +36,15 @@
       </tbody>
     </table>
 </div>
-
+<div align="center" id="ctn">
+<a href="http://localhost:3000/foods/new" class="btn2">Add new foods</a>
+<a href="http://localhost:3000/welcome/index" class="btn2">Back</a></div>
 <br>
 <h3>Import Food</h3>
-<%= form_tag import_foods_path, multipart: true do %>
-  <%= file_field_tag :file2 %>
-  <%= submit_tag "Upload foods" %>
-<% end %>
-
-<%= link_to 'New Food', new_food_path %>
+<div align="center"><%= form_tag import_foods_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload foods",:class => 'btn2' %>
+<% end %></div>
 
 <h1>Recipe you're creating</h1>
 <div class="table-responsive">
@@ -78,4 +78,5 @@
         <% end %>
       </tbody>
     </table>
+</div>
 </div>
