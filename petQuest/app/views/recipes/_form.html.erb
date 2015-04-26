@@ -1,4 +1,4 @@
-<%= form_for(@recipe) do |f| %>
+<div class="container-fluid"><%= form_for(@recipe) do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -10,17 +10,22 @@
       </ul>
     </div>
   <% end %>
+  <div style="width:60px" class='col-md-offset-4' id="ctn2">
+    <div class="field">
+      <%= f.label :user_id %><br>
+      <%= f.number_field :user_id %>
+    </div>
+    <div class="field">
+      <%= f.label :recipe_id %><br>
+      <%= f.number_field :recipe_id %>
+      <div class="ctn0"><p>  </p></div>
+    </div>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :recipe_id %><br>
-    <%= f.number_field :recipe_id %>
-  </div>
+    <div class="actions">
+      <%= f.submit nil, :class =>"btn2" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+  <div id="ctn0"><p>  </p></div>
+  </div>

@@ -1,56 +1,59 @@
-<p>
+<div class="container-fluid col-md-12"><h1 >Pet info</h1>
+  <div class="row"><div style="width:600px" id="ctn3">
+  <p>
   <strong>Name:</strong>
   <%= @pet.name %>
-</p>
+  </p>
 
 
-<p>
-  <strong>Gender:</strong>
-  <%= @pet.gender %>
-</p>
- 
-<p>
-  <strong>Age:</strong>
-  <%= @pet.age %>
-</p>
-
-
-
-<p>
-  <strong>Pet Type:</strong>
-  <%= @pet.pet_type %>
-</p>
-
-<p>
-  <strong>Breed:</strong>
-  <%= @pet.breed %>
-</p>
-
-<p>
-  <strong>Body Condition Score:</strong>
-  <%= @pet.body_condition_score %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @pet.body_weight %>
-</p>
-
-<p>
-  <strong>Activity Level:</strong>
-  <%= @pet.activity%>
-</p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @pet.gender %>
+  </p>
+   
+  <p>
+    <strong>Age:</strong>
+    <%= @pet.age %>
+  </p>
 
 
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %> <br>
+  <p>
+    <strong>Pet Type:</strong>
+    <%= @pet.pet_type %>
+  </p>
 
-<%= link_to 'Add a new pet', new_pet_path %>  <br>
+  <p>
+    <strong>Breed:</strong>
+    <%= @pet.breed %>
+  </p>
 
-<%= link_to 'Select food for pets', foods_path %> <br>
+  <p>
+    <strong>Body Condition Score:</strong>
+    <%= @pet.body_condition_score %>
+  </p>
 
-<a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
+  <p>
+    <strong>Weight:</strong>
+    <%= @pet.body_weight %>
+  </p>
+
+  <p>
+    <strong>Activity Level:</strong>
+    <%= @pet.activity%>
+  </p>
+
+
+  <div id="ctn0"><p>  </p></div>
+  <a href="http://localhost:3000/pets" class="btn2">Edit</a>
+  <a href="http://localhost:3000/pets" class="btn2">Back</a>
+  <div id="ctn0"><p>  </p></div>
+  <a href="http://localhost:3000/pets/new" class="btn2">Add a new pet</a>
+  <div id="ctn0"><p>  </p></div>
+  <a href="http://localhost:3000/foods" class="btn2">Select food</a>
+  <%= link_to 'Edit', edit_pet_path(@pet) %> </div>
+  </div></div>
+
 
 
 
