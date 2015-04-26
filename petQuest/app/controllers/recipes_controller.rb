@@ -21,12 +21,6 @@ class RecipesController < ApplicationController
   def edit
   end
 
-  def add_weight
-    @recipe = Recipe.find(params[:id])
-
-  end
-
-
   # POST /recipes
   # POST /recipes.json
   def create
@@ -67,8 +61,8 @@ class RecipesController < ApplicationController
     end
   end
 
-  def save
-
+  def add_weight
+    @recipe = Recipe.find(params[:id])
   end
 
 

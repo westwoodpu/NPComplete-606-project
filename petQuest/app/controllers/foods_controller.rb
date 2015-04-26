@@ -4,14 +4,14 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.paginate(:page => params[:page], :per_page =>10)
     @recipes = Recipe.all
   end
 
   # GET /foods/1
   # GET /foods/1.json
   def show
-    @weight = (Nutrition.where( food_id: params[:id])).pluck :weight
+    @food_nutrition   = (Nutrition.find_by( food_id: params[:id]))
   end
 
   # GET /foods/new

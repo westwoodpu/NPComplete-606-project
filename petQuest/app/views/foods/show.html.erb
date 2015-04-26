@@ -31,23 +31,32 @@
 
 <div class="ctn0"><p>  </p></div>
 
-<div class="table-responsive">
-    <div class="col-md-12"><table >
-      <thead>
-        <tr>
-          <th id="th1">Weight</th>
 
-        </tr>
-      </thead>
+<table class="table table-responsive">
+    <thead>
+      <tr>
+        <% @food_nutrition.attributes.each do |attr_name| %>      
+        <th><%= (attr_name)[0].to_s %></th>
+        <% end %>
+      </tr>
+    </thead>
 
-      <tbody>
-          <tr>
-            <td><%= @weight %></td>
-          </tr>
-      </tbody>
-    </table>
-    <div class="ctn0"><p>  </p></div>
-</div>
+    <tbody>
+      <tr>
+        <% @food_nutrition.attributes.each do |attr_value| %>      
+        <td><%= (attr_value)[0].to_s %></td>
+        <% end %>
+      </tr>
+    </tbody>
+
+</table>
+
+  <% @food_nutrition.attributes.each do |attr_name, attr_value| %>
+    <div class="food_nutrition_attribute">
+     <%= attr_name %>: <%= attr_value %>
+    </div>
+  <% end %>
+
 
 <div class="ctn0"><p>  </p></div>
 <div align="center"><%= link_to 'Edit', edit_food_path(@food) %> 

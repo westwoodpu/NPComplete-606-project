@@ -35,6 +35,10 @@
         <% end %>
       </tbody>
     </table>
+    <br />
+    <%= will_paginate @foods %>
+    <%= page_entries_info @foods, :entry_name => 'food'%> <br />
+
 </div>
 <div align="center" id="ctn">
 <a href="http://localhost:3000/foods/new" class="btn2">Add new foods</a>
@@ -54,8 +58,8 @@
           <th>user_id</th>
           <th>recipe_id</th>
           <th>foodname</th>
-          
           <th>weight</th>
+          <th>edit weight</th>
 
           <th colspan="1"></th>
         </tr>
@@ -66,13 +70,13 @@
           <tr>
             <td><%= recipe.user_id %></td>
             <td><%= recipe.recipe_id %></td>
-            <td><%= recipe.foodname %></td>
-
-            <td><%= form_for :recipe do |f| %>
-                weight: <%= f.text_field :weight %><br />
+            <td><%= recipe.foodname  %></td>
+            <td><%= recipe.weight    %></td>
+            <td><%= form_for  recipe do |f| %>
+                <%= f.text_field :weight %><br />
                 <%= f.submit%>
                 <% end %>
- 
+            </td>
             <td><%= link_to 'Submit',  recipe %></td>
             <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
