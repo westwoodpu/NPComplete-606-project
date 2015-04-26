@@ -21,6 +21,10 @@ class RecipesController < ApplicationController
   def edit
   end
 
+  def add_weight
+  end
+
+
   # POST /recipes
   # POST /recipes.json
   def create

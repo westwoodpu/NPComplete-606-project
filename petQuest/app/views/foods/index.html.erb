@@ -69,7 +69,8 @@
             <td><%= recipe.foodname %></td>
 
             <td><%= form_for :recipe do |f| %>
-                <%= f.text_field :weight %>
+                weight: <%= f.text_field :weight %><br />
+                <%= f.submit%>
                 <% end %>
  
             <td><%= link_to 'Submit',  recipe %></td>

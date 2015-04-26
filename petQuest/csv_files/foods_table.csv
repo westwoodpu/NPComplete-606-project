@@ -1,0 +1,165 @@
+name,description,reference_price,cook_method,food_category,img_dir,food_id
+Pork_lean&fat,,,,Meat&Meat Products,,1
+Pork_rump,,,,Meat&Meat Products,,2
+Pork_tenderloin,,,,Meat&Meat Products,,3
+Pork_leg,,,,Meat&Meat Products,,4
+Pork_large intentine,,,,Meat&Meat Products,,5
+Pork_stomach,,,,Meat&Meat Products,,6
+Pork_lung,,,,Meat&Meat Products,,7
+Pork_liver,,,,Meat&Meat Products,,8
+Pork_kidney,,,,Meat&Meat Products,,9
+Pork_heart,,,,Meat&Meat Products,,10
+Pork_blood,,,,Meat&Meat Products,,11
+Pork floss_with salt_soy sauce&sugar,,,,Meat&Meat Products,,12
+Beef,,,,Meat&Meat Products,,13
+Beef_hind leg,,,,Meat&Meat Products,,14
+Beef_tenderloin,,,,Meat&Meat Products,,15
+Beef_tripe,,,,Meat&Meat Products,,16
+Beef_lung,,,,Meat&Meat Products,,17
+Beef_liver,,,,Meat&Meat Products,,18
+Beef_kidney,,,,Meat&Meat Products,,19
+Beef_heart,,,,Meat&Meat Products,,20
+Beef_highrib_raw_lean&fat,,,,Meat&Meat Products,,21
+Beef_rump_raw_lean,,,,Meat&Meat Products,,22
+Beef_shoulder_raw_lean&fat,,,,Meat&Meat Products,,23
+Beef_bricket_raw_lean&fat,,,,Meat&Meat Products,,24
+ Beef_belly steak_raw_lean&fat,,,,Meat&Meat Products,,25
+Beef_boneless topside_raw_lean,,,,Meat&Meat Products,,26
+Beef_shank_raw_lean,,,,Meat&Meat Products,,27
+Mutton_lean&fat,,,,Meat&Meat Products,,28
+Mutton_tenderloin,,,,Meat&Meat Products,,29
+Mutton_hind leg ,,,,Meat&Meat Products,,30
+Mutton_tripe,,,,Meat&Meat Products,,31
+Mutton_lung,,,,Meat&Meat Products,,32
+Mutton_liver,,,,Meat&Meat Products,,33
+Mutton_kidney,,,,Meat&Meat Products,,34
+Mutton_heart,,,,Meat&Meat Products,,35
+Mutton_blood,,,,Meat&Meat Products,,36
+Chicken_whole,,,,Poultry&Poultry Products,,37
+Chicken_leg,,,,Poultry&Poultry Products,,38
+Chicken_breast,,,,Poultry&Poultry Products,,39
+Chicken_breast_without skin&bone_frozen_raw,,,,Poultry&Poultry Products,,40
+Chicken_thigh_frozen_raw,,,,Poultry&Poultry Products,,41
+Chicken_heart,,,,Poultry&Poultry Products,,42
+Chicken_gizzard,,,,Poultry&Poultry Products,,43
+Chicken_liver,,,,Poultry&Poultry Products,,44
+Chicken_liver_broiler,,,,Poultry&Poultry Products,,45
+Chicken_blood,,,,Poultry&Poultry Products,,46
+Duck_whole,,,,Poultry&Poultry Products,,47
+Duck_beast,,,,Poultry&Poultry Products,,48
+Duck_heart,,,,Poultry&Poultry Products,,49
+Duck_gizzard,,,,Poultry&Poultry Products,,50
+Duck_pancreas,,,,Poultry&Poultry Products,,51
+Duck_liver,,,,Poultry&Poultry Products,,52
+Duck_skin,,,,Poultry&Poultry Products,,53
+Duck_intestine,,,,Poultry&Poultry Products,,54
+"""Beijing"" white duck_blood",,,,Poultry&Poultry Products,,55
+Yougurt,,,,Milk & Eggs,,56
+Cheese_white_semisoft,,,,Milk & Eggs,,57
+Butter_clarified,,,,Milk & Eggs,,58
+Chicken_egg_whole_white shell,,,,Milk & Eggs,,59
+Chicken_egg_brown shell_whole,,,,Milk & Eggs,,60
+Duck_egg_whole,,,,Milk & Eggs,,61
+Quail egg_whole,,,,Milk & Eggs,,62
+"""Silver fish""_fresh water_estuarine",,,,Fish_Shelfish&Mollusc,,63
+Hairtail or belt fish_marine,,,,Fish_Shelfish&Mollusc,,64
+Tougue fish_flatfish_left-eye_marine,,,,Fish_Shelfish&Mollusc,,65
+Japanese sea bass_marine_estuarine,,,,Fish_Shelfish&Mollusc,,66
+"Spanish mackerel_""Kingfish ""_marine",,,,Fish_Shelfish&Mollusc,,67
+Cherry salmon_anadromous,,,,Fish_Shelfish&Mollusc,,68
+Pacific cod_marine,,,,Fish_Shelfish&Mollusc,,69
+Lizardfish_marine,,,,Fish_Shelfish&Mollusc,,70
+Anchovy_marine_dried,,,,Fish_Shelfish&Mollusc,,71
+"""Hairy"" shirmp_dried_marine",,,,Fish_Shelfish&Mollusc,,72
+Shirmp_white_amall to medium_dried_marine,,,,Fish_Shelfish&Mollusc,,73
+Scallop_marine,,,,Fish_Shelfish&Mollusc,,74
+Octopus,,,,Fish_Shelfish&Mollusc,,75
+Sesame seed_black,,,,Seed_Fat&Oils,,76
+Beed tallow_rendered,,,,Seed_Fat&Oils,,77
+Sheep fat_rendered,,,,Seed_Fat&Oils,,78
+Rapeseed oil,,,,Seed_Fat&Oils,,79
+Soybean oil,,,,Seed_Fat&Oils,,80
+Peanut oil,,,,Seed_Fat&Oils,,81
+Sunflower seed oil,,,,Seed_Fat&Oils,,82
+Corn oil,,,,Seed_Fat&Oils,,83
+Sesame oil,,,,Seed_Fat&Oils,,84
+Olive oil,,,,Seed_Fat&Oils,,85
+Soy sauce_light,,,,Condiments,,86
+Vinegar,,,,Condiments,,87
+Yeast_dried,,,,Condiments,,88
+Wheat flour_standard grade,,,,Cereal&Cereal Products,,89
+Rice_grained,,,,Cereal&Cereal Products,,90
+Long grained_purple,,,,Cereal&Cereal Products,,91
+Rice_steamed,,,,Cereal&Cereal Products,,92
+Corn_fresh,,,,Cereal&Cereal Products,,93
+Barley grain,,,,Cereal&Cereal Products,,94
+Foxtail millet_hulled,,,,Cereal&Cereal Products,,95
+"Adlay_""Job's tears""",,,,Cereal&Cereal Products,,96
+Oatmeal flake,,,,Cereal&Cereal Products,,97
+Corn grain_white,,,,Cereal&Cereal Products,,98
+Potato_white,,,,Tubers_Starches&Products,,99
+Sweet potato_red flesh,,,,Tubers_Starches&Products,,100
+Corn starch,,,,Tubers_Starches&Products,,101
+Pea starch,,,,Tubers_Starches&Products,,102
+White radish,,,,root vegetables,,103
+Carrot_red,,,,root vegetables,,104
+Beetroot,,,,root vegetables,,105
+Hyacinth bean_green,,,,leguminous vegetables_Legume products,,106
+Snow bean_edible pod,,,,leguminous vegetables_Legume products,,107
+"""Pale green"" soybean_with seed coat",,,,leguminous vegetables_Legume products,,108
+Kidney bean_green,,,,leguminous vegetables_Legume products,,109
+Pea_with pod,,,,leguminous vegetables_Legume products,,110
+Pea_shoots_tender greens,,,,leguminous vegetables_Legume products,,111
+Cowpean,,,,leguminous vegetables_Legume products,,112
+Soybean sprouts,,,,leguminous vegetables_Legume products,,113
+Pea greens,,,,leguminous vegetables_Legume products,,114
+Soybean curd sheet_semisoft,,,,leguminous vegetables_Legume products,,115
+Eggplant_long_dark purple skin,,,,solanaceous_melon&fruit vegetables,,116
+Tomato_round,,,,solanaceous_melon&fruit vegetables,,117
+Sweet peppet_pale green,,,,solanaceous_melon&fruit vegetables,,118
+Hispid bottle gourd,,,,solanaceous_melon&fruit vegetables,,119
+Okra,,,,solanaceous_melon&fruit vegetables,,120
+Chinese wax gourd or winter melon,,,,solanaceous_melon&fruit vegetables,,121
+Chayote,,,,solanaceous_melon&fruit vegetables,,122
+Calabash,,,,solanaceous_melon&fruit vegetables,,123
+Cucumber,,,,solanaceous_melon&fruit vegetables,,124
+Pumpkin,,,,solanaceous_melon&fruit vegetables,,125
+Sponge gourd_loofah,,,,solanaceous_melon&fruit vegetables,,126
+Zucchini_green,,,,solanaceous_melon&fruit vegetables,,127
+Cabbage flowering stalk ,,,,leafy_flower vegetables,,128
+Rape flowering stalk_red,,,,leafy_flower vegetables,,129
+Broadbeaked cabbage,,,,leafy_flower vegetables,,130
+Rape,,,,leafy_flower vegetables,,131
+Cabbage,,,,leafy_flower vegetables,,132
+Cauliflower,,,,leafy_flower vegetables,,133
+Broccoli,,,,leafy_flower vegetables,,134
+Kohlrabi leaf,,,,leafy_flower vegetables,,135
+Spinach,,,,leafy_flower vegetables,,136
+Celery stem_white,,,,leafy_flower vegetables,,137
+Celery stem,,,,leafy_flower vegetables,,138
+Celery leaf,,,,leafy_flower vegetables,,139
+Romaine lettuce,,,,leafy_flower vegetables,,140
+"""Curl-leafed"" endive lettuce",,,,leafy_flower vegetables,,141
+Amaranth_pale green,,,,leafy_flower vegetables,,142
+Amaranth_purple,,,,leafy_flower vegetables,,143
+Chrysanthemum crowndairy_greens,,,,leafy_flower vegetables,,144
+Lettuce stem,,,,leafy_flower vegetables,,145
+Lettuce leaf,,,,leafy_flower vegetables,,146
+Warer spinach,,,,leafy_flower vegetables,,147
+Bamboo shoot_whole,,,,leafy_flower vegetables,,148
+Spring bamboo whoot,,,,leafy_flower vegetables,,149
+Winter bamboo shoot,,,,leafy_flower vegetables,,150
+Asparagus,,,,leafy_flower vegetables,,151
+Water caltrop,,,,aquatic_tuber vegetable,,152
+Lotus root,,,,aquatic_tuber vegetable,,153
+Water bamboo,,,,aquatic_tuber vegetable,,154
+Water chestnut,,,,aquatic_tuber vegetable,,155
+Yam,,,,aquatic_tuber vegetable,,156
+Taro,,,,aquatic_tuber vegetable,,157
+"""Gold needle"" mushroom_thin",,,, Fungi&Algae,,158
+Wood ear fungus_dried,,,, Fungi&Algae,,159
+Shitake mushroom,,,, Fungi&Algae,,160
+Silver ear fungus_white dried,,,, Fungi&Algae,,161
+Kelp,,,, Fungi&Algae,,162
+Kelp_dried,,,, Fungi&Algae,,163
+Laver_dried,,,, Fungi&Algae,,164
