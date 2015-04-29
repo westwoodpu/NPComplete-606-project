@@ -64,7 +64,7 @@ class FoodsController < ApplicationController
   end
 
   def import
-  	Food.import(params[:file2])
+  	Food.import(params[:file])
   	redirect_to foods_path, notice: "Foods Added successfully"
 	end
 
