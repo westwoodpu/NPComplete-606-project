@@ -16,6 +16,22 @@ ActiveRecord::Schema.define(version: 20150424222151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "athletes", force: :cascade do |t|
+    t.integer  "scid"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "age"
+    t.string   "gender"
+    t.string   "classification"
+    t.string   "questionnaire"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+  end
+
+  add_index "athletes", ["email"], name: "index_athletes_on_email", unique: true, using: :btree
+
   create_table "foods", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -42,6 +58,40 @@ ActiveRecord::Schema.define(version: 20150424222151) do
     t.integer  "max_kg"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "nutritionfacts", force: :cascade do |t|
+    t.string   "category"
+    t.string   "foodname"
+    t.decimal  "weight"
+    t.decimal  "edible"
+    t.decimal  "energy"
+    t.decimal  "protein"
+    t.decimal  "fat"
+    t.decimal  "cho"
+    t.decimal  "dietaryfiber"
+    t.decimal  "ash"
+    t.decimal  "cholesterol"
+    t.decimal  "vitaminA"
+    t.decimal  "retinol"
+    t.decimal  "vitaminE"
+    t.decimal  "vitaminB1"
+    t.decimal  "vitaminB2"
+    t.decimal  "vitaminB3"
+    t.decimal  "calcium"
+    t.decimal  "phosphorous"
+    t.decimal  "potassium"
+    t.decimal  "sodium"
+    t.decimal  "magnesium"
+    t.decimal  "iron"
+    t.decimal  "zinc"
+    t.decimal  "selenium"
+    t.decimal  "copper"
+    t.decimal  "manganese"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "food_id"
+    t.decimal  "vitaminC"
   end
 
   create_table "nutritions", force: :cascade do |t|

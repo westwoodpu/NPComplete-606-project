@@ -41,6 +41,15 @@ class PetsController < ApplicationController
         @pet=Pet.find(params[:id])
   end
 
+  def me
+    @pet = Pet.find(params[:id])
+    @me_result = (100*(@pet.body_weight.to_f**0.67.to_f)*6.732.to_f*(2.718.to_f**(-0.189.to_f*@pet.body_weight.to_f/4)-0.66.to_f)).ceil
+    # decimal numbers like 0.67, 6.732 will be considered as string rather than number if input directly
+    # thererfore, we use .to_f to convert it into fraction then compute
+    # ** = ^
+    # .ceil means round up to nearest integer. If round up to tenth decimal, then it should be (number*10).ceil/10.0 
+  end
+
   def getdata
 
     # this contains what has been selected in the first select box
