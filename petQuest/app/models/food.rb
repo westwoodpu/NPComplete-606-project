@@ -6,7 +6,3 @@ class Food < ActiveRecord::Base
 		end
 	end
 end
-
-
-
-

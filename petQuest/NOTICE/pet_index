@@ -1,0 +1,16 @@
+# the codes need to be inserted in the app/pets_controller.rb under the def index function 
+
+# def index
+#    require 'csv'    
+csv_text = File.read('csv_files/idealcatweight.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+    Idealcatweight.create!(row.to_hash)
+    end    
+    csv_text = File.read('csv_files/idealbreedweight.csv')
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+    Idealdogweight.create!(row.to_hash)
+    end
+# @pets = Pet.all
+#    end

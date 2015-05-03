@@ -26,7 +26,10 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'getdata' => 'pets#getdata'
+
    resources :pets
+   get 'pets/:id/me(.:format)' => 'pets#me', :as => :me_pet# to calculate the ME for pet(:id)
+
   # You can have the root of your site routed with "root"
     resources :idealdogweights
    resources :idealcatweights
