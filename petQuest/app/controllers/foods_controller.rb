@@ -160,7 +160,7 @@ Recipe.all.each do |recipe|
 Rails.logger.debug(@Food)
 case @Food.category
 
-when 'Meat And Meat Products'
+when 'Meat&Meat Products'
 @Meatproportion=recipe.weight+@Meatproportion
 when 'Poultry And Poultry Products'
 @Poultryproportion=recipe.weight+@Poultryproportion
@@ -199,23 +199,35 @@ end
 @Vitamin_A=@Vitamin_A+(@Food.vitaminA*recipe.weight)
 @Vitamin_D=@Vitamin_D+(@Food.vitaminD*recipe.weight)
 =end
+unless @Food.zinc.nil?
 @Zinc=@Zinc+(@Food.zinc*recipe.weight)
+end
 
-
-
-
+unless @Food.energy.nil?
 @Energy=@Energy+(@Food.energy*recipe.weight)
+end
+
+unless @Food.protein.nil?
 @Protein=@Protein+(@Food.protein*recipe.weight)
+end
 
+unless @Food.fat.nil?
 @Fat=@Fat+(@Food.fat*recipe.weight)
+end
+
+unless @Food.cho.nil?
 @CHO=@CHO+(@Food.cho*recipe.weight)
+end
 
-Rails.logger.debug(@CHO)
-=begin
-@dietaryfiber=@dietaryfiber+(@Food.dietaryfiber*recipe.weight)
 
+unless @Food.dietaryfiber.nil?
+@Dietaryfiber=@Dietaryfiber+(@Food.dietaryfiber*recipe.weight)
+end
+
+unless @Food.ash.nil?
 @Ash=@Ash+@Food.ash+(@Food.ash*recipe.weight)
-
+end
+=begin
 @Cholesterol=@Cholesterol+(@Food.cholesterol*recipe.weight)
 
 @Retinol=@Retinol+(@Food.retinol*recipe.weight)
@@ -288,13 +300,14 @@ end
 @Zinc=@Zinc/@Totalweight
 
 @Methionine/@Totalweight
-=begin
+
 @Energy=@Energy/@Totalweight
 @Protein=@Protein/@Totalweight
 @Fat=@Fat/@Totalweight
 @CHO=@CHO/@Totalweight
-@dietaryfiber=@dietaryfiber/@Totalweight
+@Dietaryfiber=@Dietaryfiber/@Totalweight
 @Ash=@Ash/@Totalweight
+=begin
 @Cholesterol=@Cholesterol/@Totalweight
 
 @Retinol=@Retinol/@Totalweight

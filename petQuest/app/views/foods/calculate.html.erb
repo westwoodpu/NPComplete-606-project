@@ -4,16 +4,32 @@
 <p>
   <h1><strong>Nutrient Analysis</strong></h1></p>
  <p>
-  <strong>Vitamin K (percent):</strong>
-  <%= '%.2f' %@Vitamin_A %>
+  <strong>Protein (percent):</strong>
+  <%= '%.2f' %@Protein %>
   </p>
  <p>
-  <strong>Vitamin D (percent):</strong>
-  <%= '%.2f' %@Vitamin_D %>
+  <strong>Fat (percent):</strong>
+  <%= '%.2f' %@Fat %>
   </p>
  <p>
-  <strong>Zinc  (percent):</strong>
-  <%='%.2f' % @Zinc %>
+  <strong>NFE  (percent):</strong>
+  <%='%.2f' % (@CHO-@Dietaryfiber) %>
+  </p>
+<p>
+  <strong>CHO  (percent):</strong>
+  <%='%.2f' % @CHO %>
+  </p>
+<p>
+  <strong>Dietary Fiber  (percent):</strong>
+  <%='%.2f' % @Dietaryfiber %>
+  </p>
+<p>
+  <strong>Ash  (percent):</strong>
+  <%='%.2f' % @Ash %>
+  </p>
+<p>
+  <strong>Moisture  (percent):</strong>
+  <%='%.2f' % (100-@Protein-@Fat-@CHO-@Ash) %>
   </p>
 <p>
   <h1><strong>Calorie Proportion</strong></h1></p>

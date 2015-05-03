@@ -22,7 +22,7 @@
 <div align="center">
 <a href="http://localhost:3000/recipes/1" class="btn2">Edit</a>
 <div class="ctn0"><p>  </p></div>
-<a href="http://localhost:3000/foods" class="btn2">Back</a>
+<a href="http://localhost:3000/recipes" class="btn2">Back</a>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> </div>
 <div>
 </div></div>
