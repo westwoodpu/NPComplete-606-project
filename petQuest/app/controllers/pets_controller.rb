@@ -36,8 +36,8 @@ class PetsController < ApplicationController
     case @pet.pet_type
       when "Cat" 
             if @pet.age.to_f < 1 # it is kitten
-              @weight_min = Idealcatweights.find_by(english_name: @pet.pet_type).min_kg || "no such cat found"
-              @weight_max = Idealcatweights.find_by(english_name: @pet.pet_type).max_kg || "no such cat found"
+              @weight_min = (Idealcatweight.find_by(english_name: @pet.breed).min_kg).to_f || "no such cat found"
+              @weight_max = (Idealcatweight.find_by(english_name: @pet.breed).max_kg).to_f || "no such cat found"
               @R_me_min = (100 * (@pet.body_weight.to_f ** 0.67.to_f) * 6.732.to_f * (2.718.to_f ** (-0.189.to_f*@pet.body_weight.to_f/@weight_min)-0.66.to_f)).ceil
               @R_me_max = (100 * (@pet.body_weight.to_f ** 0.67.to_f) * 6.732.to_f * (2.718.to_f ** (-0.189.to_f*@pet.body_weight.to_f/@weight_max)-0.66.to_f)).ceil
               @me_result = (0.5.to_f * (@R_me_min + @R_me_max)).ceil
@@ -54,14 +54,14 @@ class PetsController < ApplicationController
 
       when "Dog"
         if @pet.age.to_f < 1 # it is puppy
-          @weight_min = Idealdogweights.find_by(english_name: @pet.pet_type).min_kg || "no such dog found"
-              @weight_max = Idealdogweights.find_by(english_name: @pet.pet_type).max_kg || "no such dog found"
-              @R_me_min = (130 * (@pet.body_weight.to_f ** 0.75.to_f) * 3.2.to_f * (2.718.to_f ** (-0.87.to_f * @pet.body_weight.to_f / @weight_min) - 0.66.to_f)).ceil
-              @R_me_max = (130 * (@pet.body_weight.to_f ** 0.75.to_f) * 3.2.to_f * (2.718.to_f ** (-0.87.to_f * @pet.body_weight.to_f / @weight_max) - 0.66.to_f)).ceil
+          @weight_min = (Idealdogweight.find_by(english_name: @pet.breed).min_kg).to_f || "no such dog found"
+              @weight_max = (Idealdogweight.find_by(english_name: @pet.breed).max_kg).to_f || "no such dog found"
+              @R_me_min = (130 * (@pet.body_weight.to_f ** 0.75.to_f) * 3.2.to_f * (2.718.to_f ** (-0.87.to_f * @pet.body_weight.to_f / @weight_min) - 0.1.to_f)).ceil
+              @R_me_max = (130 * (@pet.body_weight.to_f ** 0.75.to_f) * 3.2.to_f * (2.718.to_f ** (-0.87.to_f * @pet.body_weight.to_f / @weight_max) - 0.1.to_f)).ceil
               @me_result = (0.5.to_f * (@R_me_min + @R_me_max)).ceil
 
         else # it is adult dog
-          if @pet.age.to_f > 7 || @pet.activity == "Inactive"
+          if @pet.age.to_f > 7 || @pet.activity == "Inactive" # old or inactive dog
             @me_result = (95 * @pet.body_weight ** 0.75.to_f).ceil
           elsif @pet.body_weight <= 23 # small-medium adult dog
             @me_result = (180 * @pet.body_weight ** 0.75.to_f).ceil
