@@ -352,9 +352,7 @@ end
 @Linoleic_acid=@Linoleic_acid/@Totalweight
 @Arachidonic_acid=@Arachidonic_acid/@Totalweight
 =end
-
-
-
+ @A_ME_result = (@Protein * 4 +@Fat * 9 + (@CHO - @Dietaryfiber) * 4).round(2)
 end
 
 

@@ -4,6 +4,10 @@
 <div style="width:1000px" id="ctn3" class='col-md-1 col-md-offset-1'><p>
   <h1><strong>Nutrient Analysis</strong></h1></p>
  <p>
+  <strong>Actual Daily ME  (KCal):</strong>
+  <%='%.2f' % @A_ME_result %>
+  </p>
+ <p>
   <strong>Protein (percent):</strong>
   <%= '%.2f' %@Protein %>
   </p>
@@ -11,7 +15,8 @@
   <strong>Fat (percent):</strong>
   <%= '%.2f' %@Fat %>
   </p>
- <p>
+ 
+<p>
   <strong>NFE  (percent):</strong>
   <%='%.2f' % (@CHO-@Dietaryfiber) %>
   </p>
