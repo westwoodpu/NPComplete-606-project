@@ -2,7 +2,8 @@ require 'csv'
 
 class PetsController < ApplicationController
     def index
-    require 'csv'    
+    require 'csv'  
+
 
     @pets = Pet.all
     end

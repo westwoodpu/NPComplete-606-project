@@ -1,8 +1,8 @@
 class ChangeMethioninecystineFormatInNutritions < ActiveRecord::Migration
    def up
- change_column :nutritions, :methionine_cystine, :decimal
+change_column :nutritions, :methionine_cystine, :decimal, :precision => 8, :scale =>2
   end
 def down
-  change_column :nutritions, :methionine_cystine, :decimal, :precision => 8, :scale =>2
+  change_column :nutritions, :methionine_cystine, :decimal
 end 
 end

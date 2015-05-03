@@ -89,7 +89,9 @@
 <%= form_for @food, url: {action: "calculate"} do |f| %>
 
 
-  <%= f.submit "Submit Recipe" %>
+<%= f.button_to "Submit Recipe", { :controller => 'foods',
+  :id => 1}, 
+  :method => :calculate %>
 <% end %>
 </div>
 </div>
