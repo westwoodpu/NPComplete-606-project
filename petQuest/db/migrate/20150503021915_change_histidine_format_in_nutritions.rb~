@@ -1,0 +1,4 @@
+class ChangeHistidineFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

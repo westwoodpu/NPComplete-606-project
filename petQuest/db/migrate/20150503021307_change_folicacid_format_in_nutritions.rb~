@@ -1,0 +1,4 @@
+class ChangeFolicacidFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

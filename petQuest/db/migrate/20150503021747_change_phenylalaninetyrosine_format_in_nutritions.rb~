@@ -1,0 +1,4 @@
+class ChangePhenylalaninetyrosineFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

@@ -6,6 +6,6 @@ RSpec.describe Pet, :type => :model do
 end
 
   it 'is invalid without a pet type' do 
-   expect(build(:pet, name: nil)).to_not be_valid
+   expect(build(:pet, age: nil)).to_not be_valid
   end
 end

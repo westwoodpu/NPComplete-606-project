@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424222151) do
+ActiveRecord::Schema.define(version: 20150503025052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,35 +81,60 @@ ActiveRecord::Schema.define(version: 20150424222151) do
   create_table "nutritions", force: :cascade do |t|
     t.string   "category"
     t.string   "foodname"
-    t.decimal  "weight",       precision: 8, scale: 2
-    t.decimal  "edible",       precision: 8, scale: 2
-    t.decimal  "energy",       precision: 8, scale: 2
-    t.decimal  "protein",      precision: 8, scale: 2
-    t.decimal  "fat",          precision: 8, scale: 2
-    t.decimal  "cho",          precision: 8, scale: 2
-    t.decimal  "dietaryfiber", precision: 8, scale: 2
-    t.decimal  "ash",          precision: 8, scale: 2
-    t.decimal  "cholesterol",  precision: 8, scale: 2
-    t.decimal  "vitaminA",     precision: 8, scale: 2
-    t.decimal  "retinol",      precision: 8, scale: 2
-    t.decimal  "vitaminE",     precision: 8, scale: 2
-    t.decimal  "vitaminB1",    precision: 8, scale: 2
-    t.decimal  "vitaminB2",    precision: 8, scale: 2
-    t.decimal  "vitaminB3",    precision: 8, scale: 2
-    t.decimal  "calcium",      precision: 8, scale: 2
-    t.decimal  "phosphorous",  precision: 8, scale: 2
-    t.decimal  "potassium",    precision: 8, scale: 2
-    t.decimal  "sodium",       precision: 8, scale: 2
-    t.decimal  "magnesium",    precision: 8, scale: 2
-    t.decimal  "iron",         precision: 8, scale: 2
-    t.decimal  "zinc",         precision: 8, scale: 2
-    t.decimal  "selenium",     precision: 8, scale: 2
-    t.decimal  "copper",       precision: 8, scale: 2
-    t.decimal  "manganese",    precision: 8, scale: 2
+    t.decimal  "weight",                precision: 8, scale: 2
+    t.decimal  "edible",                precision: 8, scale: 2
+    t.decimal  "energy",                precision: 8, scale: 2
+    t.decimal  "protein",               precision: 8, scale: 2
+    t.decimal  "fat",                   precision: 8, scale: 2
+    t.decimal  "cho",                   precision: 8, scale: 2
+    t.decimal  "dietaryfiber",          precision: 8, scale: 2
+    t.decimal  "ash",                   precision: 8, scale: 2
+    t.decimal  "cholesterol",           precision: 8, scale: 2
+    t.decimal  "vitaminA",              precision: 8, scale: 2
+    t.decimal  "retinol",               precision: 8, scale: 2
+    t.decimal  "vitaminE",              precision: 8, scale: 2
+    t.decimal  "vitaminB1",             precision: 8, scale: 2
+    t.decimal  "vitaminB2",             precision: 8, scale: 2
+    t.decimal  "vitaminB3",             precision: 8, scale: 2
+    t.decimal  "calcium",               precision: 8, scale: 2
+    t.decimal  "phosphorous",           precision: 8, scale: 2
+    t.decimal  "potassium",             precision: 8, scale: 2
+    t.decimal  "sodium",                precision: 8, scale: 2
+    t.decimal  "magnesium",             precision: 8, scale: 2
+    t.decimal  "iron",                  precision: 8, scale: 2
+    t.decimal  "zinc",                  precision: 8, scale: 2
+    t.decimal  "selenium",              precision: 8, scale: 2
+    t.decimal  "copper",                precision: 8, scale: 2
+    t.decimal  "manganese",             precision: 8, scale: 2
     t.integer  "food_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.decimal  "vitaminC",     precision: 8, scale: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.decimal  "vitaminC",              precision: 8, scale: 2
+    t.decimal  "vitaminK"
+    t.decimal  "vitaminD"
+    t.decimal  "vitaminB6"
+    t.decimal  "vitaminB12"
+    t.decimal  "folicacid"
+    t.decimal  "choline"
+    t.decimal  "biotin"
+    t.decimal  "vitaminB5"
+    t.decimal  "chloride"
+    t.decimal  "iodine"
+    t.decimal  "taurine"
+    t.decimal  "isoleucine"
+    t.decimal  "leucine"
+    t.decimal  "lysine"
+    t.decimal  "methionine_cystine"
+    t.decimal  "methionine"
+    t.decimal  "phenylalaninetyrosine"
+    t.decimal  "phenylalanine"
+    t.decimal  "threonine"
+    t.decimal  "tryptophan"
+    t.decimal  "valine"
+    t.decimal  "arginine"
+    t.decimal  "histidine"
+    t.decimal  "linoleicacid"
+    t.decimal  "arachidonicacid",       precision: 8, scale: 2
   end
 
   create_table "pets", force: :cascade do |t|

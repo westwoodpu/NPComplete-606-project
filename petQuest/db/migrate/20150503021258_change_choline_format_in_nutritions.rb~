@@ -1,0 +1,4 @@
+class ChangeCholineFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

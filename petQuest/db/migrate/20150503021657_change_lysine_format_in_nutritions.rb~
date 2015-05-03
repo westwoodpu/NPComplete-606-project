@@ -1,0 +1,4 @@
+class ChangeLysineFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end
