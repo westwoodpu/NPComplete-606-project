@@ -1,4 +1,4 @@
-<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
+f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 
 <h1>Food Lists</h1>
 
@@ -41,8 +41,8 @@
 
 </div>
 <div align="center" id="ctn">
-<a href="http://localhost:3000/foods/new" class="btn2">Add new foods</a>
-<a href="http://localhost:3000/welcome/index" class="btn2">Back</a></div>
+<a href="http://localhost:3000/foods/new" class="btn2">Add new foods(admin)</a>
+
 <br>
 <h3>Import Food</h3>
 <div align="center"><%= form_tag import_foods_path, multipart: true do  %>
@@ -72,7 +72,7 @@
             <td><%= recipe.weight    %></td>
             <td><%= form_for  recipe do |f| %>
                 <%= f.text_field :weight %><br />
-                <%= f.submit%>
+                <%= f.submit nil, :class =>"btn2"%>
                 <% end %>
             </td>
             <td><%= link_to 'Submit',  recipe %></td>
@@ -87,7 +87,8 @@
 <%= form_for @food, url: {action: "calculate"} do |f| %>
 
 
-  <%= f.submit "Submit Recipe" %>
+  <%= f.submit "Submit Recipe", :class =>"btn2"%>
+  <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
 <% end %>
 </div>
 </div>
