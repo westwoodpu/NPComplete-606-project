@@ -1,0 +1,4 @@
+class ChangeValineFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

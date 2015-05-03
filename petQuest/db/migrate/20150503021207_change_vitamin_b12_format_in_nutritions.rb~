@@ -1,0 +1,4 @@
+class ChangeVitaminB12FormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

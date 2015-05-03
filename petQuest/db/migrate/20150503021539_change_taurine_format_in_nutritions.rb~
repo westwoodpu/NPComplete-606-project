@@ -1,0 +1,4 @@
+class ChangeTaurineFormatInNutritions < ActiveRecord::Migration
+  def change
+  end
+end

@@ -32,7 +32,17 @@ Then(/^the page should have food "(.*?)"$/) do |salmon|
 end
 
 
+Given(/^I am on the see food screen$/) do
+visit 'localhost:3000/foods'
+end
 
+When(/^I press "(.*?)" to "(.*?)"$/) do |arg1, arg2|
+visit("localhost:3000/recipes/1/add")
+end
+
+Then(/^the page should have "(.*?)"$/) do |arg1|
+
+end
 
 
 
