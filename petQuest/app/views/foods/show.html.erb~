@@ -36,7 +36,7 @@
     <thead>
       <tr>
         <% @food_nutrition.attributes.each do |attr_name| %>      
-        <th><%= attr_name %></th>
+        <th><%= (attr_name)[0].to_s %></th>
         <% end %>
       </tr>
     </thead>
@@ -44,7 +44,7 @@
     <tbody>
       <tr>
         <% @food_nutrition.attributes.each do |attr_value| %>      
-        <td><%= attr_value %></td>
+        <td><%= (attr_value)[0].to_s %></td>
         <% end %>
       </tr>
     </tbody>

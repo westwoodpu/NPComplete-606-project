@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
     @foods = Food.paginate(:page => params[:page], :per_page =>10)
 @food = Food.new
     @recipes = Recipe.all
-@food_nutrition=Nutrition.new
+
   end
 
   # GET /foods/1
@@ -195,19 +195,27 @@ end
 
 
 #adding up individual nutrients
+=begin
 @Vitamin_A=@Vitamin_A+(@Food.vitaminA*recipe.weight)
 @Vitamin_D=@Vitamin_D+(@Food.vitaminD*recipe.weight)
+=end
 @Zinc=@Zinc+(@Food.zinc*recipe.weight)
-Rails.logger.debug(@Zinc)
 
 
-=begin
+
+
 @Energy=@Energy+(@Food.energy*recipe.weight)
 @Protein=@Protein+(@Food.protein*recipe.weight)
+
 @Fat=@Fat+(@Food.fat*recipe.weight)
 @CHO=@CHO+(@Food.cho*recipe.weight)
+
+Rails.logger.debug(@CHO)
+=begin
 @dietaryfiber=@dietaryfiber+(@Food.dietaryfiber*recipe.weight)
+
 @Ash=@Ash+@Food.ash+(@Food.ash*recipe.weight)
+
 @Cholesterol=@Cholesterol+(@Food.cholesterol*recipe.weight)
 
 @Retinol=@Retinol+(@Food.retinol*recipe.weight)
@@ -272,14 +280,13 @@ end
 @Fungiproportion=(@Fungiproportion/@Totalweight)*100.0
 
 
-Rails.logger.debug(@Zinc)
-Rails.logger.debug(@Totalweight)
+
 
 #final totals for each nutrient
 @Vitamin_A=@Vitamin_A/@Totalweight
 @Vitamin_D=@Vitamin_D/@Totalweight
 @Zinc=@Zinc/@Totalweight
-Rails.logger.debug(@Zinc)
+
 @Methionine/@Totalweight
 =begin
 @Energy=@Energy/@Totalweight

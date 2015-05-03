@@ -15,6 +15,20 @@
   <strong>Zinc  (percent):</strong>
   <%='%.2f' % @Zinc %>
   </p>
+<p>
+  <h1><strong>Calorie Proportion</strong></h1></p>
+ <p>
+  <strong>Protein (percent):</strong>
+  <%= '%.2f' %(@Protein*4.0/@Energy*100.00) %>
+  </p>
+ <p>
+  <strong>Fat(percent):</strong>
+  <%= '%.2f' %(@Fat*9.0/@Energy*100.0)%>
+  </p>
+ <p>
+  <strong>Carbohydrate  (percent):</strong>
+  <%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %>
+  </p>
 
 
 <p>
