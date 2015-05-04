@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
   params[:name].zip(params[:recipes]).each do |fname, fweight|
 
   @recipe=Recipe.find_by( foodname: fname['name'])
-  if(fweight['weight']!='')
+  unless fweight['weight'].nil?
   recipeentry=@recipe.update_attribute(:weight, fweight['weight'])
   end
   end

@@ -2,9 +2,11 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 
 
 
-<div id="search">
-    <%= render :partial => 'foods/search' %>
-  </div>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 
 <h1>Food Lists</h1>
@@ -58,6 +60,7 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 <% end %></div>
 
 <h1>Recipe you're creating</h1>
+<%= form_tag '/create_multiple' do %>
 <div class="table-responsive">
     <table class="table">
       <thead>
@@ -70,17 +73,15 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
           <th colspan="2"></th>
         </tr>
       </thead>
-
+            
       <tbody>
         <% @recipes.each do |recipe| %>
           <tr>
           
             <td><%= recipe.foodname  %></td>
             <td><%= recipe.weight    %></td>
-            <td><%= form_for  recipe do |f| %>
-                <%= f.text_field :weight %><br />
-                <%= f.submit nil, :class =>"btn2"%>
-                <% end %>
+            <td><%= text_field_tag "recipes[][nape]" %>
+            <%= hidden_field_tag "name[][name]", recipe.foodname %>
             </td>
             <td><%= link_to 'Submit',  recipe %></td>
             <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -88,16 +89,20 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
         <% end %>
       </tbody>
     </table>
-</div>
+
 <div align="center">
            <p>
-<%= form_for @food, url: {action: "calculate"} do |f| %>
 
 
-  <%= f.submit "Submit Recipe", :class =>"btn2"%>
+
+  <%= submit_tag "Submit Recipe", :class =>"btn2"%>
   <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
-<% end %>
+
 </div>
+   
+ <% end %>
+</div>
+
 </div>
 
 

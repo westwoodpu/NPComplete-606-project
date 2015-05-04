@@ -41,7 +41,8 @@ Rails.application.routes.draw do
    get 'calculate' => 'foods#calculate', :as => :calculate# to calculate the ME for pet(:id)
    post 'calculate' => 'foods#calculate', :as => :calculatemore# to calculate the ME for pet(:id)
   # You can have the root of your site routed with "root"
-
+    get 'create_multiple' => 'recipes#create_multiple', :as => :createmultiple#
+    post 'create_multiple' => 'recipes#create_multiple', :as => :createmultiplemore#
 
 
    root 'welcome#index'
