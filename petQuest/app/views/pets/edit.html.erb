@@ -1,6 +1,64 @@
-<div class='container-fluid'><h1>Editing pet</h1>
- 
-<%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="img/crown-white.png" alt="" />
+          <!-- Heading -->
+          <h2 class="white">Edit pets</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      
+      <!-- Banner End -->
+ <!-- Booking Start -->
+        
+        <div class="booking">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <!-- Heading -->
+                <h3>Edit pets</h3>
+                <!-- Paragraph -->
+                <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna onjecture listing elite, sed do eiusmod tempo aliqua.</p>
+                <!-- Image Slider -->
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                      <img class="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                      <img class="img-responsive" src="img/booking/table3.jpg" alt="" />
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="fa fa-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="fa fa-chevron-right"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <!-- Booking form area -->
+                <div class="booking-form">
+                  <!-- Heading -->
+                  <h3>Edit pets</h3>
+                  <!-- Paragraph -->
+                  <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna aliqua.</p>
+                  <!-- Booking form -->
+                  <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
   <% if @pet.errors.any? %>
     <div id="error_explanation">
@@ -15,7 +73,7 @@
       </ul>
     </div>
   <% end %>
-  <div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
+  <div >
   <p>
     <%= f.label :gender %><br>
     <select name="gender">
@@ -61,11 +119,21 @@
     <option value="outdoor">Outdoor</option>
     </select>
   </p>
-
+  <br>
   <p>
-    <%= f.submit nil, :class => 'btn2'%>
+    <%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%>
   </p>
  
 <% end %>
- 
-<a href="http://localhost:3000/pets" class="btn2">Back</a></div></div>
+<br>
+<a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div></div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Booking End -->      
+
+<%=render partial: "layouts/foot"%>

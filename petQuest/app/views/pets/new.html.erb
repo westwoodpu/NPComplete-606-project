@@ -1,6 +1,64 @@
-<div class='container-fluid col-md-12'><h1>Adding a Pet</h1>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="img/crown-white.png" alt="" />
+          <!-- Heading -->
+          <h2 class="white">New Pet</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      
+      <!-- Banner End -->
+<!-- Booking Start -->
+        
+        <div class="booking">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <!-- Heading -->
+                <h3>Add Pet</h3>
+                <!-- Paragraph -->
+                <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna onjecture listing elite, sed do eiusmod tempo aliqua.</p>
+                <!-- Image Slider -->
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img class="img-responsive" src="http://www.plentifulpet.com/product_images/uploaded_images/cute-dog2.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                      <img class="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                      <img class="img-responsive" src="img/booking/table3.jpg" alt="" />
+                    </div>
+                  </div>
 
-<%= form_for :pet, url: pets_path(@pet) do |f| %>
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="fa fa-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="fa fa-chevron-right"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <!-- Booking form area -->
+                <div class="booking-form">
+                  <!-- Heading -->
+                  <h3>Add new pets</h3>
+                  <!-- Paragraph -->
+                  <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna aliqua.</p>
+                  <!-- Booking form -->
+                  <%= form_for :pet, url: pets_path(@pet) do |f| %>
 
  <% if @pet.errors.any? %>
     <div id="error_explanation" align="center">
@@ -15,25 +73,25 @@
       </ul>
     </div>
   <% end %>
-  <div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
+  <div class="form-group">
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
  
   <p>
-	<%= f.label "Gender" %><br>
-	<%= f.select(:gender,options_for_select([['Male',"Male"],	 
+  <%= f.label "Gender" %><br>
+  <%= f.select(:gender,options_for_select([['Male',"Male"],  
         ['Female',"Female"]])) %>
   </p>
 
   <p>
     <%= f.label "Age (in years)" %><br>
-    <%= f.text_field :age %>
+    <%= f.text_field :age %></p>
  
 
 
-    <%= f.label "Age (in months)" %><br>
+    <p><%= f.label "Age (in months)" %><br>
     <%= f.text_field :months %>
 </p>
 
@@ -58,7 +116,7 @@
 
   <p>
     <%= f.label :body_condition_score %><br>
-    <%= f.select(:body_condition_score,options_for_select([['Slim/Normal',"Normal"],   	   	  	['Fat',"Fat"]])) %>
+    <%= f.select(:body_condition_score,options_for_select([['Slim/Normal',"Normal"],            ['Fat',"Fat"]])) %>
   </p>
 
   <p>
@@ -68,22 +126,22 @@
 
   <p>
     <%= f.label :activity_level %><br>
-   <%= f.select(:activity,options_for_select([['Active',"Active"],   	   	  	['Inactive',"Inactive"]])) %>
-  </p>
-
- 
-
- 
- 
-
-
-
-
-  <!--pet type, gender, date of birth (age), body condition score, body weight, activity level (indoor / backyard), sterilization time, vaccination history in vivo anthelmintic time vitro flea flooding time, diet (optional homemade, canned food, cat food, snacks)-->
- 
-  <p>
-    <%= f.submit nil, :class => 'btn2'%>
+   <%= f.select(:activity,options_for_select([['Active',"Active"],            ['Inactive',"Inactive"]])) %>
+  <br></br>
+    <%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><br></br><a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a>
   </p>
 <% end %>
-<a href="http://localhost:3000/pets" class="btn2">Back</a></div>
+
 </div>
+</div>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        <!-- Booking End -->      
+<%= render partial: "layouts/foot"%>
+

@@ -10,22 +10,34 @@
       </ul>
     </div>
   <% end %>
-  <div style="width:60px" class='col-md-offset-4' id="ctn2">
-    <div class="field">
-      <%= f.label :user_id %><br>
-      <%= f.number_field :user_id %>
-    </div>
-    <div class="field">
-      <%= f.label :recipe_id %><br>
-      <%= f.number_field :recipe_id %>
-      <div class="ctn0"><p>  </p></div>
-    </div>
-
-    <div class="actions">
-      <%= f.submit nil, :class =>"btn2" %>
-    </div>
-
-  </div>
-  <% end %>
-  <div id="ctn0"><p>  </p></div>
-  </div>
+  <div class="container"><div class="showcase">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-sm-10 col-md-offset-1">
+                <!-- Showcase section item -->
+                <div class="showcase-item">
+                  <!-- Image -->
+                  <img class="img-responsive" src="http://globalpetfoodshrm.ca/images/uploads/dog112.png" alt="" />
+                  <!-- Heading -->
+                  
+                  <!-- Paragraph -->
+                  <div class="col-md-offset-6">
+                  <div class="field">
+                  <%= f.label :user_id %><br>
+                  <%= f.number_field :user_id %>
+                  </div>
+                  <div class="field">
+                  <%= f.label :recipe_id %><br>
+                  <%= f.number_field :recipe_id %>
+                  </div>
+                  <br>
+                  <div class="actions">
+                  <%= f.submit nil, :class =>"btn btn-danger" %>
+                  </div><br></div></div><% end %>
+                  
+                  
+                  <div class="clearfix"></div>
+                  <br>
+                </div>
+              </div></div></div></div>
+  

@@ -1,5 +1,68 @@
-<h1>New Recipe</h1>
+<%=render partial: "layouts/head"%>
 
-<%= render 'form' %>
-<div align="center">
-<%= link_to 'Back', recipes_path, class:"btn2" %>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <div class="img-responsive" alt=""><%=image_tag "crown-white.png"%></div>
+          <!-- Heading -->
+          <h2 class="white">New Recipes</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Reserve Seats</li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <br>
+      <!-- Banner End -->
+
+<div class="container-fluid"><%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container"><div class="showcase">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-md-offset-3">
+                <!-- Showcase section item -->
+                <div class="showcase-item">
+                  <!-- Image -->
+                  <img class="img-responsive" src="http://www.hillspet.com/images/en-us/SD_FL_NA_ktn_NA_o_O_n_NA_pet_242.png" alt="" />
+                  <!-- Heading -->
+                  
+                  <!-- Paragraph -->
+                  <div class="col-md-offset-6">
+                  <div class="field">
+                  <%= f.label :user_id %><br>
+                  <%= f.number_field :user_id %>
+                  </div>
+                  <div class="field">
+                  <%= f.label :recipe_id %><br>
+                  <%= f.number_field :recipe_id %>
+                  </div>
+                  <br>
+                  <div class="actions">
+                  <%= f.submit nil, :class =>"btn btn-danger" %> 
+                  <%= link_to 'Back', recipes_path, class:"btn btn-danger" %></div>
+                  </div><br></div></div><% end %>
+                  
+                  
+                  <div class="clearfix"></div>
+                  <br>
+                </div>
+              </div></div></div></div>
+              <br>
+  		
+
+<%= render partial: "layouts/foot"%>
+

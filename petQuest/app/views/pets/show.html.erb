@@ -1,64 +1,79 @@
-<div class="container-fluid col-md-12"><h1 >Pet info</h1>
-  <div class="row"><div style="width:500px" id="ctn3" class='col-md-1 col-md-offset-4'>
-  <p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-  </p>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="img/crown-white.png" alt="" />
+          <!-- Heading -->
+          <h2 class="white">View Pet</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <br>
+      <!-- Banner End -->
+<div class="container">
+  <div class ="row">
+    <div class = "col-md-6"><img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg"></div>
 
+    <div class="table-responsive col-md-5 col-md-offset-1">
+                    <table class="table table-bordered">
+                      
+                      <tbody>
+                        <tr>
+                          <td>Name</td>
+                          <td> <%= @pet.name %></td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td><%= @pet.gender %></td>
+                        </tr>
+                        <tr>
+                          <td>Pet Type</td>
+                          <td> <%= @pet.pet_type %></td>
+                        </tr>
+                        <tr>
+                          <td>Breed</td>
+                          <td> <%= @pet.breed %></td>
+                        </tr>
+                        <tr>
+                          <td>Body Condition Score</td>
+                          <td> <%= @pet.body_condition_score %></td>
+                        </tr>
+                        <tr>
+                          <td>Weight</td>
+                          <td> <%= @pet.body_weight %></td>
+                        </tr>
+                        <tr>
+                          <td>Activity Level</td>
+                          <td> <%= @pet.activity %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <%= link_to 'Edit', edit_pet_path(@pet), :class=>"btn btn-danger", :type=>"button"%> 
+                    
+  
+                    <a href="http://localhost:3000/pets/new" class="btn btn-danger">Add a new pet</a>
+ 
+                    <a href="http://localhost:3000/foods" class="btn btn-danger">Select food</a>
 
-  <p>
-    <strong>Gender:</strong>
-    <%= @pet.gender %>
-  </p>
-   
-  <p>
-    <strong>Age:</strong>
-    <%= @pet.age %>
-  </p>
-
-
-
-  <p>
-    <strong>Pet Type:</strong>
-    <%= @pet.pet_type %>
-  </p>
-
-  <p>
-    <strong>Breed:</strong>
-    <%= @pet.breed %>
-  </p>
-
-  <p>
-    <strong>Body Condition Score:</strong>
-    <%= @pet.body_condition_score %>
-  </p>
-
-  <p>
-    <strong>Weight:</strong>
-    <%= @pet.body_weight %>
-  </p>
-
-  <p>
-    <strong>Activity Level:</strong>
-    <%= @pet.activity%>
-  </p>
-
-
-  <div id="ctn0" ><p>  </p></div>
-  <%= link_to 'Edit', edit_pet_path(@pet), class:"btn2"%>
-  <a href="http://localhost:3000/pets" class="btn2">Back</a>
-  <div id="ctn0"><p>  </p></div>
-  <a href="http://localhost:3000/pets/new" class="btn2">Add a new pet</a>
-  <div id="ctn0"><p>  </p></div>
-  <a href="http://localhost:3000/foods" class="btn2">Select food</a>
-  <br></br>
-  <%= link_to 'ME Calculation', me_pet_path(@pet),class:"btn2" %>
+                    <%= link_to 'ME Calculation', me_pet_path(@pet),:class=>"btn btn-danger", :type=>"button" %>
+                    <a href="http://localhost:3000/pets" class="btn btn-danger" type ="button">Back</a>
+                  </div>
+                </div>
+              </div>  
+ 
+  
    </div>
    <br>
   
   </div></div>
 
-
+<%= render partial: "layouts/foot"%>
 
 
 

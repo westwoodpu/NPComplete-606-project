@@ -1,7 +1,38 @@
-<p>
-  <div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn5">
-  	<h2>ME Calculation:<%= @me_result%></h2>
-  	<%= link_to 'Back', edit_pet_path(@pet), class:"btn2"%>
-  </div>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="img/crown-white.png" alt="" />
+          <!-- Heading -->
+          <h2 class="white">ME Result</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!-- Banner End -->
+				<div class="showcase">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 col-sm-10 col-md-offset-1">
+								<!-- Showcase section item -->
+								<div class="showcase-item">
+									<!-- Image -->
+									<img class="img-responsive" src="http://cdn.pet360.com/pet360/Content/Images/CMS/Cat-Dog.png" alt="" />
+									<!-- Heading -->
+									<h3><a href="#">ME Result:</a></h3>
+									<!-- Paragraph -->
+									<p><%= @me_result%></p>
+									<div align="center"><%= link_to 'Back', pet_path(@pet), :class=>"btn btn-danger"%></div>
+									<br>
+									<div class="clearfix"></div>
+								</div>
+							</div></div></div></div>
+							<br>
 
   </p>
+<%= render partial: "layouts/foot"%>
