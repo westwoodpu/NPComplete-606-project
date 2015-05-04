@@ -139,10 +139,12 @@ def update
 end
 
 
+
+
 private
   def pet_params
   	  
-      params.require(:pet).permit(:name, :gender, :age, :pet_type, :body_condition_score, :body_weight, :breed, :activity)
+      params.require(:pet).permit(:name, :gender, :age, :months, :pet_type, :body_condition_score, :body_weight, :breed, :activity)
 	
   end
 

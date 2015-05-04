@@ -13,7 +13,7 @@ class FoodsController < ApplicationController
   # GET /foods/1
   # GET /foods/1.json
   def show
-    @food_nutrition   = (Nutrition.find_by( food_id: params[:id]))
+    @food_nutrition   = (Nutrition.find_by( food_id: @food.food_id))
   end
 
   # GET /foods/new

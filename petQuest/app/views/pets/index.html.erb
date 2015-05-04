@@ -5,7 +5,8 @@
     
   <tr>
       <th style ="text-align:center">Name&nbsp</th>
-      <th style ="text-align:center">&nbspAge&nbsp</th> 
+      <th style ="text-align:center">&nbspAge in years&nbsp</th> 
+      <th style ="text-align:center">&nbspAge in months &nbsp</th> 
       <th style ="text-align:center">&nbspGender&nbsp</th>
       <th style ="text-align:center">&nbspPet_Type&nbsp</th>
       <th style ="text-align:center">&nbspBreed&nbsp</th>
@@ -19,6 +20,7 @@
       <tr>
         <td><%= pet.name %>&nbsp<br></td>
         <td>&nbsp<%= pet.age %>&nbsp</td>
+ 	<td>&nbsp<%= pet.months %>&nbsp</td>
         <td>&nbsp<%= pet.gender %>&nbsp</td>
         <td>&nbsp<%= pet.pet_type %>&nbsp</td>
         <td>&nbsp<%= pet.breed %>&nbsp</td>
@@ -39,4 +41,15 @@
 </div>
 <div align="center"><a href="http://localhost:3000/welcome/index" class="btn2">Back to welcome page</a></div>
 </div>
+
+<h3>Import Cat breeds</h3>
+<div align="center"><%= form_tag import_idealcatweights_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Cat Breeds",:class => 'btn2' %>
+<% end %></div>
+<h3>Import Dog breeds</h3>
+<div align="center"><%= form_tag import_idealdogweights_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Dog Breeds",:class => 'btn2' %>
+<% end %></div>
 
