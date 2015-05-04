@@ -24,6 +24,18 @@ class FoodsController < ApplicationController
   # GET /foods/1/edit
   def edit
   end
+ 
+  def search
+ 
+  @word= params[:q]
+  Rails.logger.debug(@word)
+
+  @foodresults=Food.where('name ILIKE ?',"%#{@word}%").paginate(:page=>params[:page])
+
+
+
+
+   end
 
   # POST /foods
   # POST /foods.json

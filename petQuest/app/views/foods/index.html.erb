@@ -1,5 +1,14 @@
 f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 
+
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <h1>Food Lists</h1>
 
 <div class="table-responsive">

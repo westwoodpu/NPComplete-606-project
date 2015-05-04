@@ -34,7 +34,8 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'getdata' => 'pets#getdata'
-  get '/pets/import(.:format)' => 'pets#import', :as =>:import_cat_breed
+  get 'search(.:format)' => 'foods#search', :as => :search
+  post 'search(.:format)' => 'foods#search', :as => :search
    resources :pets
    get 'pets/:id/me(.:format)' => 'pets#me', :as => :me_pet# to calculate the ME for pet(:id)
    get 'calculate' => 'foods#calculate', :as => :calculate# to calculate the ME for pet(:id)

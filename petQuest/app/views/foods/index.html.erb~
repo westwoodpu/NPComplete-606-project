@@ -1,5 +1,12 @@
 f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 
+
+
+<div id="search">
+    <%= render :partial => 'foods/search' %>
+  </div>
+
+
 <h1>Food Lists</h1>
 
 <div class="table-responsive">
@@ -45,9 +52,9 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
 
 <br>
 <h3>Import Food</h3>
-<div align="center"><%= form_tag import_idealcatweights_path, multipart: true do  %>
+<div align="center"><%= form_tag import_foods_path, multipart: true do  %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Upload Cat breeds",:class => 'btn2' %>
+  <%= submit_tag "Upload foods",:class => 'btn2' %>
 <% end %></div>
 
 <h1>Recipe you're creating</h1>
