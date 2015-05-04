@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150503025052) do
+=======
+ActiveRecord::Schema.define(version: 20150504030847) do
+>>>>>>> compare
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,16 +50,16 @@ ActiveRecord::Schema.define(version: 20150503025052) do
 
   create_table "idealcatweights", force: :cascade do |t|
     t.string   "english_name"
-    t.integer  "min_kg"
-    t.integer  "max_kg"
+    t.float    "min_kg"
+    t.float    "max_kg"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   create_table "idealdogweights", force: :cascade do |t|
     t.string   "english_name"
-    t.integer  "min_kg"
-    t.integer  "max_kg"
+    t.float    "min_kg"
+    t.float    "max_kg"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -158,7 +162,7 @@ ActiveRecord::Schema.define(version: 20150503025052) do
     t.string   "gender"
     t.string   "pet_type"
     t.string   "age"
-    t.integer  "body_weight"
+    t.float    "body_weight"
     t.string   "breed"
     t.string   "body_condition_score"
     t.string   "activity"
