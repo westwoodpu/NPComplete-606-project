@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150503025052) do
-=======
 ActiveRecord::Schema.define(version: 20150504030847) do
->>>>>>> compare
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,6 +164,7 @@ ActiveRecord::Schema.define(version: 20150504030847) do
     t.string   "activity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "months"
   end
 
   create_table "recipes", force: :cascade do |t|
