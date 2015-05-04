@@ -13,7 +13,7 @@ class FoodsController < ApplicationController
   # GET /foods/1
   # GET /foods/1.json
   def show
-    @food_nutrition   = (Nutrition.find_by( food_id: params[:id]))
+    @food_nutrition   = (Nutrition.find_by( food_id: @food.food_id))
   end
 
   # GET /foods/new
@@ -24,6 +24,18 @@ class FoodsController < ApplicationController
   # GET /foods/1/edit
   def edit
   end
+ 
+  def search
+ 
+  @word= params[:q]
+  Rails.logger.debug(@word)
+
+  @foodresults=Food.where('name ILIKE ?',"%#{@word}%").paginate(:page=>params[:page])
+
+ redirect_to foods_path
+
+
+   end
 
   # POST /foods
   # POST /foods.json
@@ -305,7 +317,7 @@ end
 @Protein=@Protein/@Totalweight
 @Fat=@Fat/@Totalweight
 @CHO=@CHO/@Totalweight
-@dietaryfiber=@dietaryfiber/@Totalweight
+@Dietaryfiber=@Dietaryfiber/@Totalweight
 @Ash=@Ash/@Totalweight
 =begin
 @Cholesterol=@Cholesterol/@Totalweight
@@ -352,9 +364,7 @@ end
 @Linoleic_acid=@Linoleic_acid/@Totalweight
 @Arachidonic_acid=@Arachidonic_acid/@Totalweight
 =end
-
-
-
+ @A_ME_result = (@Protein * 4 +@Fat * 9 + (@CHO - @Dietaryfiber) * 4).round(2)
 end
 
 

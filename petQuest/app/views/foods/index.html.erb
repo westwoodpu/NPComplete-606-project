@@ -1,5 +1,6 @@
 <%=render partial: "layouts/head"%>
 
+<<<<<<< HEAD
       <!-- Banner Start -->
       
       <div class="banner padd">
@@ -34,6 +35,18 @@
               <th colspan="4"></th>
             </tr>
           </thead>
+=======
+
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<h1>Food Lists</h1>
+>>>>>>> 0b360384bc11d89b9706fc1212962840c553f3c5
 
           <tbody>
             <% @foods.each do |food| %>

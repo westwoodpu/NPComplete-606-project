@@ -13,7 +13,7 @@ class FoodsController < ApplicationController
   # GET /foods/1
   # GET /foods/1.json
   def show
-    @food_nutrition   = (Nutrition.find_by( food_id: params[:id]))
+    @food_nutrition   = (Nutrition.find_by( food_id: @food.food_id))
   end
 
   # GET /foods/new
@@ -24,6 +24,18 @@ class FoodsController < ApplicationController
   # GET /foods/1/edit
   def edit
   end
+ 
+  def search
+ 
+  @word= params[:q]
+  Rails.logger.debug(@word)
+
+  @foodresults=Food.where('name ILIKE ?',"%#{@word}%").paginate(:page=>params[:page])
+
+
+
+
+   end
 
   # POST /foods
   # POST /foods.json

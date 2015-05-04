@@ -1,5 +1,0 @@
-class ChangeAgeFormatInPets < ActiveRecord::Migration
-  def up
-	change_column :pets, :age, :integer
-  end
-end

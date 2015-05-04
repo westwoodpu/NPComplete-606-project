@@ -5,4 +5,6 @@ class Food < ActiveRecord::Base
 			Food.create! row.to_hash
 		end
 	end
+
+	
 end
