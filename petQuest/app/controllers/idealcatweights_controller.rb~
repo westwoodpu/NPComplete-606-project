@@ -1,8 +1,5 @@
 class IdealcatweightsController < ApplicationController
 
-def index
-
-end
 def import
 
 

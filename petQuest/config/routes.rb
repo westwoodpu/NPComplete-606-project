@@ -8,8 +8,16 @@ Rails.application.routes.draw do
     collection {post :import }
   end
 
-  resources :recipes, except: :add
+     resources :idealdogweights do
+    collection {post :import }
+  end
+  resources :idealcatweights do
+    collection {post :import }
+  end
 
+
+  resources :recipes, except: :add
+   
 
   get 'recipes/:id/add(.:format)' => 'foods#add', :as => :add
 
@@ -32,8 +40,8 @@ Rails.application.routes.draw do
    get 'calculate' => 'foods#calculate', :as => :calculate# to calculate the ME for pet(:id)
    post 'calculate' => 'foods#calculate', :as => :calculatemore# to calculate the ME for pet(:id)
   # You can have the root of your site routed with "root"
-    resources :idealdogweights
-   resources :idealcatweights
+
+
 
    root 'welcome#index'
 
