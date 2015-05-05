@@ -220,27 +220,7 @@
           </div>
         </div>
 
-          <tbody>
-            <% @foods.each do |food| %>
-              <tr>
-                <td><%= food.name %></td>
-                <td><%= food.description %></td>
-                <td><%= food.reference_price %></td>
-                <td><%= food.cook_method %></td>
-                <td><%= food.food_category %></td>
-                <td><%= food.img_dir %></td>
-                <td><%= food.food_id %></td>
-                <td><%= link_to 'Show', food %></td>
-                <td><%= link_to 'Add',  add_path(food) %></td>
-                <td><%= link_to 'Edit', edit_food_path(food) %></td>
-                <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <div align ="center"><%= will_paginate @foods %>
-        <%= page_entries_info @foods, :entry_name => 'food'%> <br /></div>
-
+         
       </div>
      </div>
     </div>  
