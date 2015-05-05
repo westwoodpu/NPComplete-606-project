@@ -645,7 +645,10 @@ end
 @magnesium_3500ME_max_dog = 400.to_f
 
 # A_ME_protein : protain weight regrading to the actual ME
-@pet = Pet.find(4)
+Rails.logger.debug(params[:ids])
+
+
+@pet = Pet.find_by(name: params[:name])
 case @pet.pet_type
 when "Cat"
   @A_ME_result = (@Protein * 4 + @Fat * 8.5.to_f + (@CHO - @Dietaryfiber) * 4).round(2)

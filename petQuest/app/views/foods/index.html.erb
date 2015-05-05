@@ -212,7 +212,7 @@
 <div align="center">
            <p><%= label_tag(:q, "Select Pet for Recipe:") %></p>
            
-            <p><%=  collection_select("pet", "ids", Pet.all, :id, :name) %></p><br>
+            <p><%=  collection_select("pet", "name", Pet.all, :name, :name) %></p><br>
 
 
 
