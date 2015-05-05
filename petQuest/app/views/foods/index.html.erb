@@ -1,12 +1,11 @@
 <%=render partial: "layouts/head"%>
 
-<<<<<<< HEAD
       <!-- Banner Start -->
       
       <div class="banner padd">
         <div class="container">
           <!-- Image -->
-          <div class="img-responsive" alt=""><%=image_tag "crown-white.png"%></div>
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
           <!-- Heading -->
           <h2 class="white">Foods List</h2>
           <ol class="breadcrumb">
@@ -35,18 +34,18 @@
               <th colspan="4"></th>
             </tr>
           </thead>
-=======
+
 
 
 <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "Find food ") %>
   <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Search") %><br>
 <% end %>
+<br>
 
 
-<h1>Food Lists</h1>
->>>>>>> 0b360384bc11d89b9706fc1212962840c553f3c5
+
 
           <tbody>
             <% @foods.each do |food| %>
@@ -152,6 +151,6 @@
 </div>
 <% end %>
 </div>
-
+<br><br>
 
 <%= render partial: "layouts/foot"%>
