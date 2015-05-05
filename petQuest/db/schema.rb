@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504030847) do
+ActiveRecord::Schema.define(version: 20150504183205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,14 +141,14 @@ ActiveRecord::Schema.define(version: 20150504030847) do
     t.string   "name"
     t.string   "gender"
     t.string   "pet_type"
-    t.string   "age"
+    t.integer  "age",                  default: 0
     t.float    "body_weight"
     t.string   "breed"
     t.string   "body_condition_score"
     t.string   "activity"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "months"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "months",               default: 0
   end
 
   create_table "recipes", force: :cascade do |t|

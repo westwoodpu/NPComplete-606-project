@@ -80,6 +80,7 @@
 
 <br>
 
+
 <div class="container"><div class="showcase">
           <div class="container">
             <div class="row">
@@ -150,6 +151,58 @@
   <%= f.submit "Submit Recipe", :class=>"btn btn-danger",:type=>"button"%>
 </div>
 <% end %>
+
+<h3>Import Food</h3>
+<div align="center"><%= form_tag import_foods_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload foods",:class => 'btn2' %>
+<% end %></div>
+
+<h1>Recipe you're creating</h1>
+<%= form_tag '/create_multiple' do %>
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th>foodname</th>
+          <th>weight</th>
+          <th>edit weight</th>
+
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+            
+      <tbody>
+        <% @recipes.each do |recipe| %>
+          <tr>
+          
+            <td><%= recipe.foodname  %></td>
+            <td><%= recipe.weight    %></td>
+            <td><%= text_field_tag "recipes[][weight]" %>
+            <%= hidden_field_tag "name[][name]", recipe.foodname %>
+            </td>
+            <td><%= link_to 'Submit',  recipe %></td>
+            <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+<div align="center">
+           <p>
+
+
+
+  <%= submit_tag "Submit Recipe", :class =>"btn2"%>
+  <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
+
+</div>
+   
+ <% end %>
+</div>
+
+
 </div>
 <br><br>
 

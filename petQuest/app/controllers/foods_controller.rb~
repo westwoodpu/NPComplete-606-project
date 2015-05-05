@@ -32,7 +32,7 @@ class FoodsController < ApplicationController
 
   @foodresults=Food.where('name ILIKE ?',"%#{@word}%").paginate(:page=>params[:page])
 
- redirect_to foods_path
+
 
 
    end
@@ -173,34 +173,61 @@ Rails.logger.debug(@Food)
 case @Food.category
 
 when 'Meat&Meat Products'
+unless recipe.weight.nil?
 @Meatproportion=recipe.weight+@Meatproportion
-when 'Poultry And Poultry Products'
+end
+when 'Poultry&Poultry Products'
+unless recipe.weight.nil?
 @Poultryproportion=recipe.weight+@Poultryproportion
-
-when 'Milk And Eggs'
+end
+when 'Milk & Eggs'
+unless recipe.weight.nil?
 @Milkeggproportion=recipe.weight+@Milkeggproportion
-when 'Fish Shelfish And Mollusc'
+end
+when 'Fish_Shelfish&Mollusc'
+unless recipe.weight.nil?
 @Fishshellfishproportion=recipe.weight+@Fishshellfishproportion
-when 'Seed Fat And Oils'
+end
+when 'Seed_Fat&Oils'
+unless recipe.weight.nil?
 @Seedfatoilproportion=recipe.weight+@Seedfatoilproportion
+end
 when 'Condiments'
+unless recipe.weight.nil?
 @Condimentsproportion=recipe.weight+@Condimentsproportion
+end
 when 'Cereal And Cereal Products'
+unless recipe.weight.nil?
 @Cerealproportion=recipe.weight+@Cerealproportion
-when 'Tubers Starches And Products'
+end
+when 'Tubers_Starches&Products'
+unless recipe.weight.nil?
 @Tubersproportion=recipe.weight+@Tubersproportion
-when 'Root Vegetables'
+end
+when 'root vegetables'
+unless recipe.weight.nil?
 @Rootvegetablesproportion=recipe.weight+@Rootvegetablesproportion
-when 'Leguminous Vegetables And Legume Products'
+end
+when 'leguminous vegetables_Legume products'
+unless recipe.weight.nil?
 @Leguminousvegetablesproportion=recipe.weight+@Leguminousvegetablesproportion
-when 'Solanaceous Melon And Fruit Vegetables'
+end
+when 'solanaceous_melon&fruit vegetables'
+unless recipe.weight.nil?
 @Solanaceousvegetablesproportion=recipe.weight+@Solanaceousvegetablesproportion
-when 'Leafy Flower Vegetables'
+end
+when 'leafy_flower vegetables'
+unless recipe.weight.nil?
 @Leafyflowervegetablesproportion=recipe.weight+@Leafyflowervegetablesproportion
-when 'Aquatic And Tuber Vegetable'
+end
+when 'aquatic_tuber vegetable'
+unless recipe.weight.nil?
 @Aquaticproportion=recipe.weight+@Aquaticproportion
-when 'Fungi And Algae'
+end
+when 'Fungi&Algae'
+unless recipe.weight.nil?
 @Fungiproportion=recipe.weight+@Fungiproportion
+end
 end
 
 
@@ -211,32 +238,32 @@ end
 @Vitamin_A=@Vitamin_A+(@Food.vitaminA*recipe.weight)
 @Vitamin_D=@Vitamin_D+(@Food.vitaminD*recipe.weight)
 =end
-unless @Food.zinc.nil?
+unless @Food.zinc.nil? or recipe.weight.nil?
 @Zinc=@Zinc+(@Food.zinc*recipe.weight)
 end
 
-unless @Food.energy.nil?
+unless @Food.energy.nil? or recipe.weight.nil?
 @Energy=@Energy+(@Food.energy*recipe.weight)
 end
 
-unless @Food.protein.nil?
+unless @Food.protein.nil? or recipe.weight.nil?
 @Protein=@Protein+(@Food.protein*recipe.weight)
 end
 
-unless @Food.fat.nil?
+unless @Food.fat.nil? or recipe.weight.nil?
 @Fat=@Fat+(@Food.fat*recipe.weight)
 end
 
-unless @Food.cho.nil?
+unless @Food.cho.nil? or recipe.weight.nil?
 @CHO=@CHO+(@Food.cho*recipe.weight)
 end
 
 
-unless @Food.dietaryfiber.nil?
+unless @Food.dietaryfiber.nil? or recipe.weight.nil?
 @Dietaryfiber=@Dietaryfiber+(@Food.dietaryfiber*recipe.weight)
 end
 
-unless @Food.ash.nil?
+unless @Food.ash.nil? or recipe.weight.nil?
 @Ash=@Ash+@Food.ash+(@Food.ash*recipe.weight)
 end
 =begin
@@ -284,7 +311,9 @@ end
 @Linoleic_acid=@Linoleic_acid+(@Food.linoleicacid*recipe.weight)
 @Arachidonic_acid=@Arachidonic_acid+(@Food.arachidonicacid*recipe.weight)
 =end
+unless recipe.weight.nil? 
 @Totalweight=@Totalweight+recipe.weight
+end
 end
 
 #final totals for proportions
