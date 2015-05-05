@@ -109,17 +109,18 @@ class PetsController < ApplicationController
     Rails.logger.debug('test3')
     # we get the data for selectbox 2
     if params[:pet][:pet_type] == "Dog"
+         Rails.logger.debug('test4')
     @data_for_select2 = Idealdogweight.all
     end
     if params[:pet][:pet_type] == "Cat"
     @data_for_select2 = Idealcatweight.all
     end
-    Rails.logger.debug("Params: #{@data_select2.inspect}")
+    Rails.logger.debug("Params: #{@data_for_select2.inspect}")
 
     
     
     if params[:pet][:pet_type] != ""
-
+   Rails.logger.debug('test5')
     # render an array in JSON containing arrays like:
     #[[:id1, :name1], [:id2, :name2]]
     render :json => @data_for_select2.map{|c| [c.english_name, c.english_name]}
