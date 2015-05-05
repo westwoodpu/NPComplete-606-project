@@ -1,5 +1,143 @@
-<h1>New Nutrition</h1>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">Add New Nutrients</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <br>
+      <!-- Banner End -->
 
-<%= render 'form' %>
-<br></br>
-<div align="center" class="col-md-1 col-md-offset-6"><%= link_to 'Back', nutritions_path,class:"btn2" %></div>
+<%= form_for(@nutrition) do |f| %>
+  <% if @nutrition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nutrition.errors.count, "error") %> prohibited this nutrition from being saved:</h2>
+
+      <ul>
+      <% @nutrition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="col-md-5 col-md-offset-1">  
+<table class="table table-bordered">
+                            <tr>
+                              <td><%= f.label :category %></td>
+                              <td><%= f.text_field :category %></td>
+                            </tr>
+                            <tr>
+                              <td><%= f.label :foodname %></td>
+                              <td><%= f.text_field :foodname %></td>
+                            </tr>
+                            <tr>
+                              <td><%= f.label :weight %></td>
+                              <td><%= f.text_field :weight %></td>
+                            </tr>
+                            <tr>
+                              <td><%= f.label :edible %></td>
+                              <td><%= f.text_field :edible %></td>
+                            </tr><tr>
+                              <td><%= f.label :energy %></td>
+                              <td><%= f.text_field :energy %></td>
+                            </tr><tr>
+                              <td><%= f.label :protein %></td>
+                              <td><%= f.text_field :protein %></td>
+                            </tr><tr>
+                              <td><%= f.label :fat %></td>
+                              <td><%= f.text_field :fat %></td>
+                            </tr><tr>
+                              <td><%= f.label :cho %></td>
+                              <td><%= f.text_field :cho %></td>
+                            </tr><tr>
+                              <td><%= f.label :dietaryfiber %></td>
+                              <td><%= f.text_field :dietaryfiber %></td>
+                            </tr><tr>
+                              <td><%= f.label :ash %></td>
+                              <td><%= f.text_field :ash %></td>
+                            </tr><tr>
+                              <td><%= f.label :cholesterol %></td>
+                              <td><%= f.text_field :cholesterol %></td>
+                            </tr><tr>
+                              <td><%= f.label :vitaminA %></td>
+                              <td><%= f.text_field :vitaminA %></td>
+                            </tr><tr>
+                              <td><%= f.label :retinol %></td>
+                              <td><%= f.text_field :retinol %></td>
+                            </tr><tr>
+                              <td><%= f.label :vitaminE %></td>
+                              <td><%= f.text_field :vitaminE %></td>
+                            </tr>
+                          </table></div>
+<div class="col-md-5 "><table class="table table-bordered">
+                            <tr>
+                              <td><%= f.label :vitaminB1 %></td>
+                              <td><%= f.text_field :vitaminB1 %></td>
+                            </tr>
+                            <tr>
+                              <td><%= f.label :vitaminB2 %></td>
+                              <td><%= f.text_field :vitaminB2 %></td>
+                            </tr>
+                            <tr>
+                              <td><%= f.label :vitaminB3 %></td>
+                              <td><%= f.text_field :vitaminB3 %></td>
+                            </tr>
+                            <tr>
+                              <td><%= f.label :calcium %></td>
+                              <td><%= f.text_field :calcium %></td>
+                            </tr><tr>
+                              <td><%= f.label :phosphorous %></td>
+                              <td><%= f.text_field :phosphorous %></td>
+                            </tr><tr>
+                              <td><%= f.label :potassium %></td>
+                              <td><%= f.text_field :potassium %></td>
+                            </tr><tr>
+                              <td><%= f.label :sodium %></td>
+                              <td><%= f.text_field :sodium %></td>
+                            </tr><tr>
+                              <td><%= f.label :magnesium %></td>
+                              <td><%= f.text_field :magnesium %></td>
+                            </tr><tr>
+                              <td><%= f.label :iron %></td>
+                              <td><%= f.text_field :iron %></td>
+                            </tr><tr>
+                              <td><%= f.label :zinc %></td>
+                              <td><%= f.text_field :zinc %></td>
+                            </tr><tr>
+                              <td><%= f.label :selenium %></td>
+                              <td><%= f.text_field :selenium %></td>
+                            </tr><tr>
+                              <td><%= f.label :copper %></td>
+                              <td><%= f.text_field :copper %></td>
+                            </tr><tr>
+                              <td><%= f.label :manganese %></td>
+                              <td><%= f.text_field :manganese %></td>
+                            </tr><tr>
+                              <td><%= f.label :food_id %></td>
+                              <td><%= f.number_field :food_id %></td>
+                            </tr>
+                              
+                          </table></div>
+  
+  
+ 
+    
+  
+    
+  <br></br>
+  <div align="center">
+  <div><div class="actions">
+    <%= f.submit nil, class:"btn btn-danger" %><% end %>
+    <%= link_to 'Back', nutritions_path,class:"btn btn-danger" %></div></div>
+<br><br><br>
+
+<%= render partial: "layouts/foot"%>

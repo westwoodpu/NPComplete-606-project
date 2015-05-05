@@ -1,13 +1,133 @@
-<div class = 'container-fluid'>
-	<div align=center>
-		<img src='http://wecarepet.com/images/pia-logo.png' alt="petQuest log">
-		<h1> Hello, Dear PetQuest Customers! </h1>
-		<h1>Make a Healthy Diet For Your Lovely Kitty!</h1>
-		<a href="http://localhost:3000/foods" class="btn2">View Foods</a>
-		<a class="btn2" href="http://localhost:3000/pets">Show Pets</a>
-		<a class="btn2" href="http://localhost:3000/pets/new">Input Pets</a></div>
-		<div id="ctn0"><p>  </p></div>
-<div class='text-right'><a href="http://www.wecarepet.com" >Link to our home page</a></div>
-</div>
+<!DOCTYPE html>
+<html>
+<%=render partial: "layouts/head"%>	
+<br>
+			
+			<!-- Slider Start 
+			#################################
+				- THEMEPUNCH BANNER -
+			#################################	-->
 
+			
+			
+			
+			
+			
+		
+			
+		<div class="booking">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 ">
+                <!-- Heading -->
+                
+                <!-- Image Slider -->
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                      <img class="img-responsive" src ="http://images4.fanpop.com/image/photos/16800000/Dog-and-Cat-Wallpaper-teddybear64-16834786-1280-800.jpg" alt="" />
+                    </div>
+                    <div class="item">
+                      <img class="img-responsive" src="http://kittytonpost.com/wp-content/uploads/2013/07/Kittytonpost_wallpaper04.jpg" alt="" />
+                    </div>
+                  </div>
 
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="fa fa-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="fa fa-chevron-right"></span>
+                  </a>
+                </div>
+              </div></div></div></div><br>
+		<%= render partial: "layouts/foot"%>
+		
+		<!-- Scroll to top -->
+		<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> 
+		
+		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+		<script type="text/javascript" src="js/jquery.themepunch.plugins.min.js"></script>
+		<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+		<!-- FLEX SLIDER SCRIPTS  -->
+		<script defer src="js/jquery.flexslider-min.js"></script>
+		<!-- Pretty Photo JS -->
+		<script src="js/jquery.prettyPhoto.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+		<!-- JS code for this page -->
+		<script>
+		/* ******************************************** */
+		/*  JS for SLIDER REVOLUTION  */
+		/* ******************************************** */
+				jQuery(document).ready(function() {
+					   jQuery('.tp-banner').revolution(
+						{
+							delay:9000,
+							startheight:500,
+							
+							hideThumbs:10,
+							
+							navigationType:"bullet",	
+														
+							hideArrowsOnMobile:"on",
+							
+							touchenabled:"on",
+							onHoverStop:"on",
+							
+							navOffsetHorizontal:0,
+							navOffsetVertical:20,
+							
+							stopAtSlide:-1,
+							stopAfterLoops:-1,
+
+							shadow:0,
+							
+							fullWidth:"on",
+							fullScreen:"off"
+						});
+				});
+		/* ******************************************** */
+		/*  JS for FlexSlider  */
+		/* ******************************************** */
+		
+			$(window).load(function(){
+				$('.flexslider-recent').flexslider({
+					animation:		"fade",
+					animationSpeed:	1000,
+					controlNav:		true,
+					directionNav:	false
+				});
+				$('.flexslider-testimonial').flexslider({
+					animation: 		"fade",
+					slideshowSpeed:	5000,
+					animationSpeed:	1000,
+					controlNav:		true,
+					directionNav:	false
+				});
+			});
+		
+		/* Gallery */
+
+		jQuery(".gallery-img-link").prettyPhoto({
+		   overlay_gallery: false, social_tools: false
+		});
+		
+		</script>
+	</body>	
+</html>

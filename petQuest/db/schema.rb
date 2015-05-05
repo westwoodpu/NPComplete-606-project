@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20150504030847) do
+
+
 ActiveRecord::Schema.define(version: 20150504183205) do
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,30 +115,30 @@ ActiveRecord::Schema.define(version: 20150504183205) do
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
     t.decimal  "vitaminC",              precision: 8, scale: 2
-    t.decimal  "vitaminK",              precision: 8, scale: 2
-    t.decimal  "vitaminD",              precision: 8, scale: 2
-    t.decimal  "vitaminB6",             precision: 8, scale: 2
-    t.decimal  "vitaminB12",            precision: 8, scale: 2
-    t.decimal  "folicacid",             precision: 8, scale: 2
-    t.decimal  "choline",               precision: 8, scale: 2
-    t.decimal  "biotin",                precision: 8, scale: 2
-    t.decimal  "vitaminB5",             precision: 8, scale: 2
-    t.decimal  "chloride",              precision: 8, scale: 2
-    t.decimal  "iodine",                precision: 8, scale: 2
-    t.decimal  "taurine",               precision: 8, scale: 2
-    t.decimal  "isoleucine",            precision: 8, scale: 2
-    t.decimal  "leucine",               precision: 8, scale: 2
-    t.decimal  "lysine",                precision: 8, scale: 2
-    t.decimal  "methionine_cystine",    precision: 8, scale: 2
-    t.decimal  "methionine",            precision: 8, scale: 2
-    t.decimal  "phenylalaninetyrosine", precision: 8, scale: 2
-    t.decimal  "phenylalanine",         precision: 8, scale: 2
-    t.decimal  "threonine",             precision: 8, scale: 2
-    t.decimal  "tryptophan",            precision: 8, scale: 2
-    t.decimal  "valine",                precision: 8, scale: 2
-    t.decimal  "arginine",              precision: 8, scale: 2
-    t.decimal  "histidine",             precision: 8, scale: 2
-    t.decimal  "linoleicacid",          precision: 8, scale: 2
+    t.decimal  "vitaminK"
+    t.decimal  "vitaminD"
+    t.decimal  "vitaminB6"
+    t.decimal  "vitaminB12"
+    t.decimal  "folicacid"
+    t.decimal  "choline"
+    t.decimal  "biotin"
+    t.decimal  "vitaminB5"
+    t.decimal  "chloride"
+    t.decimal  "iodine"
+    t.decimal  "taurine"
+    t.decimal  "isoleucine"
+    t.decimal  "leucine"
+    t.decimal  "lysine"
+    t.decimal  "methionine_cystine"
+    t.decimal  "methionine"
+    t.decimal  "phenylalaninetyrosine"
+    t.decimal  "phenylalanine"
+    t.decimal  "threonine"
+    t.decimal  "tryptophan"
+    t.decimal  "valine"
+    t.decimal  "arginine"
+    t.decimal  "histidine"
+    t.decimal  "linoleicacid"
     t.decimal  "arachidonicacid",       precision: 8, scale: 2
   end
 
@@ -141,14 +146,22 @@ ActiveRecord::Schema.define(version: 20150504183205) do
     t.string   "name"
     t.string   "gender"
     t.string   "pet_type"
-    t.integer  "age",                  default: 0
+    t.string   "age"
     t.float    "body_weight"
     t.string   "breed"
     t.string   "body_condition_score"
     t.string   "activity"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "months",               default: 0
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "months"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "recipes", force: :cascade do |t|
