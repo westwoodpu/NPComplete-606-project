@@ -1,58 +1,213 @@
-f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
+<%=render partial: "layouts/head"%>
 
+      <!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">Foods List</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Reserve Seats</li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <br>
+      <!-- Banner End -->
+<div class="container">
+  <div class ="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr id="tr1">
+              <th>Name</th>
+              <th>Description</th>
+              <th>Reference price</th>
+              <th>Cook method</th>
+              <th>Food category</th>
+              <th>Img dir</th>
+              <th>Food id</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
 
 
 <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "Find food ") %>
   <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Search") %><br>
 <% end %>
+<br>
+
+<h1>Adding Food</h1>
 
 
-<h1>Food Lists</h1>
+<%= link_to(image_tag("猪腿肉.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Meat&Meat Products"}) %>
 
-<div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr id="tr1">
-          <th>Name</th>
-          <th>Description</th>
-          <th>Reference price</th>
-          <th>Cook method</th>
-          <th>Food category</th>
-          <th>Img dir</th>
-          <th>Food id</th>
-          <th colspan="4"></th>
-        </tr>
-      </thead>
+<%= link_to(image_tag("鸡脯肉.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Poultry&Poultry Products"}) %>
 
-      <tbody>
-        <% @foods.each do |food| %>
-          <tr>
-            <td><%= food.name %></td>
-            <td><%= food.description %></td>
-            <td><%= food.reference_price %></td>
-            <td><%= food.cook_method %></td>
-            <td><%= food.food_category %></td>
-            <td><%= food.img_dir %></td>
-            <td><%= food.food_id %></td>
-            <td><%= link_to 'Show', food %></td>
-            <td><%= link_to 'Add',  add_path(food) %></td>
-            <td><%= link_to 'Edit', edit_food_path(food) %></td>
-            <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+<%= link_to(image_tag("白皮鸡蛋.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Milk & Eggs"}) %><br>
+
+<%= link_to(image_tag("马鲛鱼.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Fish_Shelfish&Mollusc"}) %>
+
+<%= link_to(image_tag("葵花籽油.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Seed_Fat&Oils"}) %>
+
+<%= link_to(image_tag("food-condiments.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Condiments"}) %><br>
+
+<%= link_to(image_tag("Kellogg-s-cereal-products.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Cereal&Cereal Products"}) %>
+
+<%= link_to(image_tag("红薯.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Tubers_Starches&Products"}) %>
+
+<%= link_to(image_tag("胡萝卜.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "root vegetables"}) %><br>
+
+<%= link_to(image_tag("荷兰豆.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "leguminous vegetables_Legume products"}) %>
+
+<%= link_to(image_tag("番茄.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "solanaceous_melon&fruit vegetables"}) %>
+
+
+<%= link_to(image_tag("西兰花.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "leafy_flower vegetables"}) %><br>
+
+<%= link_to(image_tag("莲藕.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "aquatic_tuber vegetable"}) %>
+
+
+<%= link_to(image_tag("u87.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "fungi&Algae"}) %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <tbody>
+            <% @foods.each do |food| %>
+              <tr>
+                <td><%= food.name %></td>
+                <td><%= food.description %></td>
+                <td><%= food.reference_price %></td>
+                <td><%= food.cook_method %></td>
+                <td><%= food.food_category %></td>
+                <td><%= food.img_dir %></td>
+                <td><%= food.food_id %></td>
+                <td><%= link_to 'Show', food %></td>
+                <td><%= link_to 'Add',  add_path(food) %></td>
+                <td><%= link_to 'Edit', edit_food_path(food) %></td>
+                <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div align ="center"><%= will_paginate @foods %>
+        <%= page_entries_info @foods, :entry_name => 'food'%> <br /></div>
+
+      </div>
+     </div>
+    </div>  
+   </div> 
     <br />
-    <%= will_paginate @foods %>
-    <%= page_entries_info @foods, :entry_name => 'food'%> <br />
-
+    
 </div>
+
+
+
+
 <div align="center" id="ctn">
 <a href="http://localhost:3000/foods/new" class="btn2">Add new foods(admin)</a>
 
+
+
 <br>
+
+
+<div class="container"><div class="showcase">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-sm-10 col-md-offset-1">
+                <!-- Showcase section item -->
+                <div class="showcase-item">
+                  <!-- Image -->
+                  <img class="img-responsive" src="http://globalpetfoodshrm.ca/images/uploads/dog112.png" alt="" />
+                  <!-- Heading -->
+                  <h3><a href="#">Import Food</a></h3>
+                  <!-- Paragraph -->
+                  <div class="col-md-offset-6"><a href="http://localhost:3000/foods/new" class="btn btn-danger" type="button">Add new foods(admin)</a><br>
+                  <br>
+                  <%= submit_tag "Upload foods",:class=>"btn btn-danger",:type=>"button" %>
+                  <br>
+                  <%= form_tag import_foods_path, multipart: true do  %>
+  <%= file_field_tag :file %><br>
+<% end %></div></div>
+                  
+                  <br>
+                  <div class="clearfix"></div>
+                </div>
+              </div></div></div></div></div>
+              <br><br><br><br><br>
+
+<div align="center"><h1>Recipe you're creating</h1><br></div>
+<div class="container">
+  <div class ="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              
+              <th>foodname</th>
+              <th>weight</th>
+              <th>edit weight</th>
+
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @recipes.each do |recipe| %>
+              <tr>
+              
+                <td><%= recipe.foodname  %></td>
+                <td><%= recipe.weight    %></td>
+                <td><%= form_for  recipe do |f| %>
+                    <%= f.text_field :weight %><br />
+                    <%= f.submit nil, :class=>"btn btn-danger",:type=>"button"%>
+                    <% end %>
+                </td>
+                <td><%= link_to 'Submit',  recipe %></td>
+                <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>    
+</div>
+<div align="center">
+
+
 <h3>Import Food</h3>
 <div align="center"><%= form_tag import_foods_path, multipart: true do  %>
   <%= file_field_tag :file %>
@@ -80,7 +235,7 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
           
             <td><%= recipe.foodname  %></td>
             <td><%= recipe.weight    %></td>
-            <td><%= text_field_tag "recipes[][nape]" %>
+            <td><%= text_field_tag "recipes[][weight]" %>
             <%= hidden_field_tag "name[][name]", recipe.foodname %>
             </td>
             <td><%= link_to 'Submit',  recipe %></td>
@@ -90,12 +245,16 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
       </tbody>
     </table>
 
+
+
 <div align="center">
-           <p>
+           <p><%= label_tag(:q, "Select Pet for Recipe:") %></p>
+           
+            <p><%=  collection_select("pet", "ids", Pet.all, :id, :name) %></p>
 
 
 
-  <%= submit_tag "Submit Recipe", :class =>"btn2"%>
+  <p><%= submit_tag "Submit Recipe", :class =>"btn2"%></p>
   <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
 
 </div>
@@ -103,7 +262,8 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
  <% end %>
 </div>
 
+
 </div>
+<br><br>
 
-
-
+<%= render partial: "layouts/foot"%>

@@ -1,97 +1,137 @@
-<p id="notice"><%= notice %></p>
+<%=render partial: "layouts/head"%>
 
-<h1>Listing Nutritions</h1>
+      <!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">Nutrients List</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Reserve Seats</li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <br>
+      <!-- Banner End -->
+      <p id="notice"><%= notice %></p>
 
-<div class="table-responsive">
-    <table class="table">
-      <thead>
-      <tr>
-        <th>Category</th>
-        <th>Foodname</th>
-        <th>Weight(g)</th>
-        <th>Edible(g)</th>
-        <th>Energy(g)</th>
-        <th>Protein(g)</th>
-        <th>Fat(g)</th>
-        <th>Cho(g)</th>
-        <th>Dietaryfiber(g)</th>
-        <th>Ash(g)</th>
-        <th>Cholesterol(mg)</th>
-        <th>VitaminA(ugRE)</th>
-        <th>Retinol(ug)</th>
-        <th>VitaminE(mg)</th>
-        <th>VitaminB1(mg)</th>
-        <th>VitaminB2(mg)</th>
-        <th>VitaminB3(mg)</th>
-        <th>Calcium(mg)</th>
-        <th>Phosphorous(mg)</th>
-        <th>Potassium(mg)</th>
-        <th>Sodium(mg)</th>
-        <th>Magnesium(mg)</th>
-        <th>Iron(mg)</th>
-        <th>Zinc(mg)</th>
-        <th>Selenium(ug)</th>
-        <th>Copper(mg)</th>
-        <th>Manganese(mg)</th>
-        <th>Food_id</th>
-        <th>VitaminC(mg)</th>
-        <th colspan="3"></th>
-      </tr>
-      </thead>
-
-      <tbody>
-        <% @nutritions.each do |nutrition| %>
+<div class="container">
+  <div class ="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
           <tr>
-            <td><%= nutrition.category %></td>
-            <td><%= nutrition.foodname %></td>
-            <td><%= nutrition.weight %></td>
-            <td><%= nutrition.edible %></td>
-            <td><%= nutrition.energy %></td>
-            <td><%= nutrition.protein %></td>
-            <td><%= nutrition.fat %></td>
-            <td><%= nutrition.cho %></td>
-            <td><%= nutrition.dietaryfiber %></td>
-            <td><%= nutrition.ash %></td>
-            <td><%= nutrition.cholesterol %></td>
-            <td><%= nutrition.vitaminA %></td>
-            <td><%= nutrition.retinol %></td>
-            <td><%= nutrition.vitaminE %></td>
-            <td><%= nutrition.vitaminB1 %></td>
-            <td><%= nutrition.vitaminB2 %></td>
-            <td><%= nutrition.vitaminB3 %></td>
-            <td><%= nutrition.calcium %></td>
-            <td><%= nutrition.phosphorous %></td>
-            <td><%= nutrition.potassium %></td>
-            <td><%= nutrition.sodium %></td>
-            <td><%= nutrition.magnesium %></td>
-            <td><%= nutrition.iron %></td>
-            <td><%= nutrition.zinc %></td>
-            <td><%= nutrition.selenium %></td>
-            <td><%= nutrition.copper %></td>
-            <td><%= nutrition.manganese %></td>
-            <td><%= nutrition.food_id %></td>
-            <td><%= nutrition.vitaminC%></td>
-            <td><%= link_to 'Show', nutrition %></td>
-            <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
-            <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Category</th>
+            <th>Foodname</th>
+            <th>Weight(g)</th>
+            <th>Edible(g)</th>
+            <th>Energy(g)</th>
+            <th>Protein(g)</th>
+            <th>Fat(g)</th>
+            <th>Cho(g)</th>
+            <th>Dietaryfiber(g)</th>
+            <th>Ash(g)</th>
+            <th>Cholesterol(mg)</th>
+            <th>VitaminA(ugRE)</th>
+            <th>Retinol(ug)</th>
+            <th>VitaminE(mg)</th>
+            <th>VitaminB1(mg)</th>
+            <th>VitaminB2(mg)</th>
+            <th>VitaminB3(mg)</th>
+            <th>Calcium(mg)</th>
+            <th>Phosphorous(mg)</th>
+            <th>Potassium(mg)</th>
+            <th>Sodium(mg)</th>
+            <th>Magnesium(mg)</th>
+            <th>Iron(mg)</th>
+            <th>Zinc(mg)</th>
+            <th>Selenium(ug)</th>
+            <th>Copper(mg)</th>
+            <th>Manganese(mg)</th>
+            <th>Food_id</th>
+            <th>VitaminC(mg)</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+          </thead>
 
-    <br />
-    <%= will_paginate @nutritions %>
-    <%= page_entries_info @nutritions, :entry_name => 'nutrition'%> <br />
+          <tbody>
+            <% @nutritions.each do |nutrition| %>
+              <tr>
+                <td><%= nutrition.category %></td>
+                <td><%= nutrition.foodname %></td>
+                <td><%= nutrition.weight %></td>
+                <td><%= nutrition.edible %></td>
+                <td><%= nutrition.energy %></td>
+                <td><%= nutrition.protein %></td>
+                <td><%= nutrition.fat %></td>
+                <td><%= nutrition.cho %></td>
+                <td><%= nutrition.dietaryfiber %></td>
+                <td><%= nutrition.ash %></td>
+                <td><%= nutrition.cholesterol %></td>
+                <td><%= nutrition.vitaminA %></td>
+                <td><%= nutrition.retinol %></td>
+                <td><%= nutrition.vitaminE %></td>
+                <td><%= nutrition.vitaminB1 %></td>
+                <td><%= nutrition.vitaminB2 %></td>
+                <td><%= nutrition.vitaminB3 %></td>
+                <td><%= nutrition.calcium %></td>
+                <td><%= nutrition.phosphorous %></td>
+                <td><%= nutrition.potassium %></td>
+                <td><%= nutrition.sodium %></td>
+                <td><%= nutrition.magnesium %></td>
+                <td><%= nutrition.iron %></td>
+                <td><%= nutrition.zinc %></td>
+                <td><%= nutrition.selenium %></td>
+                <td><%= nutrition.copper %></td>
+                <td><%= nutrition.manganese %></td>
+                <td><%= nutrition.food_id %></td>
+                <td><%= nutrition.vitaminC%></td>
+                <td><%= link_to 'Show', nutrition %></td>
+                <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
+                <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br />
+        <div align="center"><%= will_paginate @nutritions %>
+        <%= page_entries_info @nutritions, :entry_name => 'nutrition'%> <br /></div>
+    </div></div></div></div>
+
+    <div class="container"><div class="showcase">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-sm-10 col-md-offset-1">
+                <!-- Showcase section item -->
+                <div class="showcase-item">
+                  <!-- Image -->
+                  <img class="img-responsive" src="http://globalpetfoodshrm.ca/images/uploads/dog112.png" alt="" />
+                  <!-- Heading -->
+                  <h3><a href="#">Import Nutrients</a></h3>
+                  <!-- Paragraph -->
+                  <div class="col-md-offset-6"><%= link_to 'Add new Nutrition', new_nutrition_path ,class:"btn btn-danger"%><br>
+                  <br>
+                  <%= submit_tag "Upload Nutritions",:class=>"btn btn-danger",:type=>"button" %>
+                  <br>
+                  <%= form_tag import_nutritions_path, multipart: true do  %>
+  <%= file_field_tag :file %><br>
+<% end %></div></div>
+                  
+                  <br>
+                  <div class="clearfix"></div>
+                </div>
+              </div></div></div></div></div>
+              <br><br><br><br><br>
 
 
 </div>
 <br>
 
-<div align="center"><h3>Import Nutritions</h3>
-<%= form_tag import_nutritions_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <br></br>
-  <%= submit_tag "Upload nutritions",class:"btn2" %>
-<% end %>
-<br></br>
-<%= link_to 'New Nutrition', new_nutrition_path ,class:"btn2"%></div>
+
+
+<%= render partial: "layouts/foot"%>

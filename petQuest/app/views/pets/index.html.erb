@@ -1,7 +1,25 @@
-<div class = 'container-fluid'><h1>Check All You Pets Here!</h1>
- 
-<div class='text-center'>
-  <table>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">View Pets</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      
+      <!-- Banner End -->
+ <div class = "container"> 
+ <div class = "row">    
+  <div class="col-md-10 col-md-offset-1">
+    <div class ="table-responsive"><table class="table table-bordered">
     
   <tr>
       <th style ="text-align:center">Name&nbsp</th>
@@ -34,11 +52,15 @@
       </tr>
 
     <% end %>
-  </table></div>
-<div align="center" id="ctn">
-<a href="http://localhost:3000/foods" class="btn2">Select food for pets</a>
-<a href="http://localhost:3000/pets/new" class="btn2">Add new pets</a>
+  </table></div></div>
+<div class="col-md-12" align="center">
+<a href="http://localhost:3000/foods" class="btn btn-danger" type="button">Select food for pets</a>
+<a href="http://localhost:3000/pets/new" class="btn btn-danger" type="button">Add new pets</a>
+<a href="http://localhost:3000/welcome/index" class="btn btn-danger" type="button">Back to welcome page</a><br></div></div>
 </div>
+
+<%=render partial:"layouts/foot"%>
+=======
 <div align="center"><a href="http://localhost:3000/welcome/index" class="btn2">Back to welcome page</a></div>
 </div>
 
@@ -53,3 +75,4 @@
   <%= submit_tag "Upload Dog Breeds",:class => 'btn2' %>
 <% end %></div>
 
+>>>>>>> 0b360384bc11d89b9706fc1212962840c553f3c5

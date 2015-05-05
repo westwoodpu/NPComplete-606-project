@@ -1,28 +1,67 @@
-<div class="container-fluid"><p id="notice"><%= notice %></p>
-<div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user_id %>
-</p>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">View Recipes</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    
+      <!-- Banner End -->
+      <div class="container"><div class="showcase">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-sm-10 col-md-offset-1">
+                <!-- Showcase section item -->
+                <div class="showcase-item">
+                  <!-- Image -->
+                  <img class="img-responsive" src="http://globalpetfoodshrm.ca/images/uploads/dog112.png" alt="" />
+                  <!-- Heading -->
+                  <br>
+                  <!-- Paragraph -->
+                  <div class="col-md-offset-1"><p>
+                    <strong>User:</strong>
+                    <%= @recipe.user_id %>
+                  </p>
 
-<p>
-  <strong>Recipe:</strong>
-  <%= @recipe.recipe_id %>
-</p>
+                  <p>
+                    <strong>Recipe:</strong>
+                    <%= @recipe.recipe_id %>
+                  </p>
 
-<p>
-  <strong>Foodname:</strong>
-  <%= @recipe.foodname %>
-</p>
+                  <p>
+                    <strong>Foodname:</strong>
+                    <%= @recipe.foodname %>
+                  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @recipe.weight %>
-</p>
-<div align="center">
-<%= link_to 'Edit', edit_recipe_path(@recipe),class:"btn2" %> </div>
-<div class="ctn0"><p>  </p></div>
-<a href="http://localhost:3000/foods" class="btn2">Back</a>
+                  <p>
+                    <strong>Weight:</strong>
+                    <%= @recipe.weight %>
+                  </p></div>
+                 
 
-<div>
-</div></div>
+
+                  <!-- Paragraph -->
+                  <div align="center"><%= link_to 'Edit', edit_recipe_path(@recipe),class:"btn btn-danger" %>
+                  <a href="http://localhost:3000/foods" class="btn btn-danger" type="button">Back</a><br></div>
+
+                  <br>
+                  </div></div>
+                  
+                  <br>
+                  <div class="clearfix"></div>
+                </div>
+              </div></div></div></div></div>
+              <br><br><br><br><br>
+              
+
+
+<%= render partial: "layouts/foot"%>

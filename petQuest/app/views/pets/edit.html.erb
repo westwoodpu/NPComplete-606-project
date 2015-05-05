@@ -1,5 +1,109 @@
-<div class='container-fluid'><h1>Editing pet</h1>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">Edit Pets</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html"></a></li>
+            <li class="active"></li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      
+      <!-- Banner End -->
+ <!-- Booking Start -->
+        
+        <div class="booking">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <!-- Heading -->
+                <h3>Edit pets</h3>
+                <!-- Paragraph -->
+                <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna onjecture listing elite, sed do eiusmod tempo aliqua.</p>
+                <!-- Image Slider -->
+                <img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg">
+                </div>
+              
+              <div class="col-md-5">
+                <!-- Booking form area -->
+              <div class="booking-form">
+                  <!-- Heading -->
+                  <h3>Edit pets</h3>
+                  <!-- Paragraph -->
+                  <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna aliqua.</p>
+                  <!-- Booking form -->
+                  <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
+
+                    <% if @pet.errors.any? %>
+                      <div id="error_explanation">
+                        <h2>
+                          <%= pluralize(@pet.errors.count, "error") %> prohibited
+                          this pet from being saved:
+                        </h2>
+                        <ul>
+                          <% @pet.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    <% end %>
+                    <div class="table-responsive ">
+                    <table class="table table-bordered">
+                      
+                      <tbody>
+                        <tr>
+                          <td><%= f.label :name %></td>
+                          <td> <%= f.text_field :name %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label "Gender" %></td>
+                          <td><%= f.select(:gender,options_for_select([['Male',"Male"],  
+                          ['Female',"Female"]])) %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label "Age (in years)" %></td>
+                          <td> <%= f.text_field :age %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label "Age (in months)" %></td>
+                          <td><%= f.text_field :months %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label "Pet Type" %></td>
+                          <td> <%= 
+                    f.select :pet_type,options_for_select([["Cat", "Cat"], ['Dog',"Dog"]]),{:include_blank=>true}, :id=>"first_select", 
+                        :'data-remote' => 'true', # important for UJS
+                        :'data-url' => url_for(:controller => 'pets', :action => 'getdata'), # we get the data from here!
+                        :'data-type' => 'json' # tell jQuery to parse the response as JSON!
+                  %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label :Breed %></td>
+                          <td> <%= 
+                    f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
+                  %></td>
+                        </tr>
+                        <tr>
+                          <td><%= f.label :body_condition_score %></td>
+                          <td> <%= f.select(:body_condition_score,options_for_select([['Slim/Normal',"Normal"],            ['Fat',"Fat"]])) %></td>
+                        </tr>
+                         <tr>
+                          <td><%= f.label "weight in Kg" %></td>
+                          <td> <%= f.text_field :body_weight %></td>
+                        </tr>
+                         </tr>
+                         <tr>
+                          <td><%= f.label :activity_level %></td>
+                          <td> <%= f.select(:activity,options_for_select([['Active',"Active"],            ['Inactive',"Inactive"]])) %></td>
+                        </tr>
+
 <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
   <% if @pet.errors.any? %>
@@ -52,28 +156,18 @@
   f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
 %> 
 
-  <p>
-    <%= f.label :body_condition_score %><br>
-    <%= f.text_field :body_condition_score %>
-  </p>
 
-  <p>
-    <%= f.label :weight %><br>
-    <%= f.text_field :body_weight %>
-  </p>
+                      </tbody>
+                    </table>
+    <div class="col-md-offset-4"><%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>
+    <a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div></div></div></div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Booking End -->      
 
-  <p>
-    <%= f.label :activity_level %><br>
-    <select name="activity_level">
-    <option value="indoor">Indoor</option>
-    <option value="outdoor">Outdoor</option>
-    </select>
-  </p>
-
-  <p>
-    <%= f.submit nil, :class => 'btn2'%>
-  </p>
- 
-<% end %>
- 
-<a href="http://localhost:3000/pets" class="btn2">Back</a></div></div>
+<%=render partial: "layouts/foot"%>

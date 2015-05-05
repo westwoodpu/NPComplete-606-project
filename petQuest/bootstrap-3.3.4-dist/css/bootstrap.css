@@ -634,9 +634,7 @@ th {
 .glyphicon-retweet:before {
   content: "\e115";
 }
-.glyphicon-shopping-cart:before {
-  content: "\e116";
-}
+
 .glyphicon-folder-close:before {
   content: "\e117";
 }

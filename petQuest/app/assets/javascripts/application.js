@@ -12,8 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require turbolinks
+//= require bootstrap.js
+//= require turbolinks.js
+//= require html5shiv.js
+//= require custom.js
+//= require isotope.js
+//= require jquery.prettyPhoto.js
+//= require jquery.flexslider-min.js
+//= require jquery.themepunch.plugins.min.js
+//= require jquery.themepunch.revolution.min.js
+//= respond.min.js
+//= require bootstrap.min.js
+
+
 
 
 //= require_tree .
