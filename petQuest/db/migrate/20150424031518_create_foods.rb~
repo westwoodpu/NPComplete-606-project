@@ -1,0 +1,16 @@
+class CreateFoods < ActiveRecord::Migration
+  def change
+   drop_table :foods
+    create_table :foods do |t|
+      t.string :name
+      t.text :description
+      t.decimal :reference_price
+      t.string :cook_method
+      t.string :food_category
+      t.string :img_dir
+      t.integer :food_id
+
+      t.timestamps null: false
+    end
+  end
+end

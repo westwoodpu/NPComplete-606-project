@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 
 
+
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.use_transactional_fixtures = false

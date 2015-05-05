@@ -20,9 +20,16 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
   end
+  def create_multiple
+  params[:name].zip(params[:recipes]).each do |fname, fweight|
 
-  def add_weight
+  @recipe=Recipe.find_by( foodname: fname['name'])
+  if(fweight['weight']!='')
+  recipeentry=@recipe.update_attribute(:weight, fweight['weight'])
   end
+  end
+  redirect_to calculate_path
+  end 
 
 
   # POST /recipes
@@ -64,6 +71,11 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add_weight
+    @recipe = Recipe.find(params[:id])
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

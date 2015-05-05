@@ -1,56 +1,66 @@
-<p>
+<div class="container-fluid col-md-12"><h1 >Pet info</h1>
+  <div class="row"><div style="width:500px" id="ctn3" class='col-md-1 col-md-offset-4'>
+  <p>
   <strong>Name:</strong>
   <%= @pet.name %>
-</p>
+  </p>
 
 
-<p>
-  <strong>Gender:</strong>
-  <%= @pet.gender %>
-</p>
- 
-<p>
-  <strong>Age:</strong>
-  <%= @pet.age %>
-</p>
-
-
+  <p>
+    <strong>Gender:</strong>
+    <%= @pet.gender %>
+  </p>
+   
+  <p>
+    <strong>Age in years:</strong>
+    <%= @pet.age %>
+  </p>
 
 <p>
-  <strong>Pet Type:</strong>
-  <%= @pet.pet_type %>
-</p>
+    <strong>Age in months:</strong>
+    <%= @pet.months %>
+  </p>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @pet.breed %>
-</p>
+  <p>
+    <strong>Pet Type:</strong>
+    <%= @pet.pet_type %>
+  </p>
 
-<p>
-  <strong>Body Condition Score:</strong>
-  <%= @pet.body_condition_score %>
-</p>
+  <p>
+    <strong>Breed:</strong>
+    <%= @pet.breed %>
+  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @pet.body_weight %>
-</p>
+  <p>
+    <strong>Body Condition Score:</strong>
+    <%= @pet.body_condition_score %>
+  </p>
 
-<p>
-  <strong>Activity Level:</strong>
-  <%= @pet.activity%>
-</p>
+  <p>
+    <strong>Weight:</strong>
+    <%= @pet.body_weight %>
+  </p>
+
+  <p>
+    <strong>Activity Level:</strong>
+    <%= @pet.activity%>
+  </p>
 
 
+  <div id="ctn0" ><p>  </p></div>
+  <%= link_to 'Edit', edit_pet_path(@pet), class:"btn2"%>
+  <a href="http://localhost:3000/pets" class="btn2">Back</a>
+  <div id="ctn0"><p>  </p></div>
+  <a href="http://localhost:3000/pets/new" class="btn2">Add a new pet</a>
+  <div id="ctn0"><p>  </p></div>
+  <a href="http://localhost:3000/foods" class="btn2">Select food</a>
+  <br></br>
+  <%= link_to 'ME Calculation', me_pet_path(@pet),class:"btn2" %>
+   </div>
+   <br>
+  
+  </div></div>
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %> <br>
-
-<%= link_to 'Add a new pet', new_pet_path %>  <br>
-
-<%= link_to 'Select food for pets', foods_path %> <br>
-
-<a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
 
 
 

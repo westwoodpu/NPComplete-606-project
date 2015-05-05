@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container-fluid"><p id="notice"><%= notice %></p>
+<div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
 <p>
   <strong>User:</strong>
   <%= @recipe.user_id %>
@@ -19,6 +19,10 @@
   <strong>Weight:</strong>
   <%= @recipe.weight %>
 </p>
+<div align="center">
+<%= link_to 'Edit', edit_recipe_path(@recipe),class:"btn2" %> </div>
+<div class="ctn0"><p>  </p></div>
+<a href="http://localhost:3000/foods" class="btn2">Back</a>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<div>
+</div></div>

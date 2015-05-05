@@ -1,36 +1,55 @@
-<h1>Check All You Pets Here!</h1>
+<div class = 'container-fluid'><h1>Check All You Pets Here!</h1>
  
-<table>
-  
-<tr>
-    <th style ="text-align:center">Name&nbsp</th>
-    <th style ="text-align:center">&nbspAge&nbsp</th> 
-    <th style ="text-align:center">&nbspGender&nbsp</th>
-    <th style ="text-align:center">&nbspPet_Type&nbsp</th>
-    <th style ="text-align:center">&nbspBreed&nbsp</th>
-    <th style ="text-align:center">&nbspBody_Condition_Score&nbsp</th>
-    <th style ="text-align:center">&nbspWeight&nbsp</th>
-    <th style ="text-align:center">&nbspActivity_Level&nbsp</th>
-    <th colspan="2"></th>
-  </tr>
- 
-  <% @pets.each do |pet| %>
-    <tr>
-      <td><%= pet.name %>&nbsp<br></td>
-      <td>&nbsp<%= pet.age %>&nbsp</td>
-      <td>&nbsp<%= pet.gender %>&nbsp</td>
-      <td>&nbsp<%= pet.pet_type %>&nbsp</td>
-      <td>&nbsp<%= pet.breed %>&nbsp</td>
-      <td>&nbsp<%= pet.body_condition_score %>&nbsp</td>
-      <td>&nbsp<%= pet.body_weight %>&nbsp</td>
-      <td>&nbsp<%= pet.activity %>&nbsp</td>
-
+<div class='text-center'>
+  <table>
+    
+  <tr>
+      <th style ="text-align:center">Name&nbsp</th>
+      <th style ="text-align:center">&nbspAge in years&nbsp</th> 
+      <th style ="text-align:center">&nbspAge in months &nbsp</th> 
+      <th style ="text-align:center">&nbspGender&nbsp</th>
+      <th style ="text-align:center">&nbspPet_Type&nbsp</th>
+      <th style ="text-align:center">&nbspBreed&nbsp</th>
+      <th style ="text-align:center">&nbspBody_Condition_Score&nbsp</th>
+      <th style ="text-align:center">&nbspWeight&nbsp</th>
+      <th style ="text-align:center">&nbspActivity_Level&nbsp</th>
+      <th colspan="3"></th>
     </tr>
+   
+    <% @pets.each do |pet| %>
+      <tr>
+        <td><%= pet.name %>&nbsp<br></td>
+        <td>&nbsp<%= pet.age %>&nbsp</td>
+ 	<td>&nbsp<%= pet.months %>&nbsp</td>
+        <td>&nbsp<%= pet.gender %>&nbsp</td>
+        <td>&nbsp<%= pet.pet_type %>&nbsp</td>
+        <td>&nbsp<%= pet.breed %>&nbsp</td>
+        <td>&nbsp<%= pet.body_condition_score %>&nbsp</td>
+        <td>&nbsp<%= pet.body_weight %>&nbsp</td>
+        <td>&nbsp<%= pet.activity %>&nbsp</td>
+        <td><%= link_to 'Show', pet %></td>
+        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
+        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-  <% end %>
-</table>
+      </tr>
 
-<%= link_to 'Input pets', foods_path %> <br>
-<%= link_to 'Select food for pets', foods_path %> <br>
+    <% end %>
+  </table></div>
+<div align="center" id="ctn">
+<a href="http://localhost:3000/foods" class="btn2">Select food for pets</a>
+<a href="http://localhost:3000/pets/new" class="btn2">Add new pets</a>
+</div>
+<div align="center"><a href="http://localhost:3000/welcome/index" class="btn2">Back to welcome page</a></div>
+</div>
 
-<a href="http://www.wecarepet.com" class="k-button">Link to our home page</a>
+<h3>Import Cat breeds</h3>
+<div align="center"><%= form_tag import_idealcatweights_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload foods",:class => 'btn2' %>
+<% end %></div>
+<h3>Import Dog breeds</h3>
+<div align="center"><%= form_tag import_idealdogweights_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload foods",:class => 'btn2' %>
+<% end %></div>
+

@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid"><p id="notice"><%= notice %></p>
 
 
 <div class="table-responsive">
-    <table class="table">
+    <table>
       <thead>
         <tr>
           <th>Name</th>
@@ -29,26 +29,39 @@
     </table>
 </div>
 
+<div class="ctn0"><p>  </p></div>
 
 
-<div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Weight</th>
+<table class="table table-responsive">
+    <thead>
+      <tr>
+        <% @food_nutrition.attributes.each do |attr_name| %>      
+        <th><%= (attr_name)[0].to_s %></th>
+        <% end %>
+      </tr>
+    </thead>
 
-        </tr>
-      </thead>
+    <tbody>
+      <tr>
+        <% @food_nutrition.attributes.each do |attr_value| %>      
+        <td><%= (attr_value)[0].to_s %></td>
+        <% end %>
+      </tr>
+    </tbody>
 
-      <tbody>
-          <tr>
-            <td><%= @weight %></td>
-          </tr>
-      </tbody>
-    </table>
+</table>
+
+  <% @food_nutrition.attributes.each do |attr_name, attr_value| %>
+    <div class="food_nutrition_attribute">
+     <%= attr_name %>: <%= attr_value %>
+    </div>
+  <% end %>
+
+
+<div class="ctn0"><p>  </p></div>
+<div align="center">
+<%= link_to 'Edit', edit_food_path(@food),class:"btn2" %> 
+
+<a href="http://localhost:3000/foods" class="btn2">Back</a></div></div>
 </div>
-
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
 

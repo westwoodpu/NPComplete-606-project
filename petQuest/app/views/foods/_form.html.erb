@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div style="width:100px" class='col-md-1 col-md-offset-3' id="ctn5">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -30,23 +30,23 @@
 
   <div class="field">
     <%= f.label :food_category %><br>
-    <%= f.text_field :food_category %>
+    
       <div class="controls">
         <%= f.select(:food_category, options_for_select([
-          ['Meat&Meat Products','Meat&Meat Products'],
-          ['Poultry&Poultry Products','Poultry&Poultry Products'],
-          ['Milk & Eggs','Milk & Eggs'],
-          ['Fish_Shelfish&Mollusc','Fish_Shelfish&Mollusc'],
-          ['Seed_Fat&Oils','Seed_Fat&Oils'],
+          ['Meat And Meat Products','Meat And Meat Products'],
+          ['Poultry And Poultry Products','Poultry And Poultry Products'],
+          ['Milk And Eggs','Milk And Eggs'],
+          ['Fish Shelfish And Mollusc','Fish Shelfish And Mollusc'],
+          ['Seed Fat And Oils','Seed Fat And Oils'],
           ['Condiments','Condiments'],
-          ['Cereal&Cereal Products','Cereal&Cereal Products'],
-          ['Tubers_Starches&Products','Tubers_Starches&Products'],
-          ['root vegetables','root vegetables'],
-          ['leguminous vegetables_Legume products','leguminous vegetables_Legume products'],
-          ['solanaceous_melon&fruit vegetables','solanaceous_melon&fruit vegetables'],
-          ['leafy_flower vegetables','leafy_flower vegetables'],
-          ['aquatic_tuber vegetable','aquatic_tuber vegetable'],
-          ['fungi&Algae','fungi&Algae']]), { include_blank: true }) %>
+          ['Cereal And Cereal Products','Cereal And Cereal Products'],
+          ['Tubers Starches And Products','Tubers Starches And Products'],
+          ['Root Vegetables','Root Vegetables'],
+          ['Leguminous Vegetables And Legume Products','Leguminous Vegetables And Legume Products'],
+          ['Solanaceous Melon And Fruit Vegetables','Solanaceous Melon And Fruit Vegetables'],
+          ['Leafy Flower Vegetables','Leafy Flower Vegetables'],
+          ['Aquatic And Tuber Vegetable','Aquatic And Tuber Vegetable'],
+          ['Fungi And Algae','Fungi And Algae']]), { include_blank: true }) %>
       </div>
   </div>
 
@@ -58,7 +58,12 @@
     <%= f.label :food_id %><br>
     <%= f.number_field :food_id %>
   </div>
+  <div class="ctn0"><p>  </p></div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => "btn2"%>
+    <div class="ctn0"><p>  </p></div>
+    <a href="http://localhost:3000/foods" class="btn2">Back</a>
   </div>
 <% end %>
+
+</div>

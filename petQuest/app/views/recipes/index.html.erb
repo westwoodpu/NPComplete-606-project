@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid"><p id="notice"><%= notice %></p>
 
 <h1>Adding a Pet</h1>
   <br>
@@ -34,10 +34,12 @@
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <div class="ctn0"><p>  </p></div>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<div class="ctn0"><p>  </p></div>
+<div class="ctn0"><p>  </p></div>
+<div align="center"><a href="http://localhost:3000/recipes/new" class="btn2" >Add new recipes</a>
+<a href="http://localhost:3000/foods" class="btn2">Back</a></div></div>
+<>

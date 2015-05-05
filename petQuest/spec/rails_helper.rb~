@@ -4,11 +4,11 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
-config.use_transactional_fixtures = false
+
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
-
+  config.use_transactional_fixtures = false
 config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end

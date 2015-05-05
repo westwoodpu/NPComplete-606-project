@@ -79,13 +79,19 @@
       </tbody>
     </table>
 
+    <br />
+    <%= will_paginate @nutritions %>
+    <%= page_entries_info @nutritions, :entry_name => 'nutrition'%> <br />
+
+
 </div>
 <br>
 
-<h3>Import Nutritions</h3>
+<div align="center"><h3>Import Nutritions</h3>
 <%= form_tag import_nutritions_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Upload nutritions" %>
+  <br></br>
+  <%= submit_tag "Upload nutritions",class:"btn2" %>
 <% end %>
-
-<%= link_to 'New Nutrition', new_nutrition_path %>
+<br></br>
+<%= link_to 'New Nutrition', new_nutrition_path ,class:"btn2"%></div>

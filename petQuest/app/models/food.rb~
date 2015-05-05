@@ -1,3 +1,13 @@
 class Food < ActiveRecord::Base
-	has_one :nutritionfact, :dependent => :destory
+	has_one :nutrition, :dependent => :destroy
+	def self.import(file)
+		CSV.foreach(file.path, headers: true) do |row|
+			Food.create! row.to_hash
+		end
+	end
+
+	def self.search(search)
+	  search_condition = "%" + search + "%"
+  	find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
+end
 end

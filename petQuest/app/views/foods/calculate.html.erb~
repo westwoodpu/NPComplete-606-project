@@ -1,0 +1,133 @@
+<div class = 'container-fluid'><h1>Report Here!</h1>
+ 
+<div class='text-center'>
+<p>
+  <h1><strong>Nutrient Analysis</strong></h1></p>
+ <p>
+  <strong>Protein (percent):</strong>
+  <%= '%.2f' %@Protein %>
+  </p>
+ <p>
+  <strong>Fat (percent):</strong>
+  <%= '%.2f' %@Fat %>
+  </p>
+ <p>
+  <strong>NFE  (percent):</strong>
+  <%='%.2f' % (@CHO-@Dietaryfiber) %>
+  </p>
+<p>
+  <strong>CHO  (percent):</strong>
+  <%='%.2f' % @CHO %>
+  </p>
+<p>
+  <strong>Dietary Fiber  (percent):</strong>
+  <%='%.2f' % @Dietaryfiber %>
+  </p>
+<p>
+  <strong>Ash  (percent):</strong>
+  <%='%.2f' % @Ash %>
+  </p>
+<p>
+  <h1><strong>Calorie Proportion</strong></h1></p>
+ <p>
+  <strong>Protein (percent):</strong>
+  <%= '%.2f' %(@Protein*4.0/@Energy*100.00) %>
+  </p>
+ <p>
+  <strong>Fat(percent):</strong>
+  <%= '%.2f' %(@Fat*9.0/@Energy*100.0)%>
+  </p>
+ <p>
+  <strong>Carbohydrate  (percent):</strong>
+  <%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %>
+  </p>
+
+
+<p>
+  <h1><strong>Ingredient Proportions (percent)</strong></h1></p>
+ 
+ <p>
+  <strong>Meat And Meat Products Proportion (percent):</strong>
+  <%= '%.2f' %@Meatproportion%>
+  </p>
+<p>
+  <strong>Poultry And Poultry Products Proportion (percent):</strong>
+  <%= '%.2f' % @Poultryproportion%>
+  </p>
+<p>
+  <strong>Milk And Eggs Proportion (percent):</strong>
+  <%= '%.2f' % @Milkeggproportion%>
+  </p>
+<p>
+  <strong>Fish Shelfish And Mollusc Proportion (percent):</strong>
+  <%= '%.2f' % @Fishshellfishproportion%>
+  </p>
+<p>
+  <strong>Seed Fat And Oils Proportion (percent):</strong>
+  <%= '%.2f' % @Seedfatoilproportion%>
+  </p>
+<p>
+  <strong>Condiments Proportion (percent):</strong>
+  <%= '%.2f' % @Condimentsproportion%>
+  </p>
+<p>
+  <strong>Cereal And Cereal Products Proportion (percent):</strong>
+  <%= '%.2f' % @Cerealproportion%>
+  </p>
+
+<p>
+  <strong>Tubers Starches And Products Proportion (percent):</strong>
+  <%= '%.2f' % @Tubersproportion%>
+  </p>
+<p>
+  <strong>Root Vegetables Proportion (percent):</strong>
+  <%= '%.2f' % @Rootvegetablesproportion%>
+  </p>
+<p>
+  <strong>Leguminous Vegetables And Legume Products Proportion (percent):</strong>
+  <%= '%.2f' % @Leguminousvegetablesproportion%>
+  </p>
+
+<p>
+  <strong>Solanaceous Melon And Fruit Vegetables Proportion (percent):</strong>
+  <%= '%.2f' % @Solanaceousvegetablesproportion%>
+  </p>
+<p>
+  <strong>Leafy Flower Vegetables Proportion (percent):</strong>
+  <%= '%.2f' % @Leafyflowervegetablesproportion%>
+  </p>
+
+<p>
+  <strong>Aquatic And Tuber Vegetable Proportion (percent):</strong>
+  <%= '%.2f' % @Aquaticproportion%>
+  </p>
+
+<p>
+  <strong>Fungi And Algae Proportion (percent):</strong>
+  <%= '%.2f' % @Fungiproportion%>
+  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div align="center"><a href="http://localhost:3000/welcome/index" class="btn2">Back to welcome page</a></div>
+</div>

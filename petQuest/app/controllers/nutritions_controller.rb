@@ -4,7 +4,7 @@ class NutritionsController < ApplicationController
   # GET /nutritions
   # GET /nutritions.json
   def index
-    @nutritions = Nutrition.all
+    @nutritions = Nutrition.paginate(:page => params[:page], :per_page =>10)
   end
 
   # GET /nutritions/1

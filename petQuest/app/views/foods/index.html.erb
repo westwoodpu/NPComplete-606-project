@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
+
 
 <h1>Adding Food</h1>
 
@@ -53,46 +54,111 @@
 
 
 
-<br>
-<h3>Import Food</h3>
-<%= form_tag import_foods_path, multipart: true do %>
-  <%= file_field_tag :file2 %>
-  <%= submit_tag "Upload foods" %>
+
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
 <% end %>
 
-<%= link_to 'New Food', new_food_path %>
 
-<h1>Recipe you're creating</h1>
+<h1>Food Lists</h1>
+
 <div class="table-responsive">
     <table class="table">
       <thead>
-        <tr>
-          <th>user_id</th>
-          <th>recipe_id</th>
-          <th>foodname</th>
-          
-          <th>weight</th>
-
-          <th colspan="1"></th>
+        <tr id="tr1">
+          <th>Name</th>
+          <th>Description</th>
+          <th>Reference price</th>
+          <th>Cook method</th>
+          <th>Food category</th>
+          <th>Img dir</th>
+          <th>Food id</th>
+          <th colspan="4"></th>
         </tr>
       </thead>
 
       <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.description %></td>
+            <td><%= food.reference_price %></td>
+            <td><%= food.cook_method %></td>
+            <td><%= food.food_category %></td>
+            <td><%= food.img_dir %></td>
+            <td><%= food.food_id %></td>
+            <td><%= link_to 'Show', food %></td>
+            <td><%= link_to 'Add',  add_path(food) %></td>
+            <td><%= link_to 'Edit', edit_food_path(food) %></td>
+            <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br />
+    <%= will_paginate @foods %>
+    <%= page_entries_info @foods, :entry_name => 'food'%> <br />
+
+</div>
+<div align="center" id="ctn">
+<a href="http://localhost:3000/foods/new" class="btn2">Add new foods(admin)</a>
+>>>>>>> dc83ef42c0f8c4912e7a1c926b1c5a9974f4d553
+
+<br>
+<h3>Import Food</h3>
+<div align="center"><%= form_tag import_foods_path, multipart: true do  %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload foods",:class => 'btn2' %>
+<% end %></div>
+
+<h1>Recipe you're creating</h1>
+<%= form_tag '/create_multiple' do %>
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th>foodname</th>
+          <th>weight</th>
+          <th>edit weight</th>
+
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+            
+      <tbody>
         <% @recipes.each do |recipe| %>
           <tr>
-            <td><%= recipe.user_id %></td>
-            <td><%= recipe.recipe_id %></td>
-            <td><%= recipe.foodname %></td>
-
-            <td><%= form_for :recipe do |f| %>
-                weight: <%= f.text_field :weight %><br />
-                <%= f.submit%>
-                <% end %>
- 
+          
+            <td><%= recipe.foodname  %></td>
+            <td><%= recipe.weight    %></td>
+            <td><%= text_field_tag "recipes[][weight]" %>
+            <%= hidden_field_tag "name[][name]", recipe.foodname %>
+            </td>
             <td><%= link_to 'Submit',  recipe %></td>
             <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+<div align="center">
+           <p>
+
+
+
+  <%= submit_tag "Submit Recipe", :class =>"btn2"%>
+  <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
+
 </div>
+   
+ <% end %>
+</div>
+
+</div>
+
+
+
