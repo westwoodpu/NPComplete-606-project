@@ -95,7 +95,8 @@
 
 
 
-
+<% 
+=begin %>
 
 
 
@@ -130,6 +131,8 @@
     <br />
     
 </div>
+<% 
+
 
 
 
@@ -140,6 +143,7 @@
 
 
 <br>
+=end %>
 
 
 <div class="container"><div class="showcase">
@@ -168,13 +172,17 @@
               <br><br><br><br><br>
 
 
-
+<%
+=begin %>
 
 <h3 align="center" >Import Food</h3>
 <div align="center"><%= form_tag import_foods_path, multipart: true do  %>
   <%= file_field_tag :file %>
   <%= submit_tag "Upload foods",:class => 'btn2' %>
 <% end %></div>
+
+<%
+=end %>
 
 <h1 align="center">Recipe you're creating</h1>
 <%= form_tag '/create_multiple' do %>
