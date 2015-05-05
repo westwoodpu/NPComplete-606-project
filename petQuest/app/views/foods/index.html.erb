@@ -43,64 +43,182 @@
 <% end %>
 <br>
 
-<h1>Adding Food</h1>
+<h2>Food Categories, just click one</h2>
 
+      <!-- Inner Content -->
+      <div class="inner-page padd">
+      
+        <!-- Inner page menu start -->
+        <div class="inner-menu">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Meat</h3>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("猪腿肉.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Meat&Meat Products"}) %>
+                 
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Poultry</h3>
+                  <!-- Image for menu list -->
+              
 
-<%= link_to(image_tag("猪腿肉.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Meat&Meat Products"}) %>
+                  <%= link_to(image_tag("鸡脯肉.jpg",:width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Poultry&Poultry Products"}) %>
+          
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Diary</h3>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("白皮鸡蛋.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Milk & Eggs"}) %>
+      
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Fish</h3>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("马鲛鱼.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Fish_Shelfish&Mollusc"}) %>
+                 
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Oils</h3>
+                  <!-- Image for menu list -->
+              
 
-<%= link_to(image_tag("鸡脯肉.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Poultry&Poultry Products"}) %>
+                  <%= link_to(image_tag("葵花籽油.jpg",:width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Seed_Fat&Oils"}) %>
+          
+                </div>
+              </div>
 
-<%= link_to(image_tag("白皮鸡蛋.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Milk & Eggs"}) %><br>
+            </div>
+              <div class="row">
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Condiment</h3>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("food-condiments.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Condiments"}) %>
+      
+                </div>
+              </div>
 
-<%= link_to(image_tag("马鲛鱼.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Fish_Shelfish&Mollusc"}) %>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Cereal</h3>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("Kellogg-s-cereal-products.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Cereal&Cereal Products"}) %>
+      
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Starch</h3>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("红薯.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "Tubers_Starches&Products"}) %>
+                 
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h4>Root Vegatables</h4>
+                  <!-- Image for menu list -->
+              
 
-<%= link_to(image_tag("葵花籽油.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Seed_Fat&Oils"}) %>
+                  <%= link_to(image_tag("胡萝卜.jpg",:width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "root vegetables"}) %>
+          
+                </div>
+              </div>
 
-<%= link_to(image_tag("food-condiments.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Condiments"}) %><br>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h4>Legume</h4>
+                  <!-- Image for menu list -->
+              
 
-<%= link_to(image_tag("Kellogg-s-cereal-products.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Cereal&Cereal Products"}) %>
+                  <%= link_to(image_tag("荷兰豆.jpg",:width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "leguminous vegetables_Legume products"}) %>
+          
+                </div>
+              </div>
 
-<%= link_to(image_tag("红薯.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "Tubers_Starches&Products"}) %>
+              </div>     
 
-<%= link_to(image_tag("胡萝卜.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "root vegetables"}) %><br>
+               <div class="row">
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h4>Fruit Vegatables</h4>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("番茄.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "solanaceous_melon&fruit vegetables"}) %>
+      
+                </div>
+              </div>
 
-<%= link_to(image_tag("荷兰豆.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "leguminous vegetables_Legume products"}) %>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h4>Flower Vegatables</h4>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("西兰花.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "leafy_flower vegetables"}) %>
+      
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h4>Tuber Vegatables</h4>
+                  <!-- Image for menu list -->
+                  <%= link_to(image_tag("莲藕.jpg", :width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "aquatic_tuber vegetable"}) %>
+                 
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2">
+                <!-- Inner page menu list -->
+                <div class="menu-list">
+                  <!-- Menu item heading -->
+                  <h3>Fungi</h3>
+                  <!-- Image for menu list -->
+              
 
-<%= link_to(image_tag("番茄.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "solanaceous_melon&fruit vegetables"}) %>
-
-
-<%= link_to(image_tag("西兰花.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "leafy_flower vegetables"}) %><br>
-
-<%= link_to(image_tag("莲藕.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "aquatic_tuber vegetable"}) %>
-
-
-<%= link_to(image_tag("u87.jpg"), {:controller => "foods",
-:action => "getfooddata", :Food => "fungi&Algae"}) %>
-
-
-
-
-
-
-
-
-
-
-
-
+                  <%= link_to(image_tag("u87.jpg",:width => 130, :height => 100), {:controller => "foods", :action => "getfooddata", :Food => "root fungi&Algae"}) %>
+          
+                </div>
+              </div>
+              </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
           <tbody>
             <% @foods.each do |food| %>
