@@ -5,7 +5,7 @@
       <div class="banner padd">
         <div class="container">
           <!-- Image -->
-          <div class="img-responsive" alt=""><%=image_tag "crown-white.png"%></div>
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
           <!-- Heading -->
           <h2 class="white">Recipes List</h2>
           <ol class="breadcrumb">
@@ -52,11 +52,11 @@
                 <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
                 <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
-              <div class="ctn0"><p>  </p></div>
+              
             <% end %>
           </tbody>
         </table></div></div></div></div>
-
+<br>
 <div align="center"><a href="http://localhost:3000/recipes/new" class="btn btn-danger" >Add new recipes</a>
 <a href="http://localhost:3000/foods" class="btn btn-danger">Back</a></div></div>
 <br>

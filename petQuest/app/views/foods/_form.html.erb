@@ -10,61 +10,66 @@
       </ul>
     </div>
   <% end %>
-<div class="form-group">
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :reference_price %><br>
-    <%= f.text_field :reference_price %>
-  </div>
-  <div class="field">
-    <%= f.label :cook_method %><br>
-    <%= f.text_field :cook_method %>
-  </div>
+<div class="table-responsive ">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>  
 
-  <div class="field">
-    <%= f.label :food_category %><br>
-    
-      <div class="controls">
-        <%= f.select(:food_category, options_for_select([
-          ['Meat And Meat Products','Meat And Meat Products'],
-          ['Poultry And Poultry Products','Poultry And Poultry Products'],
-          ['Milk And Eggs','Milk And Eggs'],
-          ['Fish Shelfish And Mollusc','Fish Shelfish And Mollusc'],
-          ['Seed Fat And Oils','Seed Fat And Oils'],
-          ['Condiments','Condiments'],
-          ['Cereal And Cereal Products','Cereal And Cereal Products'],
-          ['Tubers Starches And Products','Tubers Starches And Products'],
-          ['Root Vegetables','Root Vegetables'],
-          ['Leguminous Vegetables And Legume Products','Leguminous Vegetables And Legume Products'],
-          ['Solanaceous Melon And Fruit Vegetables','Solanaceous Melon And Fruit Vegetables'],
-          ['Leafy Flower Vegetables','Leafy Flower Vegetables'],
-          ['Aquatic And Tuber Vegetable','Aquatic And Tuber Vegetable'],
-          ['Fungi And Algae','Fungi And Algae']]), { include_blank: true }) %>
-      </div>
-  </div>
+      <tr>
+        <td><%= f.label :description %></td>
+        <td><%= f.text_area :description %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :reference_price %></td>
+        <td><%= f.text_field :reference_price %></td>
+      </tr>
+  
+      <tr>
+        <td><%= f.label :cook_method %></td>
+        <td><%= f.text_field :cook_method %></td>
+      </tr>
 
-  <div class="field">
-    <%= f.label :img_dir %><br>
-    <%= f.text_field :img_dir %>
-  </div>
-  <div class="field">
-    <%= f.label :food_id %><br>
-    <%= f.number_field :food_id %>
-  </div>
-  <div class="ctn0"><p>  </p></div>
-  <div class="actions">
-    <br></br>
-    <%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%>
-    <br></br>
+      <tr>
+                                      <td><%= f.label :food_category %></td>
+                                      <td><div class="controls">
+                            <%= f.select(:food_category, options_for_select([
+                              ['Meat And Meat Products','Meat And Meat Products'],
+                              ['Poultry And Poultry Products','Poultry And Poultry Products'],
+                              ['Milk And Eggs','Milk And Eggs'],
+                              ['Fish Shelfish And Mollusc','Fish Shelfish And Mollusc'],
+                              ['Seed Fat And Oils','Seed Fat And Oils'],
+                              ['Condiments','Condiments'],
+                              ['Cereal And Cereal Products','Cereal And Cereal Products'],
+                              ['Tubers Starches And Products','Tubers Starches And Products'],
+                              ['Root Vegetables','Root Vegetables'],
+                              ['Leguminous Vegetables And Legume Products','Leguminous Vegetables And Legume Products'],
+                              ['Solanaceous Melon And Fruit Vegetables','Solanaceous Melon And Fruit Vegetables'],
+                              ['Leafy Flower Vegetables','Leafy Flower Vegetables'],
+                              ['Aquatic And Tuber Vegetable','Aquatic And Tuber Vegetable'],
+                              ['Fungi And Algae','Fungi And Algae']]), { include_blank: true }) %></div></td>
+                                    </tr>
+                                    <tr>
+                                      <td><%= f.label :img_dir %></td>
+                                      <td><%= f.text_field :img_dir %></td>
+                                    </tr>
+      
+  <tr>
+    <td><%= f.label :img_dir %></td>
+    <td><%= f.text_field :img_dir %></td>
+   </tr> 
+
+  <tr>
+    <td><%= f.label :food_id %></td>
+    <td><%= f.number_field :food_id %></td>
+  </tbody></table></div>
+<br>
+  <div class="actions col-md-offset-5">
+    <%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>
     <a href="http://localhost:3000/foods" class="btn btn-danger" type="button">Back</a>
   </div>
-<% end %>
+
 
 </div>

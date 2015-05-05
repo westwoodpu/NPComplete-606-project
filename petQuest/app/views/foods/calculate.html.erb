@@ -1,122 +1,207 @@
-<div class = 'container-fluid'><h1>Report Here!</h1>
- 
-<div class='text-center'>
-<div style="width:1000px" id="ctn3" class='col-md-1 col-md-offset-1'><p>
-  <h1><strong>Nutrient Analysis</strong></h1></p>
- <p>
-  <strong>Actual Daily ME  (KCal):</strong>
-  <%='%.2f' % @A_ME_result %>
-  </p>
- <p>
-  <strong>Protein (percent):</strong>
-  <%= '%.2f' %@Protein %>
-  </p>
- <p>
-  <strong>Fat (percent):</strong>
-  <%= '%.2f' %@Fat %>
-  </p>
- 
-<p>
-  <strong>NFE  (percent):</strong>
-  <%='%.2f' % (@CHO-@Dietaryfiber) %>
-  </p>
-<p>
-  <strong>CHO  (percent):</strong>
-  <%='%.2f' % @CHO %>
-  </p>
-<p>
-  <strong>Dietary Fiber  (percent):</strong>
-  <%='%.2f' % @Dietaryfiber %>
-  </p>
-<p>
-  <strong>Ash  (percent):</strong>
-  <%='%.2f' % @Ash %>
-  </p>
-<p>
-  <strong>Moisture  (percent):</strong>
-  <%='%.2f' % (100-@Protein-@Fat-@CHO-@Ash) %>
-  </p>
-<p>
-  <h1><strong>Calorie Proportion</strong></h1></p>
- <p>
-  <strong>Protein (percent):</strong>
-  <%= '%.2f' %(@Protein*4.0/@Energy*100.00) %>
-  </p>
- <p>
-  <strong>Fat(percent):</strong>
-  <%= '%.2f' %(@Fat*9.0/@Energy*100.0)%>
-  </p>
- <p>
-  <strong>Carbohydrate  (percent):</strong>
-  <%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %>
-  </p>
+<%=render partial: "layouts/head"%>
+<!-- Banner Start -->
+      
+      <div class="banner padd">
+        <div class="container">
+          <!-- Image -->
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
+          <!-- Heading -->
+          <h2 class="white">Nutrient Report</h2>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Reserve Seats</li>
+          </ol>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <br>
+      <!-- Banner End -->
+<div class="container">
+  <div class ="row">
+    <div class="table-responsive col-md-5 col-md-offset-1">
+                    <table class="table table-bordered">
+                      
+                      <tbody>
+                        <tr><td><strong><center>Nutrient Analysis</center></strong></td></tr>
+                        <tr>
+                          <td>Actual Daily ME  (KCal)</td>
+                          <td><%='%.2f' % @A_ME_result %></td>
+                        </tr>
+                        <tr>
+                          <td>Protein (percent)</td>
+                          <td><%= '%.2f' % @Protein %></td>
+                        </tr>
+                        <tr>
+                          <td>Fat (percent)</td>
+                          <td> <%= '%.2f' % @Fat %></td>
+                        </tr>
+                        <tr>
+                          <td>NFE  (percent)</td>
+                          <td> <%='%.2f' % (@CHO-@Dietaryfiber) %></td>
+                        </tr>
+                        <tr>
+                          <td>Body Condition Score</td>
+                          <td> 5</td>
+                        </tr>
+                        <tr>
+                          <td>Weight</td>
+                          <td> 6</td>
+                        </tr>
+                        <tr>
+                          <td>Activity Level</td>
+                          <td> 7</td>
+                        </tr>
+                      </tbody>
+                    </table></div>
+      <div class="table-responsive col-md-5 ">
+        <table class="table table-bordered">
+                  <tbody>
+
+                        <tr>
+                          <td>Actual Daily ME  (KCal)</td>
+                          <td><%='%.2f' % @A_ME_result %></td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>Pet Type</td>
+                          <td> 3</td>
+                        </tr>
+                        <tr>
+                          <td>Breed</td>
+                          <td> 4</td>
+                        </tr>
+                        <tr>
+                          <td>Body Condition Score</td>
+                          <td> 5</td>
+                        </tr>
+                        <tr>
+                          <td>Weight</td>
+                          <td> 6</td>
+                        </tr>
+                        <tr>
+                          <td>Activity Level</td>
+                          <td> 7</td>
+                        </tr>
+                      </tbody></table></div></div></div>
+        <div align="center"><h1>Nutrient Analysis</h1></div>
+        <tbody>
+          <tr>
+            <td>:</td>
+            <td><td>
+          </tr>
+          
+            <strong>:</strong>
+            
+            </p>
+           <p>
+            <strong>:</strong>
+            
+            </p>
+           
+          <p>
+            <strong>:</strong>
+            
+            </p>
+          <p>
+            <strong>CHO  (percent):</strong>
+            <%='%.2f' % @CHO %>
+            </p>
+          <p>
+            <strong>Dietary Fiber  (percent):</strong>
+            <%='%.2f' % @Dietaryfiber %>
+            </p>
+          <p>
+            <strong>Ash  (percent):</strong>
+            <%='%.2f' % @Ash %>
+            </p>
+          <p>
+            <strong>Moisture  (percent):</strong>
+            <%='%.2f' % (100-@Protein-@Fat-@CHO-@Ash) %>
+            </p>
+          <p>
+            <h1><strong>Calorie Proportion</strong></h1></p>
+           <p>
+            <strong>Protein (percent):</strong>
+            <%= '%.2f' %(@Protein*4.0/@Energy*100.00) %>
+            </p>
+           <p>
+            <strong>Fat(percent):</strong>
+            <%= '%.2f' %(@Fat*9.0/@Energy*100.0)%>
+            </p>
+           <p>
+            <strong>Carbohydrate  (percent):</strong>
+            <%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %>
+            </p>
 
 
-<p>
-  <h1><strong>Ingredient Proportions (percent)</strong></h1></p>
- 
- <p>
-  <strong>Meat And Meat Products Proportion (percent):</strong>
-  <%= '%.2f' %@Meatproportion%>
-  </p>
-<p>
-  <strong>Poultry And Poultry Products Proportion (percent):</strong>
-  <%= '%.2f' % @Poultryproportion%>
-  </p>
-<p>
-  <strong>Milk And Eggs Proportion (percent):</strong>
-  <%= '%.2f' % @Milkeggproportion%>
-  </p>
-<p>
-  <strong>Fish Shelfish And Mollusc Proportion (percent):</strong>
-  <%= '%.2f' % @Fishshellfishproportion%>
-  </p>
-<p>
-  <strong>Seed Fat And Oils Proportion (percent):</strong>
-  <%= '%.2f' % @Seedfatoilproportion%>
-  </p>
-<p>
-  <strong>Condiments Proportion (percent):</strong>
-  <%= '%.2f' % @Condimentsproportion%>
-  </p>
-<p>
-  <strong>Cereal And Cereal Products Proportion (percent):</strong>
-  <%= '%.2f' % @Cerealproportion%>
-  </p>
+          <p>
+            <h1><strong>Ingredient Proportions (percent)</strong></h1></p>
+           
+           <p>
+            <strong>Meat And Meat Products Proportion (percent):</strong>
+            <%= '%.2f' %@Meatproportion%>
+            </p>
+          <p>
+            <strong>Poultry And Poultry Products Proportion (percent):</strong>
+            <%= '%.2f' % @Poultryproportion%>
+            </p>
+          <p>
+            <strong>Milk And Eggs Proportion (percent):</strong>
+            <%= '%.2f' % @Milkeggproportion%>
+            </p>
+          <p>
+            <strong>Fish Shelfish And Mollusc Proportion (percent):</strong>
+            <%= '%.2f' % @Fishshellfishproportion%>
+            </p>
+          <p>
+            <strong>Seed Fat And Oils Proportion (percent):</strong>
+            <%= '%.2f' % @Seedfatoilproportion%>
+            </p>
+          <p>
+            <strong>Condiments Proportion (percent):</strong>
+            <%= '%.2f' % @Condimentsproportion%>
+            </p>
+          <p>
+            <strong>Cereal And Cereal Products Proportion (percent):</strong>
+            <%= '%.2f' % @Cerealproportion%>
+            </p>
 
-<p>
-  <strong>Tubers Starches And Products Proportion (percent):</strong>
-  <%= '%.2f' % @Tubersproportion%>
-  </p>
-<p>
-  <strong>Root Vegetables Proportion (percent):</strong>
-  <%= '%.2f' % @Rootvegetablesproportion%>
-  </p>
-<p>
-  <strong>Leguminous Vegetables And Legume Products Proportion (percent):</strong>
-  <%= '%.2f' % @Leguminousvegetablesproportion%>
-  </p>
+          <p>
+            <strong>Tubers Starches And Products Proportion (percent):</strong>
+            <%= '%.2f' % @Tubersproportion%>
+            </p>
+          <p>
+            <strong>Root Vegetables Proportion (percent):</strong>
+            <%= '%.2f' % @Rootvegetablesproportion%>
+            </p>
+          <p>
+            <strong>Leguminous Vegetables And Legume Products Proportion (percent):</strong>
+            <%= '%.2f' % @Leguminousvegetablesproportion%>
+            </p>
 
-<p>
-  <strong>Solanaceous Melon And Fruit Vegetables Proportion (percent):</strong>
-  <%= '%.2f' % @Solanaceousvegetablesproportion%>
-  </p>
-<p>
-  <strong>Leafy Flower Vegetables Proportion (percent):</strong>
-  <%= '%.2f' % @Leafyflowervegetablesproportion%>
-  </p>
+          <p>
+            <strong>Solanaceous Melon And Fruit Vegetables Proportion (percent):</strong>
+            <%= '%.2f' % @Solanaceousvegetablesproportion%>
+            </p>
+          <p>
+            <strong>Leafy Flower Vegetables Proportion (percent):</strong>
+            <%= '%.2f' % @Leafyflowervegetablesproportion%>
+            </p>
 
-<p>
-  <strong>Aquatic And Tuber Vegetable Proportion (percent):</strong>
-  <%= '%.2f' % @Aquaticproportion%>
-  </p>
+          <p>
+            <strong>Aquatic And Tuber Vegetable Proportion (percent):</strong>
+            <%= '%.2f' % @Aquaticproportion%>
+            </p>
 
-<p>
-  <strong>Fungi And Algae Proportion (percent):</strong>
-  <%= '%.2f' % @Fungiproportion%>
-  </p>
+          <p>
+            <strong>Fungi And Algae Proportion (percent):</strong>
+            <%= '%.2f' % @Fungiproportion%>
+            </p>
 
-
+</table><div><div>
 
 
 
@@ -140,3 +225,6 @@
 
 
 </div></div>
+<br><br>
+
+<%= render partial: "layouts/foot"%>

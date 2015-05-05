@@ -5,7 +5,7 @@
       <div class="banner padd">
         <div class="container">
           <!-- Image -->
-          <div class="img-responsive" alt=""><%=image_tag "crown-white.png"%></div>
+          <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
           <!-- Heading -->
           <h2 class="white">Nutrients List</h2>
           <ol class="breadcrumb">
@@ -99,8 +99,8 @@
           </tbody>
         </table>
         <br />
-        <%= will_paginate @nutritions %>
-        <%= page_entries_info @nutritions, :entry_name => 'nutrition'%> <br />
+        <div align="center"><%= will_paginate @nutritions %>
+        <%= page_entries_info @nutritions, :entry_name => 'nutrition'%> <br /></div>
     </div></div></div></div>
 
     <div class="container"><div class="showcase">

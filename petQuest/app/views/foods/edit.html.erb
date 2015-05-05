@@ -4,9 +4,9 @@
 			<div class="banner padd">
 				<div class="container">
 					<!-- Image -->
-					<img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg">
+					<img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
 					<!-- Heading -->
-					<h2 class="white">Edit</h2>
+					<h2 class="white">Edit Food</h2>
 					<ol class="breadcrumb">
 						<li><a href="index.html"></a></li>
 						<li class="active"></li>
@@ -27,29 +27,10 @@
 								<!-- Paragraph -->
 								<p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna onjecture listing elite, sed do eiusmod tempo aliqua.</p>
 								<!-- Image Slider -->
-								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-									<!-- Wrapper for slides -->
-									<div class="carousel-inner">
-										<div class="item active">
-											<img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg" alt="" />
-										</div>
-										<div class="item">
-											<img class="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg" alt="" />
-										</div>
-										<div class="item">
-											<img class="img-responsive" src="img/booking/table3.jpg" alt="" />
-										</div>
-									</div>
-
-									<!-- Controls -->
-									<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-										<span class="fa fa-chevron-left"></span>
-									</a>
-									<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-										<span class="fa fa-chevron-right"></span>
-									</a>
-								</div>
-							</div>
+								<img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg">
+                </div>
+						
+										
 							<div class="col-md-5">
 								<!-- Booking form area -->
 								<div class="booking-form">
@@ -58,7 +39,78 @@
 									<!-- Paragraph -->
 									<p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna aliqua.</p>
 									<!-- Booking form -->
-									<%= render 'form' %>
+									<%= form_for(@food) do |f| %>
+										  <% if @food.errors.any? %>
+										    <div id="error_explanation">
+										      <h2><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+										      <ul>
+										      <% @food.errors.full_messages.each do |message| %>
+										        <li><%= message %></li>
+										      <% end %>
+										      </ul>
+										    </div>
+										  <% end %>
+
+										  <div class="table-responsive ">
+						                    <table class="table table-bordered">
+						                      
+						                      <tbody>
+						                        <tr>
+						                          <td><%= f.label :name %></td>
+						                          <td> <%= f.text_field :name %></td>
+						                        </tr>
+						                        <tr>
+						                          <td><%= f.label :description %></td>
+						                          <td><%= f.text_area :description %></td>
+						                        </tr>
+						                        <tr>
+						                          <td><%= f.label :reference_price %></td>
+						                          <td><%= f.text_field :reference_price %></td>
+						                        </tr>
+						                        <tr>
+						                        	<td><%= f.label :cook_method %></td>
+						                        	<td><%= f.text_field :cook_method %></td>
+						                        </tr>	
+						                        <tr>
+						                        	<td><%= f.label :food_category %></td>
+						                        	<td><div class="controls">
+										        <%= f.select(:food_category, options_for_select([
+										          ['Meat And Meat Products','Meat And Meat Products'],
+										          ['Poultry And Poultry Products','Poultry And Poultry Products'],
+										          ['Milk And Eggs','Milk And Eggs'],
+										          ['Fish Shelfish And Mollusc','Fish Shelfish And Mollusc'],
+										          ['Seed Fat And Oils','Seed Fat And Oils'],
+										          ['Condiments','Condiments'],
+										          ['Cereal And Cereal Products','Cereal And Cereal Products'],
+										          ['Tubers Starches And Products','Tubers Starches And Products'],
+										          ['Root Vegetables','Root Vegetables'],
+										          ['Leguminous Vegetables And Legume Products','Leguminous Vegetables And Legume Products'],
+										          ['Solanaceous Melon And Fruit Vegetables','Solanaceous Melon And Fruit Vegetables'],
+										          ['Leafy Flower Vegetables','Leafy Flower Vegetables'],
+										          ['Aquatic And Tuber Vegetable','Aquatic And Tuber Vegetable'],
+										          ['Fungi And Algae','Fungi And Algae']]), { include_blank: true }) %></div></td>
+						                        </tr>
+						                        <tr>
+						                        	<td><%= f.label :img_dir %></td>
+						                        	<td><%= f.text_field :img_dir %></td>
+						                        </tr>
+						                        <tr>
+						                        	<td><%= f.label :food_id %><br></td>
+						                        	<td><%= f.number_field :food_id %></td>
+						                        </tr></tbody>
+						                        </table></div>
+										
+										 										  
+  <div class="actions col-md-offset-4">
+    
+    <%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>
+    <a href="http://localhost:3000/foods" class="btn btn-danger" type="button">Back</a>
+  </div>
+
+
+</div>
+
 									
 								</div>
 							</div>
