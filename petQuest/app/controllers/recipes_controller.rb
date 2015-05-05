@@ -21,8 +21,9 @@ class RecipesController < ApplicationController
   def edit
   end
   def create_multiple
+  Rails.logger.debug(params[:id])
   params[:name].zip(params[:recipes]).each do |fname, fweight|
-
+  
   @recipe=Recipe.find_by( foodname: fname['name'])
   if(fweight['weight']!='')
   recipeentry=@recipe.update_attribute(:weight, fweight['weight'])

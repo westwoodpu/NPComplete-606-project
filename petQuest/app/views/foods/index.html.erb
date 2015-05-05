@@ -249,12 +249,16 @@
       </tbody>
     </table>
 
+
+
 <div align="center">
-           <p>
+           <p><%= label_tag(:q, "Select Pet for Recipe:") %></p>
+           
+            <p><%=  collection_select("pet", "ids", Pet.all, :id, :name) %></p>
 
 
 
-  <%= submit_tag "Submit Recipe", :class =>"btn2"%>
+  <p><%= submit_tag "Submit Recipe", :class =>"btn2"%></p>
   <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
 
 </div>
