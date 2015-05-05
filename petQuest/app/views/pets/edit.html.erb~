@@ -34,7 +34,7 @@
  </p>
 
   <p>
-    <%= f.label :age(months) %><br>
+    <%= f.label "age in months" %><br>
     <%= f.text_field :age %>
   </p>
 

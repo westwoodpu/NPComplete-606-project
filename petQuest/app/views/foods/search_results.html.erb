@@ -1,0 +1,6 @@
+ <ul>
+    <% @foods.each do |food| %>
+  <li><%= link_to food.title, 
+    :action => 'show', :id =>food.food_id  %></li>
+  <% end %>
+  </ul>
