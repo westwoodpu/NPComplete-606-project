@@ -36,6 +36,60 @@
           </thead>
 
 
+<h1>Adding Food</h1>
+
+
+<%= link_to(image_tag("猪腿肉.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Meat&Meat Products"}) %>
+
+<%= link_to(image_tag("鸡脯肉.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Poultry&Poultry Products"}) %>
+
+<%= link_to(image_tag("白皮鸡蛋.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Milk & Eggs"}) %><br>
+
+<%= link_to(image_tag("马鲛鱼.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Fish_Shelfish&Mollusc"}) %>
+
+<%= link_to(image_tag("葵花籽油.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Seed_Fat&Oils"}) %>
+
+<%= link_to(image_tag("food-condiments.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Condiments"}) %><br>
+
+<%= link_to(image_tag("Kellogg-s-cereal-products.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Cereal&Cereal Products"}) %>
+
+<%= link_to(image_tag("红薯.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "Tubers_Starches&Products"}) %>
+
+<%= link_to(image_tag("胡萝卜.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "root vegetables"}) %><br>
+
+<%= link_to(image_tag("荷兰豆.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "leguminous vegetables_Legume products"}) %>
+
+<%= link_to(image_tag("番茄.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "solanaceous_melon&fruit vegetables"}) %>
+
+
+<%= link_to(image_tag("西兰花.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "leafy_flower vegetables"}) %><br>
+
+<%= link_to(image_tag("莲藕.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "aquatic_tuber vegetable"}) %>
+
+
+<%= link_to(image_tag("u87.jpg"), {:controller => "foods",
+:action => "getfooddata", :Food => "fungi&Algae"}) %>
+
+
+
+
+
+
+
+
 
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Find food ") %>
@@ -75,6 +129,12 @@
     <br />
     
 </div>
+
+
+
+
+<div align="center" id="ctn">
+<a href="http://localhost:3000/foods/new" class="btn2">Add new foods(admin)</a>
 
 
 

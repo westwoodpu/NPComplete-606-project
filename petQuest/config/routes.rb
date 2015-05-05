@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :posts
+  resources :posts
+  resources :posts
   resources :foods do
     collection {post :import }
   end
@@ -46,6 +49,8 @@ Rails.application.routes.draw do
 
 
    root 'welcome#index'
+
+   get 'getfooddata' => 'foods#getfooddata'
 
 
   # Example of regular route:

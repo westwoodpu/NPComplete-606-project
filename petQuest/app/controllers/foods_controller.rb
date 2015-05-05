@@ -89,6 +89,77 @@ class FoodsController < ApplicationController
     redirect_to foods_path, notice: "Add into recipe successfully"
   end
 
+
+  
+  #
+  def getfooddata
+
+    # this contains what has been selected in the first select box
+
+    
+    # we get the data for selectbox 2
+    if params[:Food] == "Meat&Meat Products"
+    @food_data = Food.where(food_category: "Meat&Meat Products")
+    end
+
+    if params[:Food] == "Poultry&Poultry Products"
+    @food_data = Food.where(food_category: "Poultry&Poultry Products")
+    end
+
+    if params[:Food] == "Milk & Eggs"
+    @food_data = Food.where(food_category: "Milk & Eggs")
+    end
+
+    if params[:Food] == "Fish_Shelfish&Mollusc"
+    @food_data = Food.where(food_category: "Fish_Shelfish&Mollusc")
+    end
+
+    if params[:Food] == "Seed_Fat&Oils"
+    @food_data = Food.where(food_category: "Seed_Fat&Oils")
+    end
+
+    if params[:Food] == "Condiments"
+    @food_data = Food.where(food_category: "Condiments")
+    end
+
+    if params[:Food] == "Cereal&Cereal Products"
+    @food_data = Food.where(food_category: "Cereal&Cereal Products")
+    end
+
+    if params[:Food] == "Tubers_Starches&Products"
+    @food_data = Food.where(food_category: "Tubers_Starches&Products")
+    end
+
+    # we get the data for selectbox 2
+    if params[:Food] == "root vegetables"
+    @food_data = Food.where(food_category: "root vegetables")
+    end
+
+    if params[:Food] == "leguminous vegetables_Legume products"
+    @food_data = Food.where(food_category: "leguminous vegetables_Legume products")
+    end
+
+    if params[:Food] == "solanaceous_melon&fruit vegetables"
+    @food_data = Food.where(food_category: "solanaceous_melon&fruit vegetables")
+    end
+
+    if params[:Food] == "leafy_flower vegetables"
+    @food_data = Food.where(food_category: "leafy_flower vegetables")
+    end
+
+    if params[:Food] == "aquatic_tuber vegetable"
+    @food_data = Food.where(food_category: "aquatic_tuber vegetable")
+    end
+
+    if params[:Food] == "fungi&Algae"
+    @food_data = Food.where(food_category: "fungi&Algae")
+    end
+
+    
+  
+  
+  end
+
    def calculate
 
 #initialize the totals for nutrients
@@ -235,8 +306,10 @@ end
 
 
 #adding up individual nutrients
-=begin
+unless @Food.vitaminA.nil?
 @Vitamin_A=@Vitamin_A+(@Food.vitaminA*recipe.weight)
+end
+=begin
 @Vitamin_D=@Vitamin_D+(@Food.vitaminD*recipe.weight)
 =end
 unless @Food.zinc.nil? or recipe.weight.nil?
@@ -267,15 +340,40 @@ end
 unless @Food.ash.nil? or recipe.weight.nil?
 @Ash=@Ash+@Food.ash+(@Food.ash*recipe.weight)
 end
-=begin
-@Cholesterol=@Cholesterol+(@Food.cholesterol*recipe.weight)
+unless @Food.vitaminE.nil?
+  @Vitamin_E=@Vitamin_E+(@Food.vitaminE*recipe.weight)
+end
+  unless @Food.vitaminB1.nil?
 
+@Vitamin_B1=@Vitamin_B1+(@Food.vitaminB1*recipe.weight)
+end
+unless @Food.calcium.nil?
+
+@Calcium=@Calcium+(@Food.calcium*recipe.weight)
+end
+unless @Food.phosphorous.nil?
+
+@Phosphorous=@Phosphorous+(@Food.phosphorous*recipe.weight)
+end
+unless @Food.potassium.nil?
+
+@Potassium=@Potassium+(@Food.potassium*recipe.weight)
+end
+unless @Food.sodium.nil?
+
+@Sodium=@Sodium+(@Food.sodium*recipe.weight)
+end
+unless @Food.magnesium.nil?
+
+@Magnesium=@Magnesium+(@Food.magnesium*recipe.weight)
+end
+=begin
+
+@Cholesterol=@Cholesterol+(@Food.cholesterol*recipe.weight)
 @Retinol=@Retinol+(@Food.retinol*recipe.weight)
 @Vitamin_K=@Vitamin_K+(@Food.vitaminK*recipe.weight)
 @Vitamin_D=@Vitamin_D+(@Food.vitaminD*recipe.weight)
-@Vitamin_E=@Vitamin_E+(@Food.vitaminE*recipe.weight)
 @Vitamin_C=@Vitamin_C+(@Food.vitaminC*recipe.weight)
-@Vitamin_B1=@Vitamin_B1+(@Food.vitaminB1*ecipe.weight)
 @Vitamin_B2=@Vitamin_B2+(@Food.vitaminB2*recipe.weight)
 @Vitamin_B3=@Vitamin_B3+(@Food.vitaminB3*recipe.weight)
 @Vitamin_B6=@Vitamin_B6+(@Food.vitaminB6*recipe.weight)
@@ -284,12 +382,7 @@ end
 @Choline=@Choline+(@Food.choline*recipe.weight)
 @Biotin=@Biotin+(@Food.biotin*recipe.weight)
 @Vitamin_B5=@Vitamin_B5+(@Food.vitaminb5*recipe.weigh)
-@Calcium=@Calcium+(@Food.calcium*recipe.weight)
-@Phosphorous=@Phosphorous+(@Food.phosphorous*recipe.weight)
-@Potassium=@Potassium+(@Food.potassium*recipe.weight)
-@Sodium=@Sodium+(@Food.sodium*recipe.weight)
 @Chloride=@Chloride+(@Food.chloride*recipe.weight)
-@Magnesium=@Magnesium+(@Food.magnesium*recipe.weight)
 @Iron=@Iron+@Food.iron+(@Food.iron*recipe.weight)
 @Zinc=@Zinc+@Food.zinc+(@Food.zinc*recipe.weight)
 @Selenium=@Selenium+(@Food.selenium*recipe.weight)
@@ -349,7 +442,7 @@ end
 @CHO=@CHO/@Totalweight
 @Dietaryfiber=@Dietaryfiber/@Totalweight
 @Ash=@Ash/@Totalweight
-=begin
+
 @Cholesterol=@Cholesterol/@Totalweight
 
 @Retinol=@Retinol/@Totalweight
@@ -384,18 +477,230 @@ end
 @Lysine=@Lysine/@Totalweight
 @Methionine_cystine=@Methionine_cystine/@Totalweight
 @Methionine=@Methionine/@Totalweight
-@Phenylalanine_tyrosine=@Phenylaline_tyrosine/@Totalweight
-@Phenylalanine=@Phenylaline/@Totalweight
+@Phenylalanine_tyrosine=@Phenylalanine_tyrosine/@Totalweight
+@Phenylalanine=@Phenylalanine/@Totalweight
 @Threonine=@Threonine/@Totalweight
 @Tryptophan=@Tryptophan/@Totalweight
 @Valine=@Valine/@Totalweight
 @Arginine=@Arginine/@Totalweight
-@Histidine=@Histine/@Totalweight
+@Histidine=@Histidine/@Totalweight
 @Linoleic_acid=@Linoleic_acid/@Totalweight
 @Arachidonic_acid=@Arachidonic_acid/@Totalweight
-=end
- @A_ME_result = (@Protein * 4 +@Fat * 9 + (@CHO - @Dietaryfiber) * 4).round(2)
+
+#################################################
+# Cat: all constant numbers for 3500KCal ME
+@protein_3500ME_min_kitten = 300.to_f
+@protein_3500ME_max_adultcat = 260.to_f
+
+@fat_3500ME_min_kitten = 90.to_f
+@fat_3500ME_min_adultcat = 90.to_f
+
+@retinol_3500ME_min_kitten = 2700.to_f
+@retinol_3500ME_min_adultcat = 1500.to_f
+@retinol_3500ME_max = 225000.to_f
+
+@vitamin_k_3500ME_min_kitten = 100.to_f
+@vitamin_k_3500ME_min_adultcat = 100.to_f
+
+@vitamin_d_3500ME_min_kitten = 18.75.to_f
+@vitamin_d_3500ME_min_adultcat = 12.5.to_f
+@vitamin_d_3500ME_max = 250.to_f
+
+@vitamin_e_3500ME_min_kitten = 30.to_f
+@vitamin_e_3500ME_min_adultcat = 30.to_f
+
+@vitamin_c_3500ME_min_kitten = 0.to_f
+@vitamin_c_3500ME_min_adultcat = 0.to_f
+
+@vitamin_b1_3500ME_min_kitten = 5.to_f
+@vitamin_b1_3500ME_min_adultcat = 5.to_f
+
+@vitamin_b2_3500ME_min_kitten = 4.to_f
+@vitamin_b2_3500ME_min_adultcat = 4.to_f
+
+@vitamin_b3_3500ME_min_kitten = 60.to_f
+@vitamin_b3_3500ME_min_adultcat = 60.to_f
+
+@vitamin_b6_3500ME_min_kitten = 4.to_f
+@vitamin_b6_3500ME_min_adultcat = 4.to_f
+
+@vitamin_b12_3500ME_min_kitten = 20.to_f
+@vitamin_b12_3500ME_min_adultcat = 20.to_f
+
+@folic_acid_3500ME_min_kitten = 800.to_f
+@folic_acid_3500ME_min_adultcat = 800.to_f
+
+@choline_3500ME_min_kitten = 2400.to_f
+@choline_3500ME_min_adultcat = 2400.to_f
+
+@biotin_3500ME_min_kitten = 70.to_f
+@biotin_3500ME_min_adultcat = 70.to_f
+
+@vitamin_b5_3500ME_min_kitten = 5.to_f
+@vitamin_b5_3500ME_min_adultcat = 5.to_f
+
+@calcium_3500ME_min_kitten = 10000.to_f
+@calcium_3500ME_min_adultcat = 6000.to_f
+
+@phosphorous_3500ME_min_kitten = 8000.to_f
+@phosphorous_3500ME_min_adultcat = 5000.to_f
+
+@potassium_3500ME_min_kitten = 6000.to_f
+@potassium_3500ME_min_adultcat = 6000.to_f
+
+@sodium_3500ME_min_kitten = 2000.to_f
+@sodium_3500ME_min_adultcat = 2000.to_f
+
+@chloride_3500ME_min_kitten = 3000.to_f
+@chloride_3500ME_min_adultcat = 3000.to_f
+
+@magnesium_3500ME_min_kitten = 800.to_f
+@magnesium_3500ME_min_adultcat = 400.to_f
+
+@iron_3500ME_min_kitten = 80.to_f
+@iron_3500ME_min_adultcat = 80.to_f
+
+@zinc_3500ME_min_kitten = 75.to_f
+@zinc_3500ME_min_adultcat = 75.to_f
+@zinc_3500ME_max = 2000.to_f
+
+@selenium_3500ME_min_kitten = 100.to_f
+@selenium_3500ME_min_adultcat = 100.to_f
+
+@copper_3500ME_min_kitten = 15.to_f
+@copper_3500ME_min_adultcat = 5.to_f
+
+@manganese_3500ME_min_kitten = 7.5.to_f
+@manganese_3500ME_min_adultcat = 7.5.to_f
+
+@taurine_3500ME_min_kitten = 2000.to_f
+@taurine_3500ME_min_adultcat = 2000.to_f
+
+@isoleucine_3500ME_min_kitten = 5200.to_f
+@isoleucine_3500ME_min_adultcat = 5200.to_f
+
+@leucine_3500ME_min_kitten = 12500.to_f
+@leucine_3500ME_min_adultcat = 12500.to_f
+
+@lysine_3500ME_min_kitten = 12000.to_f
+@lysine_3500ME_min_adultcat = 8300.to_f
+
+@methionine_cystine_3500ME_min_kitten = 11000.to_f
+@methionine_cystine_3500ME_min_adultcat = 11000.to_f
+
+@methionine_3500ME_min_kitten = 6200.to_f
+@methionine_3500ME_min_adultcat = 6200.to_f
+@methionine_3500ME_max = 15000.to_f
+
+@phenylalanine_tyrosine_3500ME_min_kitten = 8800.to_f
+@phenylalanine_tyrosine_3500ME_min_adultcat = 8800.to_f
+
+@phenylalanine_3500ME_min_kitten = 4200.to_f
+@phenylalanine_3500ME_min_adultcat = 4200.to_f
+
+@threonine_3500ME_min_kitten = 7300.to_f
+@threonine_3500ME_min_adultcat = 7300.to_f
+
+@tryptophan_3500ME_min_kitten = 2500.to_f
+@tryptophan_3500ME_min_adultcat = 1600.to_f
+
+@valine_3500ME_min_kitten = 6200.to_f
+@valine_3500ME_min_adultcat = 6200.to_f
+
+@arginine_3500ME_min_kitten = 12500.to_f
+@arginine_3500ME_min_adultcat = 10400.to_f
+
+@histidine_3500ME_min_kitten = 3100.to_f
+@histidine_3500ME_min_adultcat = 3100.to_f
+
+@linoleic_acid_3500ME_min_kitten = 5000.to_f
+@linoleic_acid_3500ME_min_adultcat = 5000.to_f
+
+@arachidonic_acid_3500ME_min_kitten = 200.to_f
+@arachidonic_acid_3500ME_min_adultcat = 200.to_f
+
+# Dog: all constant numbers for 3500KCal ME
+@vitamin_e_3500ME_min_puppy = 50.to_f
+@vitamin_e_3500ME_min_adultdog = 50.to_f
+
+@vitamin_b1_3500ME_min_puppy = 1.to_f
+@vitamin_b1_3500ME_min_adultdog = 1.to_f
+
+@calcium_3500ME_min_puppy = 10000.to_f
+@calcium_3500ME_min_adultdog = 6000.to_f
+@calcium_3500ME_max_dog = 25000.to_f
+
+@phosphorous_3500ME_min_puppy = 8000.to_f
+@phosphorous_3500ME_min_adultdog = 5000.to_f
+@phosphorous_3500ME_max_dog = 16000.to_f
+
+@potassium_3500ME_min_puppy = 6000.to_f
+@potassium_3500ME_min_adultdog = 6000.to_f
+
+@sodium_3500ME_min_puppy = 3000.to_f
+@sodium_3500ME_min_adultdog = 600.to_f
+
+@magnesium_3500ME_min_puppy = 400.to_f
+@magnesium_3500ME_min_adultdog = 400.to_f
+@magnesium_3500ME_max_dog = 400.to_f
+
+# A_ME_protein : protain weight regrading to the actual ME
+@pet = Pet.find(4)
+case @pet.pet_type
+when "Cat"
+  @A_ME_result = (@Protein * 4 + @Fat * 8.5.to_f + (@CHO - @Dietaryfiber) * 4).round(2)
+  if @pet.age.to_f < 1
+    @A_ME_vitamin_e  = (@vitamin_e_3500ME_min_kitten / 3500) * @A_ME_result
+    @A_ME_vitamin_b1  = (@vitamin_b1_3500ME_min_kitten / 3500) * @A_ME_result
+    @A_ME_calcium  = @calcium_3500ME_min_kitten / 3500 * @A_ME_result
+    @A_ME_phosphorous = @phosphorous_3500ME_min_kitten / 3500 * @A_ME_result
+    @A_ME_potassium  = @potassium_3500ME_min_kitten / 3500 * @A_ME_result
+    @A_ME_sodium  = @sodium_3500ME_min_kitten / 3500 * @A_ME_result
+    @A_ME_magnesium  = @magnesium_3500ME_min_kitten / 3500 * @A_ME_result
+    
+  else
+    @A_ME_vitamin_e  = @vitamin_e_3500ME_min_adultcat / 3500 * @A_ME_result
+    @A_ME_vitamin_b1  = @vitamin_b1_3500ME_min_adultcat / 3500 * @A_ME_result
+    @A_ME_calcium  = @calcium_3500ME_min_adultcat / 3500 * @A_ME_result
+    @A_ME_phosphorous = @phosphorous_3500ME_min_adultcat / 3500 * @A_ME_result
+    @A_ME_potassium  = @potassium_3500ME_min_adultcat / 3500 * @A_ME_result
+    @A_ME_sodium  = @sodium_3500ME_min_adultcat / 3500 * @A_ME_result
+    @A_ME_magnesium  = @magnesium_3500ME_min_adultcat / 3500 * @A_ME_result
+  end
+
+ 
+when "Dog"
+  @A_ME_result = (@Protein * 4 + @Fat * 9 + (@CHO - @Dietaryfiber) * 4).round(2)
+  @A_ME_calcium_max  = @calcium_3500ME_max_dog / 3500 * @A_ME_result
+  @A_ME_phosphorous_max  = @phosphorous_3500ME_max_dog / 3500 * @A_ME_result
+  @A_ME_magnesium  = @magnesium_3500ME_max_dog / 3500 * @A_ME_result
+
+  if @pet.age.to_f < 1
+    @A_ME_vitamin_e  = (@vitamin_e_3500ME_min_puppy / 3500).to_f * @A_ME_result
+    @A_ME_vitamin_b1  = (@vitamin_b1_3500ME_min_puppy / 3500).to_f * @A_ME_result
+    @A_ME_calcium  = @calcium_3500ME_min_puppy / 3500 * @A_ME_result
+    @A_ME_phosphorous = @phosphorous_3500ME_min_puppy / 3500 * @A_ME_result
+    @A_ME_potassium  = @potassium_3500ME_min_puppy / 3500 * @A_ME_result
+    @A_ME_sodium  = @sodium_3500ME_min_puppy / 3500 * @A_ME_result
+    @A_ME_magnesium  = @magnesium_3500ME_min_puppy / 3500 * @A_ME_result 
+    
+  else
+    @A_ME_vitamin_e  = @vitamin_e_3500ME_min_adultdog / 3500 * @A_ME_result
+    @A_ME_vitamin_b1  = @vitamin_b1_3500ME_min_adultdog / 3500 * @A_ME_result
+    @A_ME_calcium  = @calcium_3500ME_min_adultdog / 3500 * @A_ME_result
+    @A_ME_phosphorous = @phosphorous_3500ME_min_adultdog / 3500 * @A_ME_result
+    @A_ME_potassium  = @potassium_3500ME_min_adultdog / 3500 * @A_ME_result
+    @A_ME_sodium  = @sodium_3500ME_min_adultdog / 3500 * @A_ME_result
+    @A_ME_magnesium  = @magnesium_3500ME_min_adultdog / 3500 * @A_ME_result
+  
+  end
+else "No such pet type found"
+
 end
+
+
+end
+
 
 
 
@@ -410,3 +715,4 @@ end
       params.require(:food).permit(:name, :description, :reference_price, :cook_method, :food_category, :img_dir, :food_id)
     end
 end
+
