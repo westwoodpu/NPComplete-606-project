@@ -74,6 +74,76 @@ class FoodsController < ApplicationController
     redirect_to foods_path, notice: "Add into recipe successfully"
   end
 
+  
+  #
+  def getfooddata
+
+    # this contains what has been selected in the first select box
+
+    
+    # we get the data for selectbox 2
+    if params[:Food] == "Meat&Meat Products"
+    @food_data = Food.where(food_category: "Meat&Meat Products")
+    end
+
+    if params[:Food] == "Poultry&Poultry Products"
+    @food_data = Food.where(food_category: "Poultry&Poultry Products")
+    end
+
+    if params[:Food] == "Milk & Eggs"
+    @food_data = Food.where(food_category: "Milk & Eggs")
+    end
+
+    if params[:Food] == "Fish_Shelfish&Mollusc"
+    @food_data = Food.where(food_category: "Fish_Shelfish&Mollusc")
+    end
+
+    if params[:Food] == "Seed_Fat&Oils"
+    @food_data = Food.where(food_category: "Seed_Fat&Oils")
+    end
+
+    if params[:Food] == "Condiments"
+    @food_data = Food.where(food_category: "Condiments")
+    end
+
+    if params[:Food] == "Cereal&Cereal Products"
+    @food_data = Food.where(food_category: "Cereal&Cereal Products")
+    end
+
+    if params[:Food] == "Tubers_Starches&Products"
+    @food_data = Food.where(food_category: "Tubers_Starches&Products")
+    end
+
+    # we get the data for selectbox 2
+    if params[:Food] == "root vegetables"
+    @food_data = Food.where(food_category: "root vegetables")
+    end
+
+    if params[:Food] == "leguminous vegetables_Legume products"
+    @food_data = Food.where(food_category: "leguminous vegetables_Legume products")
+    end
+
+    if params[:Food] == "solanaceous_melon&fruit vegetables"
+    @food_data = Food.where(food_category: "solanaceous_melon&fruit vegetables")
+    end
+
+    if params[:Food] == "leafy_flower vegetables"
+    @food_data = Food.where(food_category: "leafy_flower vegetables")
+    end
+
+    if params[:Food] == "aquatic_tuber vegetable"
+    @food_data = Food.where(food_category: "aquatic_tuber vegetable")
+    end
+
+    if params[:Food] == "fungi&Algae"
+    @food_data = Food.where(food_category: "fungi&Algae")
+    end
+
+    
+  
+  
+  end
+
 
 
   private
