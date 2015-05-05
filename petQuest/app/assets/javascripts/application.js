@@ -37,7 +37,7 @@ $(document).ready(function() {
 
   $(document).ajaxSuccess(function(evt, xhr, options, data) {
 
-	   
+	   window.alert(5);
     // get second selectbox by its id
     var selectbox2 = $('#second_select');
     // empty it
@@ -51,7 +51,6 @@ $(document).ready(function() {
       var opt = $('<option/>');
 
       // value is an array: [:id, :name]
-      window.alert(value)
       opt.attr('value', value[0]);
       // set text
       opt.text(value[1]);

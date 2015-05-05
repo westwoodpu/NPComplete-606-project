@@ -116,7 +116,22 @@
           </div>
         
 
- 
+
+</script>
         <!-- Booking End -->      
 <%= render partial: "layouts/foot"%>
+
+*/
+<script type="text/JavaScript">
+$(function(){
+  $('#first_select').bind('change', function(){
+    $.ajax({
+      url: "<%= getdata_path %>",
+      data: {
+        :pet_type: $(this).val()
+      }
+    });
+  });
+});
+</script>
 
