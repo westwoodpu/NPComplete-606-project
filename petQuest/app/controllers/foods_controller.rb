@@ -245,39 +245,39 @@ Rails.logger.debug(@Food)
 case @Food.category
 
 when 'Meat&Meat Products'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Meatproportion=recipe.weight+@Meatproportion
 end
 when 'Poultry&Poultry Products'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Poultryproportion=recipe.weight+@Poultryproportion
 end
 when 'Milk & Eggs'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Milkeggproportion=recipe.weight+@Milkeggproportion
 end
 when 'Fish_Shelfish&Mollusc'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Fishshellfishproportion=recipe.weight+@Fishshellfishproportion
 end
 when 'Seed_Fat&Oils'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Seedfatoilproportion=recipe.weight+@Seedfatoilproportion
 end
 when 'Condiments'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Condimentsproportion=recipe.weight+@Condimentsproportion
 end
 when 'Cereal And Cereal Products'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Cerealproportion=recipe.weight+@Cerealproportion
 end
 when 'Tubers_Starches&Products'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Tubersproportion=recipe.weight+@Tubersproportion
 end
 when 'root vegetables'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Rootvegetablesproportion=recipe.weight+@Rootvegetablesproportion
 end
 when 'leguminous vegetables_Legume products'
@@ -289,15 +289,15 @@ unless recipe.weight.nil?
 @Solanaceousvegetablesproportion=recipe.weight+@Solanaceousvegetablesproportion
 end
 when 'leafy_flower vegetables'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Leafyflowervegetablesproportion=recipe.weight+@Leafyflowervegetablesproportion
 end
 when 'aquatic_tuber vegetable'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Aquaticproportion=recipe.weight+@Aquaticproportion
 end
 when 'Fungi&Algae'
-unless recipe.weight.nil?
+unless recipe.weight.nil? or recipe.weight.nil?
 @Fungiproportion=recipe.weight+@Fungiproportion
 end
 end
@@ -306,7 +306,7 @@ end
 
 
 #adding up individual nutrients
-unless @Food.vitaminA.nil?
+unless @Food.vitaminA.nil? or recipe.weight.nil?
 @Vitamin_A=@Vitamin_A+(@Food.vitaminA*recipe.weight)
 end
 =begin
@@ -340,30 +340,30 @@ end
 unless @Food.ash.nil? or recipe.weight.nil?
 @Ash=@Ash+@Food.ash+(@Food.ash*recipe.weight)
 end
-unless @Food.vitaminE.nil?
+unless @Food.vitaminE.nil? or recipe.weight.nil?
   @Vitamin_E=@Vitamin_E+(@Food.vitaminE*recipe.weight)
 end
-  unless @Food.vitaminB1.nil?
+  unless @Food.vitaminB1.nil? or recipe.weight.nil?
 
 @Vitamin_B1=@Vitamin_B1+(@Food.vitaminB1*recipe.weight)
 end
-unless @Food.calcium.nil?
+unless @Food.calcium.nil? or recipe.weight.nil?
 
 @Calcium=@Calcium+(@Food.calcium*recipe.weight)
 end
-unless @Food.phosphorous.nil?
+unless @Food.phosphorous.nil? or recipe.weight.nil?
 
 @Phosphorous=@Phosphorous+(@Food.phosphorous*recipe.weight)
 end
-unless @Food.potassium.nil?
+unless @Food.potassium.nil? or recipe.weight.nil?
 
 @Potassium=@Potassium+(@Food.potassium*recipe.weight)
 end
-unless @Food.sodium.nil?
+unless @Food.sodium.nil? or recipe.weight.nil?
 
 @Sodium=@Sodium+(@Food.sodium*recipe.weight)
 end
-unless @Food.magnesium.nil?
+unless @Food.magnesium.nil? or recipe.weight.nil?
 
 @Magnesium=@Magnesium+(@Food.magnesium*recipe.weight)
 end
@@ -465,8 +465,8 @@ end
 @Sodium=@Sodium/@Totalweight
 @Chloride=@Chloride/@Totalweight
 @Magnesium=@Magnesium/@Totalweight
-@Iron=@Iron+@Food.iron/@Totalweight
-@Zinc=@Zinc+@Food.zinc/@Totalweight
+@Iron=@Iron/@Totalweight
+@Zinc=@Zinc/@Totalweight
 @Selenium=@Selenium/@Totalweight
 @Copper=@Copper/@Totalweight
 @Manganese=@Manganese/@Totalweight

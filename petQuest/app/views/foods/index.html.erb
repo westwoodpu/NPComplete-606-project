@@ -36,6 +36,13 @@
           </thead>
 
 
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Find food ") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %><br>
+<% end %>
+<br>
+
 <h1>Adding Food</h1>
 
 
@@ -91,12 +98,6 @@
 
 
 
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Find food ") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %><br>
-<% end %>
-<br>
 
 
 
@@ -205,12 +206,7 @@
   </div>    
 </div>
 <div align="center">
-<%= form_for @food, url: {action: "calculate"} do |f| %>
 
-
-  <%= f.submit "Submit Recipe", :class=>"btn btn-danger",:type=>"button"%>
-</div>
-<% end %>
 
 <h3>Import Food</h3>
 <div align="center"><%= form_tag import_foods_path, multipart: true do  %>
@@ -254,7 +250,7 @@
 <div align="center">
            <p><%= label_tag(:q, "Select Pet for Recipe:") %></p>
            
-            <p><%=  collection_select("pet", "ids", Pet.all, :id, :name) %></p>
+            <p><%=  collection_select("pet", "ids", Pet.all, :id, :name) %></p><br>
 
 
 
