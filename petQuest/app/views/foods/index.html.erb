@@ -167,53 +167,16 @@
               </div></div></div></div></div>
               <br><br><br><br><br>
 
-<div align="center"><h1>Recipe you're creating</h1><br></div>
-<div class="container">
-  <div class ="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              
-              <th>foodname</th>
-              <th>weight</th>
-              <th>edit weight</th>
-
-              <th colspan="2"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @recipes.each do |recipe| %>
-              <tr>
-              
-                <td><%= recipe.foodname  %></td>
-                <td><%= recipe.weight    %></td>
-                <td><%= form_for  recipe do |f| %>
-                    <%= f.text_field :weight %><br />
-                    <% end %>
-                </td>
-                <td><%= link_to 'Submit',  recipe %></td>
-                <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>    
-</div>
-<div align="center">
 
 
-<h3>Import Food</h3>
+
+<h3 align="center" >Import Food</h3>
 <div align="center"><%= form_tag import_foods_path, multipart: true do  %>
   <%= file_field_tag :file %>
   <%= submit_tag "Upload foods",:class => 'btn2' %>
 <% end %></div>
 
-<h1>Recipe you're creating</h1>
+<h1 align="center">Recipe you're creating</h1>
 <%= form_tag '/create_multiple' do %>
 <div class="table-responsive">
     <table class="table">
