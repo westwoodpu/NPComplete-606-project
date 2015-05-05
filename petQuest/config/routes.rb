@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'search(.:format)' => 'foods#search', :as => :search
   post 'search(.:format)' => 'foods#search', :as => :searchmore
    resources :pets
-   get 'pets/:id/me(.:format)' => 'pets#me', :as => :me_pet# to calculate the ME for pet(:id)
+   #get 'pets/:id/me(.:format)' => 'pets#me'  # to calculate the ME for pet(:id)
    get 'calculate' => 'foods#calculate', :as => :calculate# to calculate the ME for pet(:id)
    post 'calculate' => 'foods#calculate', :as => :calculatemore# to calculate the ME for pet(:id)
   # You can have the root of your site routed with "root"
