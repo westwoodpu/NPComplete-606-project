@@ -6,7 +6,7 @@
           <!-- Image -->
           <div class="col-md-12"><img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" /></div>
           <!-- Heading -->
-          <h2 class="white">New Pet</h2>
+          <h2 class="brown">New Pet</h2>
           <ol class="breadcrumb">
             <li><a href="index.html"></a></li>
             <li class="active"></li>
@@ -25,7 +25,7 @@
                 <!-- Heading -->
                 <h3>Add Pet</h3>
                 <!-- Paragraph -->
-                <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna onjecture listing elite, sed do eiusmod tempo aliqua.</p>
+              
                 <!-- Image Slider -->
                 <img class="img-responsive" src="http://www.hdwallpapers11.com/wallpapers/2560x1600/cute-white-dog-2560x1600.jpg">
               </div>
@@ -35,7 +35,7 @@
                   <!-- Heading -->
                   <h3>Add new pets</h3>
                   <!-- Paragraph -->
-                  <p>We care petWe care petWe care petWe care petWe care petWe care petWe care petWe care petWe care pet</p>
+                  
                   <!-- Booking form -->
                   <%= form_for :pet, url: pets_path(@pet) do |f| %>
 
@@ -104,9 +104,15 @@
 
                       </tbody>
                     </table>
-  
-                      <div class="col-md-offset-2"><%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>
-                      <a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div>
+                    <tr>
+                    <td><%= f.submit %><td>
+                    </tr>
+
+                    <tr>
+                    <td><a href='http://localhost:3000/pets'>Back<td>
+                    </tr>
+                      <!--<div class="col-md-offset-2"><%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>-->
+                      <!--<a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div>-->
                   </div>
 
                   

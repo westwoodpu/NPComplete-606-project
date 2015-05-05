@@ -21,7 +21,8 @@ class RecipesController < ApplicationController
   def edit
   end
   def create_multiple
-  Rails.logger.debug(params[:ids])
+  Rails.logger.debug("SSSSSSSSSSSSSSSSSSSSSS")
+  Rails.logger.debug(params[:pet][:name])
 
   params[:name].zip(params[:recipes]).each do |fname, fweight|
   
@@ -30,7 +31,9 @@ class RecipesController < ApplicationController
   recipeentry=@recipe.update_attribute(:weight, fweight['weight'])
   end
   end
-  redirect_to calculate_path
+  respond_to do |format|
+  format.html{ redirect_to calculate_path(:name => params[:pet][:name]) }
+  end
   end 
 
 
