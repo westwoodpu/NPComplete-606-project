@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
 @food = Food.new
     @recipes = Recipe.all
   @recipe=Recipe.new
-
+  @pets=Pet.all
   end
 
   # GET /foods/1

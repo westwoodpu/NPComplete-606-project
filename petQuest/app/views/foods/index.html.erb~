@@ -80,7 +80,7 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
           
             <td><%= recipe.foodname  %></td>
             <td><%= recipe.weight    %></td>
-            <td><%= text_field_tag "recipes[][nape]" %>
+            <td><%= text_field_tag "recipes[][weight]" %>
             <%= hidden_field_tag "name[][name]", recipe.foodname %>
             </td>
             <td><%= link_to 'Submit',  recipe %></td>
@@ -90,12 +90,16 @@ f<div class='container-fluid text-center'><p id="notice"><%= notice %></p>
       </tbody>
     </table>
 
+
+
 <div align="center">
-           <p>
+           <p><%= label_tag(:q, "Select Pet for Recipe:") %></p>
+           
+            <p><%=  collection_select("pet", "ids", @pets.collect {|p| [ p.name, p.id ] }, { :prompt => 'Select' }) %></p>
 
 
 
-  <%= submit_tag "Submit Recipe", :class =>"btn2"%>
+  <p><%= submit_tag "Submit Recipe", :class =>"btn2"%></p>
   <a href="http://localhost:3000/welcome/index" class="btn2">Back to homepage</a></div>
 
 </div>

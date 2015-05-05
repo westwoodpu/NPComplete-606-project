@@ -34,5 +34,5 @@
     <br />
     <%= will_paginate @foodresults %>
     <%= page_entries_info @foodresults, :entry_name => 'food'%> <br />
-
+     <a href="http://localhost:3000/foods" class="btn2">Back to homepage</a></div>
 </div>
