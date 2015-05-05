@@ -192,7 +192,6 @@
                 <td><%= recipe.weight    %></td>
                 <td><%= form_for  recipe do |f| %>
                     <%= f.text_field :weight %><br />
-                    <%= f.submit nil, :class=>"btn btn-danger",:type=>"button"%>
                     <% end %>
                 </td>
                 <td><%= link_to 'Submit',  recipe %></td>
