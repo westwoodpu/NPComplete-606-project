@@ -45,25 +45,25 @@
                           <td> <%= @pet.body_condition_score %></td>
                         </tr>
                         <tr>
-                          <td>Weight (Kg)</td>
-                          <td> <%= @pet.body_weight %></td>
+                          <td>Weight </td>
+                          <td> <%= @pet.body_weight %> Kg </td>
                         </tr>
                         <tr>
                           <td>Activity Level</td>
                           <td> <%= @pet.activity %></td>
                         </tr>
                         <tr>
-                          <td>Recommended Daily Metabolic Energy (KCal)</td>
-                          <td> <%= @me_result %></td>
+                          <td>Recommended Daily Metabolic Energy </td>
+                          <td> <%= @me_result %> KCal </td>
                         </tr>
                       </tbody>
                     </table>
-                    <%= link_to 'Edit', edit_pet_path(@pet), :class=>"btn btn-danger", :type=>"button"%>   
+                    <div class= "col-md-offset-2"><%= link_to 'Edit', edit_pet_path(@pet), :class=>"btn btn-danger", :type=>"button"%>   
                     <a href="http://localhost:3000/pets/new" class="btn btn-danger">Add a new pet</a>
  
                     <a href="http://localhost:3000/foods" class="btn btn-danger">Select food</a>
 
-                    <a href="http://localhost:3000/pets" class="btn btn-danger" type ="button">Back</a>
+                    <a href="http://localhost:3000/pets" class="btn btn-danger" type ="button">Back</a></div>
                   </div>
                 </div>
               </div>  
@@ -73,8 +73,8 @@
    <br><br><br>
   
   </div></div>
+<%=render partial: "layouts/foot"%>
 
-<%= render partial: "layouts/foot"%>
 
 
 

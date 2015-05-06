@@ -25,8 +25,12 @@
                       <tbody>
                         <tr><td><strong><center>Nutrient Analysis</center></strong></td></tr>
                         <tr>
-                          <td>Actual Daily ME </td>
+                          <td>Actual Daily Metabolic Energy </td>
                           <td><%='%.2f' % @A_ME_result %> KCal/100g </td>
+                        </tr>
+                        <tr>
+                          <td>Energy Density </td>
+                          <td><%='%.2f' % @Energy %> KCal/100g </td>
                         </tr>
 
                         <tr>
@@ -38,8 +42,37 @@
                           <td> <%= '%.2f' % @Fat %> g/100g </td>
                         </tr>
                         <tr>
-                          <td>NFE </td>
+                          <td>Carbohydrate </td>
                           <td> <%='%.2f' % (@CHO-@Dietaryfiber) %> g/100g </td>
+                        </tr>
+                        
+
+
+                        <tr><td><strong><center>Nutrition Composition</center></strong></td></tr>           
+                        
+                        <tr>
+                          <td>Mositure</td>
+                          <td><%= '%.2f' % (100-@Protein-@Fat-@CHO-@Ash) %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Protein</td>
+                          <td><%= '%.2f' % @Protein %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Fat</td>
+                          <td><%= '%.2f' % @Fat %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Carbohydrate</td>
+                          <td><%= '%.2f' % (@CHO - @Dietaryfiber) %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Dietary Fiber </td>
+                          <td><%='%.2f' % @Dietaryfiber %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Ash </td>
+                          <td><%='%.2f' % @Ash %> % </td>
                         </tr>
                         
                       </tbody>
@@ -71,10 +104,7 @@
                         </tr>
 
                     <tr><td><strong><center>Calorie Proportion</center></strong></td></tr>           
-                        <tr>
-                          <td>Total Energy </td>
-                          <td><%='%.2f' % @Energy %> KCal/100g </td>
-                        </tr>
+                        
                         <tr>
                           <td>Protein</td>
                           <td><%= '%.2f' %(@Protein*4.0/@Energy*100.00) %> % </td>
@@ -88,51 +118,11 @@
                           <td><%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %> % </td>
                         </tr>
 
-                         <tr><td><strong><center>Nutrition Analysis</center></strong></td></tr>           
-                        <tr>
-                          <td>Energy Density </td>
-                          <td><%='%.2f' % @Energy %> KCal/100g </td>
-                        </tr>
-                        <tr>
-                          <td>Mositure</td>
-                          <td><%= '%.2f' % (100-@Protein-@Fat-@CHO-@Ash) %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Protein</td>
-                          <td><%= '%.2f' % @Protein %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Fat</td>
-                          <td><%= '%.2f' % @Fat %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Carbohydrate</td>
-                          <td><%= '%.2f' % (@CHO - @Dietaryfiber) %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Dietary Fiber </td>
-                          <td><%='%.2f' % @Dietaryfiber %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Ash </td>
-                          <td><%='%.2f' % @Ash %> % </td>
-                        </tr>
+                         
                         
                       </tbody></table></div></div></div>
         <div align="center"><h1>Nutrient Analysis</h1></div>
-        <tbody>
-          <tr>
-            <td>:</td>
-            <td><td>
-          </tr>
-          
-            <strong>:</strong>
-            
-            </p>
-           <p>
-            <strong>:</strong>
-            
-            </p>
+        
 <%
 =begin %>           
           <p>
@@ -239,11 +229,11 @@
 <%
 =end %>
 
-<div class = 'container-fluid'><h1>Report Here!</h1>
+
  
 <div class='text-center'>
 <div style="width:1000px" id="ctn3" class='col-md-1 col-md-offset-1'><p>
-  <h1><strong>Nutrient Analysis</strong></h1></p>
+  
  <p>
   <strong>Actual Daily ME  (KCal):</strong>
   <%='%.2f' % @A_ME_result %>

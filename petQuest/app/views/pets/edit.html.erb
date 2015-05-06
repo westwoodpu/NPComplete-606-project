@@ -18,26 +18,33 @@
       <!-- Banner End -->
  <!-- Booking Start -->
         
-        <div class="booking">
+   
           <div class="container">
             <div class="row">
               <div class="col-md-7">
                 <!-- Heading -->
-                <h3>Edit pets</h3>
+                
                 <!-- Paragraph -->
-                <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna onjecture listing elite, sed do eiusmod tempo aliqua.</p>
+
+                <p><br></p>
+                <p><br></p>
+
+
+                
                 <!-- Image Slider -->
+                <br>
                 <img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg">
                 </div>
               
               <div class="col-md-5">
                 <!-- Booking form area -->
-              <div class="booking-form">
+             
                   <!-- Heading -->
                   <h3>Edit pets</h3>
                   <!-- Paragraph -->
-                  <p>Loren gypsum dolour sit amet, conjecture listing elite, sed do eiusmod tempor incident ut laboured et magna aliqua.</p>
+
                   <!-- Booking form -->
+
                   <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
 
@@ -54,10 +61,12 @@
                         </ul>
                       </div>
                     <% end %>
+
                     <div class="table-responsive ">
                     <table class="table table-bordered">
                       
                       <tbody>
+
                         <tr>
                           <td><%= f.label :name %></td>
                           <td> <%= f.text_field :name %></td>
@@ -104,6 +113,8 @@
                           <td> <%= f.select(:activity,options_for_select([['Active',"Active"],            ['Inactive',"Inactive"]])) %></td>
                         </tr>
 
+
+
 <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
   <% if @pet.errors.any? %>
@@ -119,55 +130,21 @@
       </ul>
     </div>
   <% end %>
-  <div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
-  <p>
-    <%= f.label :gender %><br>
-    <select name="gender">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-    
-</select>
-  </p>
 
-  <p>
-    <%= f.label "age in years" %><br>
-    <%= f.text_field :age %>
-  </p>
-
-<p>
- </p>
-
-  <p>
-    <%= f.label "age in months" %><br>
-    <%= f.text_field :months %>
-  </p>
-
-<p>
-   <%= f.label "Pet Type" %><br>
-<%= 
-  f.select :pet_type,options_for_select([["Cat", "Cat"], ['Dog',"Dog"]]),{:include_blank=>true}, :id=>"first_select", 
-      :'data-remote' => 'true', # important for UJS
-      :'data-url' => url_for(:controller => 'pets', :action => 'getdata'), # we get the data from here!
-      :'data-type' => 'json' # tell jQuery to parse the response as JSON!
-%>
-</p>
-<%= f.label :Breed %><br>
-<%= 
-  f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
-%> 
+  
 
 
+<%end%>
                       </tbody>
                     </table>
-    <div class="col-md-offset-4"><%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>
-    <a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div></div></div></div>
+    <div class="col-md-offset-4"><%= f.submit nil, :class=>"btn btn-danger"%>
+    <a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a> <%end%></div></div></div></div> </div>
+   
                   
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+               
+             
         
-        <!-- Booking End -->      
+        <!-- Booking End -->  
+<%=render partial: "layouts/foot"%>    
 
-<%=render partial: "layouts/foot"%>
+
