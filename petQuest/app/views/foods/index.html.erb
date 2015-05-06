@@ -250,8 +250,8 @@
         <tr>
           
           <th>foodname</th>
-          <th>weight</th>
-          <th>edit weight</th>
+          <th>weight (g)</th>
+          <th><div align="center">edit weight (g) </div></th>
 
           <th colspan="2"></th>
         </tr>
@@ -262,9 +262,9 @@
           <tr>
           
             <td><%= recipe.foodname  %></td>
-            <td><%= recipe.weight    %></td>
-            <td><%= text_field_tag "recipes[][weight]" %>
-            <%= hidden_field_tag "name[][name]", recipe.foodname %>
+            <td><%= recipe.weight    %> g </td>
+            <td><div align="center"><%= text_field_tag "recipes[][weight]" %>
+            <%= hidden_field_tag "name[][name]", recipe.foodname %></div>
             </td>
             
             <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
