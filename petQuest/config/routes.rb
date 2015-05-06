@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   get 'recipes/:id/add(.:format)' => 'foods#add', :as => :add
 
+
   get 'recipes/:id/add_weight(.:format)' => 'recipes#add_weight', :as => :add_weight
 
   get 'welcome/index'
