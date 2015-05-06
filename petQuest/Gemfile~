@@ -7,23 +7,19 @@ group :development, :test do
 	gem 'factory_girl_rails'
 	
 end
-<<<<<<< HEAD
-=======
 
 
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
 
-gem 'rspec', :require => false, :group => :test
 
->>>>>>> 457dc9ebb5c91533cd16febe1579c6982da2910d
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
-<<<<<<< HEAD
 
-gem 'gruff'
-=======
->>>>>>> 457dc9ebb5c91533cd16febe1579c6982da2910d
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -51,13 +47,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'jquery'
 
-<<<<<<< HEAD
 gem 'will_paginate'
 
 
-=======
->>>>>>> 457dc9ebb5c91533cd16febe1579c6982da2910d
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
