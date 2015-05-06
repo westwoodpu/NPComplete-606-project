@@ -45,16 +45,16 @@
                           <td> <%= @pet.body_condition_score %></td>
                         </tr>
                         <tr>
-                          <td>Weight (Kg)</td>
-                          <td> <%= @pet.body_weight %></td>
+                          <td>Weight </td>
+                          <td> <%= @pet.body_weight %> Kg </td>
                         </tr>
                         <tr>
                           <td>Activity Level</td>
                           <td> <%= @pet.activity %></td>
                         </tr>
                         <tr>
-                          <td>Recommended Daily Metabolic Energy (KCal)</td>
-                          <td> <%= @me_result %></td>
+                          <td>Recommended Daily Metabolic Energy </td>
+                          <td> <%= @me_result %> KCal </td>
                         </tr>
                       </tbody>
                     </table>
@@ -73,8 +73,8 @@
    <br><br><br>
   
   </div></div>
+<%=render partial: "layouts/foot"%>
 
-<%= render partial: "layouts/foot"%>
 
 
 

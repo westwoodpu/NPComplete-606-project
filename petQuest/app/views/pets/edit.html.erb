@@ -54,6 +54,7 @@
                         </ul>
                       </div>
                     <% end %>
+
                     <div class="table-responsive ">
                     <table class="table table-bordered">
                       
@@ -103,6 +104,7 @@
                           <td><%= f.label :activity_level %></td>
                           <td> <%= f.select(:activity,options_for_select([['Active',"Active"],            ['Inactive',"Inactive"]])) %></td>
                         </tr>
+
 
 <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
@@ -161,6 +163,7 @@
                     </table>
     <div class="col-md-offset-4"><%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>
     <a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div></div></div></div>
+    <%end%>
                   
                 </div>
               </div>
@@ -168,6 +171,7 @@
           </div>
         </div>
         
-        <!-- Booking End -->      
+        <!-- Booking End -->  
+<%=render partial: "layouts/foot"%>    
 
-<%=render partial: "layouts/foot"%>
+
