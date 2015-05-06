@@ -151,10 +151,6 @@ class FoodsController < ApplicationController
     @food_data = Food.where(food_category: "aquatic_tuber vegetable")
     end
 
-    if params[:Food] == "fungi&Algae"
-    @food_data = Food.where(food_category: "fungi&Algae")
-    end
-
     
   
   
