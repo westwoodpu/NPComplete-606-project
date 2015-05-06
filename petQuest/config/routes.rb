@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
     get 'create_multiple' => 'recipes#create_multiple', :as => :createmultiple#
     post 'create_multiple' => 'recipes#create_multiple', :as => :createmultiplemore#
-
+    get 'food/admin' =>'foods#upload'
 
    root 'welcome#index'
 
