@@ -7,7 +7,7 @@
           <!-- Image -->
           <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
           <!-- Heading -->
-          <h2 class="white">Foods List</h2>
+          <h2 class="brown">Foods List</h2>
           <ol class="breadcrumb">
             <li><a href="index.html">Home</a></li>
             <li class="active">Reserve Seats</li>
@@ -21,11 +21,13 @@
 <br>
 
 
-<%= form_tag("/search", method: "get") do %>
+<div class="container col-md-offset-1">
+  <div class="col-md-offset-3"><%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Find food ") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %><br>
-<% end %>
+<% end %><br></div>
+
           <div class="container">
             <div class="row">
               <div class="col-md-2 col-sm-2">
@@ -190,7 +192,7 @@
    </div> 
     <br />
     
-</div>
+</div></div>
 
 
 

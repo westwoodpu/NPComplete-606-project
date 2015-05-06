@@ -7,7 +7,7 @@
           <!-- Image -->
           <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
           <!-- Heading -->
-          <h2 class="white">View Search Result</h2>
+          <h2 class="brown">View Search Result</h2>
           <ol class="breadcrumb">
             <li><a href="index.html"></a></li>
             <li class="active"></li>
@@ -25,11 +25,11 @@
             <thead>
               <tr id="tr1">
                 <th>Name</th>
-                <th>Description</th>
-                <th>Reference price</th>
-                <th>Cook method</th>
+                
+                
+                
                 <th>Food category</th>
-                <th>Img dir</th>
+                
                 <th>Food id</th>
                 <th colspan="4"></th>
               </tr>
@@ -39,11 +39,9 @@
               <% @food_data.each do |food| %>
                 <tr>
                   <td><%= food.name %></td>
-                  <td><%= food.description %></td>
-                  <td><%= food.reference_price %></td>
-                  <td><%= food.cook_method %></td>
+                 
                   <td><%= food.food_category %></td>
-                  <td><%= food.img_dir %></td>
+               
                   <td><%= food.food_id %></td>
                   <td><%= link_to 'Show', food %></td>
                   <td><%= link_to 'Add',  add_path(food) %></td>
@@ -56,7 +54,7 @@
     <br />
 
 
-     <a href="http://localhost:3000/foods" class="btn2">Back</a></div>
+     <div align="center"><a href="http://localhost:3000/foods" class="btn btn-danger">Back</a></div>
 
 
 </div></div></div></div>

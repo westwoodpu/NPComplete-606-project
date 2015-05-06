@@ -25,13 +25,12 @@
                 <!-- Heading -->
                 
                 <!-- Paragraph -->
-<<<<<<< HEAD
+
                 <p><br></p>
                 <p><br></p>
 
-=======
+
                 
->>>>>>> be175ab2ce1901239c6b13d52081752bf751106e
                 <!-- Image Slider -->
                 <br>
                 <img class="img-responsive" src="http://freedwallpaper.com/wp-content/uploads/2014/11/cat-wallpapers-for-desktop-2-1366x768-770958.jpg">
@@ -43,11 +42,7 @@
                   <!-- Heading -->
                   <h3>Edit pets</h3>
                   <!-- Paragraph -->
-<<<<<<< HEAD
-              
-=======
-  
->>>>>>> be175ab2ce1901239c6b13d52081752bf751106e
+
                   <!-- Booking form -->
 
                   <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
@@ -136,45 +131,10 @@
     </div>
   <% end %>
 
-  <div style="width:60px" class='col-md-1 col-md-offset-4' id="ctn2">
-  <p>
-    <%= f.label :gender %><br>
-    <select name="gender">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-    
-</select>
-  </p>
-
-  <p>
-    <%= f.label "age in years" %><br>
-    <%= f.text_field :age %>
-  </p>
-
-<p>
- </p>
-
-  <p>
-    <%= f.label "age in months" %><br>
-    <%= f.text_field :months %>
-  </p>
-
-<p>
-   <%= f.label "Pet Type" %><br>
-<%= 
-  f.select :pet_type,options_for_select([["Cat", "Cat"], ['Dog',"Dog"]]),{:include_blank=>true}, :id=>"first_select", 
-      :'data-remote' => 'true', # important for UJS
-      :'data-url' => url_for(:controller => 'pets', :action => 'getdata'), # we get the data from here!
-      :'data-type' => 'json' # tell jQuery to parse the response as JSON!
-%>
-</p>
-<%= f.label :Breed %><br>
-<%= 
-  f.select :breed,"<option>Please select something from first select!</option>",{},:id=>"second_select"
-%> 
+  
 
 
-
+<%end%>
                       </tbody>
                     </table>
     <div class="col-md-offset-4"><%= f.submit nil, :class=>"btn btn-danger"%>
