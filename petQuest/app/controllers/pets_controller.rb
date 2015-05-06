@@ -31,12 +31,12 @@ class PetsController < ApplicationController
   def show
         @pet=Pet.find(params[:id])
         # for pet show page, fix X year(s) Y month(s) display 
-        if @pet.age.to_f == 1
+        if @pet.age.to_f == 1 || 0
            @plural_year = "year"
         else
            @plural_year = "years"
         end
-        if @pet.months.to_f == 1
+        if @pet.months.to_f == 1 || 0
            @plural_month = "month"
         else
            @plural_month = "months"
