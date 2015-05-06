@@ -5,7 +5,7 @@
           <!-- Image -->
           <img class="img-responsive" src="http://dakotapethospital.com/clients/14546/images/slideshows/29628/banner%204%20edited.jpg" alt="" />
           <!-- Heading -->
-          <h2 class="brown">Foods Info</h2>
+          <h2 class="brown">Foods Nutrition Information</h2>
           <ol class="breadcrumb">
             <li><a href="index.html"></a></li>
             <li class="active"></li>
@@ -17,105 +17,106 @@
 
 
 
-<h1 align="center">Nutrition Information for <%=@food_nutrition.foodname%></h1><br>
-    
-    <div class="table-responsive col-md-4 col-md-offset-4" >
-    <table  class="table table-bordered" >
-      <tbody>
-          <tr>
-            <td><b> Edible </b></td>
-            <td><%=@food_nutrition.edible %></td>
-            <td><b>Energy g</b></td>
-            <td><%=@food_nutrition.energy %></td>
+<h1 align="center"><%=@food_nutrition.foodname%></h1><br>
+    <div class= "container">
+      <div class="row">
+        <div class="table-responsive col-md-4" >
+        <table  class="table table-bordered" >
+          <tbody>
+              <tr>
+                <td><b> Edible </b></td>
+                <td><%=@food_nutrition.edible %></td>
+                <td><b>Energy g</b></td>
+                <td><%=@food_nutrition.energy %></td>
 
-          </tr>
-          <tr>
-            <td><b>Protein </b></td>
-            <td><%=@food_nutrition.protein %></td>
-            <td><b>Fat g</b></td>
-            <td><%=@food_nutrition.fat%></td>
-            <td><b>CHO g</b></td>
-            <td><%=@food_nutrition.cho %></td>
+              </tr>
+              <tr>
+                <td><b>Protein </b></td>
+                <td><%=@food_nutrition.protein %></td>
+                <td><b>Fat g</b></td>
+                <td><%=@food_nutrition.fat%></td>
+                <td><b>CHO g</b></td>
+                <td><%=@food_nutrition.cho %></td>
 
-          </tr>
-          <tr>
-            <td><b>Dietary Fiber</b></td>
-            <td><%=@food_nutrition.dietaryfiber %></td>
-            <td><b>Ash</b></td>
-            <td><%=@food_nutrition.ash %></td>
+              </tr>
+              <tr>
+                <td><b>Dietary Fiber</b></td>
+                <td><%=@food_nutrition.dietaryfiber %></td>
+                <td><b>Ash</b></td>
+                <td><%=@food_nutrition.ash %></td>
 
-          </tr>
+              </tr>
 
 
-
-      </table>
+          </table></div>
+        <div class="table-responsive col-md-4">
           <table class="table table-bordered">
 
-      <tbody>
-          <tr>
-            <td> <b>Vitamin A ug</b></td>
-            <td><%=@food_nutrition.vitaminA %></td>
-            <td><b>Retinol ug</b></td>
-            <td><%=@food_nutrition.retinol %></td>
-         
-          </tr>
-          <tr>
-            
-           
-            <td><b>Vitamin C mg</b></td>
-            <td><%=@food_nutrition.vitaminC %></td>
+            <tbody>
+                <tr>
+                  <td> <b>Vitamin A ug</b></td>
+                  <td><%=@food_nutrition.vitaminA %></td>
+                  <td><b>Retinol ug</b></td>
+                  <td><%=@food_nutrition.retinol %></td>
+               
+                </tr>
+                <tr>
+                  
+                 
+                  <td><b>Vitamin C mg</b></td>
+                  <td><%=@food_nutrition.vitaminC %></td>
 
-          </tr>
-          <tr>
-            <td><b>Vitamin E mg</b></td>
-            <td><%=@food_nutrition.vitaminE %></td>
-           
+                </tr>
+                <tr>
+                  <td><b>Vitamin E mg</b></td>
+                  <td><%=@food_nutrition.vitaminE %></td>
+                 
 
-          </tr>
-
-
-
-      </table>
-
-      </table>
-          <table class="table table-bordered">
-
-      <tbody>
-          <tr>
-            <td><b>Ca</b></td>
-            <td><%=@food_nutrition.calcium%></td>
-            <td><b>P</b></td>
-            <td><%=@food_nutrition.phosphorous%></td>
-            <td><b>K</b></td>
-            <td><%=@food_nutrition.potassium %></td>
-          </tr>
-          <tr>
-            
-           
-            <td><b>Na</b></td>
-            <td><%=@food_nutrition.sodium%></td>
-            <td><b>Mg</b></td>
-            <td><%=@food_nutrition.magnesium%></td>
-            <td><b>Fe</b></td>
-            <td><%=@food_nutrition.iron%></td>
-
-          </tr>
-          <tr>
-            <td><b>Zn</b></td>
-            <td><%=@food_nutrition.zinc %></td>
-            <td><b>Se</b></td>
-            <td><%=@food_nutrition.selenium %></td>
-            <td><b>Cu</b></td>
-            <td><%=@food_nutrition.copper %></td>
-            <td><b>Mn</b></td>
-            <td><%=@food_nutrition.manganese %></td>
-           
-
-          </tr>
+                </tr>
 
 
 
-      </table>
+            </table></div>
+
+            <div class="col-md-4">
+                <table class="table-responsive table table-bordered">
+
+            <tbody>
+                <tr>
+                  <td><b>Ca</b></td>
+                  <td><%=@food_nutrition.calcium%></td>
+                  <td><b>P</b></td>
+                  <td><%=@food_nutrition.phosphorous%></td>
+                  <td><b>K</b></td>
+                  <td><%=@food_nutrition.potassium %></td>
+                </tr>
+                <tr>
+                  
+                 
+                  <td><b>Na</b></td>
+                  <td><%=@food_nutrition.sodium%></td>
+                  <td><b>Mg</b></td>
+                  <td><%=@food_nutrition.magnesium%></td>
+                  <td><b>Fe</b></td>
+                  <td><%=@food_nutrition.iron%></td>
+
+                </tr>
+                <tr>
+                  <td><b>Zn</b></td>
+                  <td><%=@food_nutrition.zinc %></td>
+                  <td><b>Se</b></td>
+                  <td><%=@food_nutrition.selenium %></td>
+                  <td><b>Cu</b></td>
+                  <td><%=@food_nutrition.copper %></td>
+                  <td><b>Mn</b></td>
+                  <td><%=@food_nutrition.manganese %></td>
+                 
+
+                </tr>
+
+
+
+            </table><br><br></div></div></div>
       
 
 
@@ -123,17 +124,15 @@
 
 
 
-<div class="ctn0"><p>  </p></div>
 <div align="center">
-
-<a href="http://localhost:3000/foods" class="btn2">Back</a></div></div>
+<a href="http://localhost:3000/foods" class="btn btn-danger">Back</a><br><br></div></div>
 </div>
 
 
 
+<%= render partial: "layouts/foot"%>
 
-
-</div>          
+     
  
 
 
