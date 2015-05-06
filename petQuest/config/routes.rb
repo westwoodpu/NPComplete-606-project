@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   get 'recipes/:id/add_weight(.:format)' => 'recipes#add_weight', :as => :add_weight
   
-  get 'aboutus' => 'welcome#about'
+  get 'about' => 'welcome#about'
 
   get 'welcome/index'
   get 'welcome/contact'
