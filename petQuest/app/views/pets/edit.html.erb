@@ -113,8 +113,8 @@
                           <td> <%= f.select(:activity,options_for_select([['Active',"Active"],            ['Inactive',"Inactive"]])) %></td>
                         </tr>
 
-
-
+<%
+=begin %>
 <%= form_for :pet, url: pet_path(@pet), method: :patch do |f| %>
  
   <% if @pet.errors.any? %>
@@ -130,11 +130,10 @@
       </ul>
     </div>
   <% end %>
-
-  
-
-
 <%end%>
+<%
+=end %>
+
                       </tbody>
                     </table>
     <div class="col-md-offset-4"><%= f.submit nil, :class=>"btn btn-danger"%>
