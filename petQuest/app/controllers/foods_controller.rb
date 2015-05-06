@@ -9,6 +9,7 @@ class FoodsController < ApplicationController
     @recipes = Recipe.all
   @recipe=Recipe.new
   @pets=Pet.all
+
   end
 
   # GET /foods/1
@@ -433,8 +434,6 @@ end
 @Vitamin_A=@Vitamin_A/@Totalweight
 @Vitamin_D=@Vitamin_D/@Totalweight
 @Zinc=@Zinc/@Totalweight
-
-@Methionine/@Totalweight
 
 @Energy=@Energy/@Totalweight
 @Protein=@Protein/@Totalweight
