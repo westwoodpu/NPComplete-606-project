@@ -44,9 +44,8 @@
                
                   <td><%= food.food_id %></td>
                   <td><%= link_to 'Show', food %></td>
-                  <td><%= link_to 'Add',  add_path(food) %></td>
-                  <td><%= link_to 'Edit', edit_food_path(food) %></td>
-                  <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Add to recipe',  add_path(food) %></td>
+                  
                 </tr>
               <% end %>
             </tbody>
