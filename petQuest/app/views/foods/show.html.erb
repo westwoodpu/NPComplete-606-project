@@ -15,62 +15,132 @@
       </div>
 
 
-<div class="table-responsive col-md-4">
-    <table class="table table-bordered">
-      <tbody>
-          <tr>
-            <td>foodname</td>
-            <td>carrot</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-          </tr>
-      </table>
-</div>          
- 
-<div class="table-responsive col-md-4">
-    <table class="table table-bordered">
-      <tbody>
-        
-          <tr>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-      </table>
-</div> 
 
-<div class="table-responsive col-md-4">
-    <table class="table table-bordered">
+
+<h1 align="center">Nutrition Information</h1><br>
+    
+    <div class="table-responsive col-md-4 col-md-offset-4" >
+    <table  class="table table-bordered" >
       <tbody>
-        
           <tr>
-            <td>5</td>
-            <td>6</td>
+            <td><b> Edible </b></td>
+            <td><%=@food_nutrition.edible %></td>
+            <td><b>Energy g</b></td>
+            <td><%=@food_nutrition.energy %></td>
+
           </tr>
+          <tr>
+            <td><b>Protein </b></td>
+            <td><%=@food_nutrition.protein %></td>
+            <td><b>Fat g</b></td>
+            <td><%=@food_nutrition.fat%></td>
+            <td><b>CHO g</b></td>
+            <td><%=@food_nutrition.cho %></td>
+
+          </tr>
+          <tr>
+            <td><b>Dietary Fiber</b></td>
+            <td><%=@food_nutrition.dietaryfiber %></td>
+            <td><b>Ash</b></td>
+            <td><%=@food_nutrition.ash %></td>
+
+          </tr>
+
+
+
       </table>
-</div>           
-      
+          <table class="table table-bordered">
+
+      <tbody>
+          <tr>
+            <td> <b>Vitamin A ug</b></td>
+            <td><%=@food_nutrition.vitaminA %></td>
+            <td><b>Retinol ug</b></td>
+            <td><%=@food_nutrition.retinol %></td>
          
+          </tr>
+          <tr>
+            
+           
+            <td><b>Vitamin C mg</b></td>
+            <td><%=@food_nutrition.vitaminC %></td>
+
+          </tr>
+          <tr>
+            <td><b>Vitamin E mg</b></td>
+            <td><%=@food_nutrition.vitaminE %></td>
+           
+
+          </tr>
+
+
+
+      </table>
+
+      </table>
+          <table class="table table-bordered">
+
+      <tbody>
+          <tr>
+            <td><b>Ca</b></td>
+            <td><%=@food_nutrition.calcium%></td>
+            <td><b>P</b></td>
+            <td><%=@food_nutrition.phosphorous%></td>
+            <td><b>K</b></td>
+            <td><%=@food_nutrition.potassium %></td>
+          </tr>
+          <tr>
+            
+           
+            <td><b>Na</b></td>
+            <td><%=@food_nutrition.sodium%></td>
+            <td><b>Mg</b></td>
+            <td><%=@food_nutrition.magnesium%></td>
+            <td><b>Fe</b></td>
+            <td><%=@food_nutrition.iron%></td>
+
+          </tr>
+          <tr>
+            <td><b>Zn</b></td>
+            <td><%=@food_nutrition.zinc %></td>
+            <td><b>Se</b></td>
+            <td><%=@food_nutrition.selenium %></td>
+            <td><b>Cu</b></td>
+            <td><%=@food_nutrition.copper %></td>
+            <td><b>Mn</b></td>
+            <td><%=@food_nutrition.manganese %></td>
+           
+
+          </tr>
+
+
+
+      </table>
+      
 
 
 
 
-
-  <% @food_nutrition.attributes.each do |attr_name, attr_value| %>
-    <div class="food_nutrition_attribute">
-     <%= attr_name %>: <%= attr_value %>
-    </div>
-  <% end %>
-
-  @food_nutrition.weight
-  @food_nutrition.category
 
 
 <div class="ctn0"><p>  </p></div>
 <div align="center">
-<%= link_to 'Edit', edit_food_path(@food),class:"btn2" %> 
 
 <a href="http://localhost:3000/foods" class="btn2">Back</a></div></div>
 </div>
+
+
+
+
+
+</div>          
+ 
+
+
+
+
+
+
+
+
 
