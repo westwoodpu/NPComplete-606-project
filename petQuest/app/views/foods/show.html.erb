@@ -1,61 +1,58 @@
-<div class="container-fluid"><p id="notice"><%= notice %></p>
+<%=render partial: "layouts/head"%>
+<br><br>
 
 
-<div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Reference price</th>
-          <th>Cook method</th>
-          <th>Food category</th>
-          <th>Img dir</th>
-          <th>Food id</th>
-        </tr>
-      </thead>
 
+<div class="table-responsive col-md-4">
+    <table class="table table-bordered">
       <tbody>
           <tr>
-            <td><%= @food.name %></td>
-            <td><%= @food.description %></td>
-            <td><%= @food.reference_price %></td>
-            <td><%= @food.cook_method %></td>
-            <td><%= @food.food_category %></td>
-            <td><%= @food.img_dir %></td>
-            <td><%= @food.food_id %></td>
+            <td>foodname</td>
+            <td>carrot</td>
           </tr>
-      </tbody>
-    </table>
-</div>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+      </table>
+</div>          
+ 
+<div class="table-responsive col-md-4">
+    <table class="table table-bordered">
+      <tbody>
+        
+          <tr>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+      </table>
+</div> 
 
-<div class="ctn0"><p>  </p></div>
+<div class="table-responsive col-md-4">
+    <table class="table table-bordered">
+      <tbody>
+        
+          <tr>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+      </table>
+</div>           
+      
+         
 
 
-<table class="table table-responsive">
-    <thead>
-      <tr>
-        <% @food_nutrition.attributes.each do |attr_name| %>      
-        <th><%= (attr_name)[0].to_s %></th>
-        <% end %>
-      </tr>
-    </thead>
 
-    <tbody>
-      <tr>
-        <% @food_nutrition.attributes.each do |attr_value| %>      
-        <td><%= (attr_value)[0].to_s %></td>
-        <% end %>
-      </tr>
-    </tbody>
 
-</table>
 
   <% @food_nutrition.attributes.each do |attr_name, attr_value| %>
     <div class="food_nutrition_attribute">
      <%= attr_name %>: <%= attr_value %>
     </div>
   <% end %>
+
+  @food_nutrition.weight
+  @food_nutrition.category
 
 
 <div class="ctn0"><p>  </p></div>

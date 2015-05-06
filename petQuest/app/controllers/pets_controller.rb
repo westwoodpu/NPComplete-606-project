@@ -15,7 +15,7 @@ class PetsController < ApplicationController
 
   def create
    
-  	@pet = Pet.new(pet_params[:pet])
+  	@pet = Pet.new(pet_params)
 
   	if @pet.save
         redirect_to @pet

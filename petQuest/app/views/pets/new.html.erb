@@ -104,16 +104,14 @@
 
                       </tbody>
                     </table>
-                    <tr>
-                    <td><%= f.submit %><td>
-                    </tr>
+                    
+                    <%= f.submit nil, :class=>"btn btn-danger" %>
+                    
 
-                    <tr>
-                    <td><a href='http://localhost:3000/pets'>Back<td>
-                    </tr>
-                      <!--<div class="col-md-offset-2"><%= f.submit nil, :class=>"btn btn-danger", :type=>"button"%><% end %>-->
-                      <!--<a href="http://localhost:3000/pets" class="btn btn-danger" type="button">Back</a></div>-->
-                  </div>
+                    <a href='http://localhost:3000/pets' class="btn btn-danger">Back</a><%end%>
+                    
+                    
+                  
 
                   
                 </div>
@@ -123,21 +121,8 @@
         
 
 
-</script>
+
         <!-- Booking End -->      
 <%= render partial: "layouts/foot"%>
 
-*/
-<script type="text/JavaScript">
-$(function(){
-  $('#first_select').bind('change', function(){
-    $.ajax({
-      url: "<%= getdata_path %>",
-      data: {
-        :pet_type: $(this).val()
-      }
-    });
-  });
-});
-</script>
 

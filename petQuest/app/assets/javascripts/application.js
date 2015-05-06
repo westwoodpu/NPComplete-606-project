@@ -12,19 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.js
-//= require turbolinks.js
-//= require html5shiv.js
-//= require custom.js
-//= require isotope.js
-//= require jquery.prettyPhoto.js
-//= require jquery.flexslider-min.js
-//= require jquery.themepunch.plugins.min.js
-//= require jquery.themepunch.revolution.min.js
-//= respond.min.js
-//= require bootstrap.min.js
-
-
+//= require bootstrap
+//= require turbolinks
 
 
 //= require_tree .
@@ -37,9 +26,10 @@ $(document).ready(function() {
 
   $(document).ajaxSuccess(function(evt, xhr, options, data) {
 
-	   window.alert(5);
+	
     // get second selectbox by its id
     var selectbox2 = $('#second_select');
+	
     // empty it
     selectbox2.empty();
 
