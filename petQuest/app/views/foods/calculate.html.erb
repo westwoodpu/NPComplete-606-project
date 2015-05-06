@@ -23,16 +23,42 @@
                     <table class="table table-bordered">
                       
                       <tbody>
+                        <tr><td><strong><center>Ingredients Composition</center></strong></td></tr>
+                        <tr>
+                        <tr>
+                          <td>Total Weight </td>
+                          <td><%='%.2f' % @Totalweight %> g </td>
+                        </tr>
+                          <td>Meat</td>
+                          <td><%='%.2f' % (@Meatproportion + @Poultryproportion + @Fishshellfishproportion )  %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Cereal and Tubers</td>
+                          <td><%='%.2f' % ((@Cerealproportion + @Tubersproportion) * @Totalweight) %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Vegetable </td>
+                          <td><%='%.2f' % ((@Tubersproportion + @Rootvegetablesproportion + @Leguminousvegetablesproportion + @Solanaceousvegetablesproportion + @Leafyflowervegetablesproportion + @Aquaticproportion) * @Totalweight) %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Oil </td>
+                          <td><%='%.2f' % (@Seedfatoilproportion * @Totalweight) %> % </td>
+                        </tr>
+
+
                         <tr><td><strong><center>Nutrient Analysis</center></strong></td></tr>
                         <tr>
-                          <td>Actual Daily Metabolic Energy </td>
+                          <td>Metabolic Energy from Recipe </td>
                           <td><%='%.2f' % @A_ME_result %> KCal/100g </td>
                         </tr>
                         <tr>
-                          <td>Energy Density </td>
-                          <td><%='%.2f' % @Energy %> KCal/100g </td>
+                          <td>Estimated Pet's Daily Metabolic Energy </td>
+                          <td><%='%.2f' % @me_result %> KCal/100g </td>
                         </tr>
-
+                        <tr>
+                          <td>Recommaned Intake for One Meal </td>
+                          <td> < <%='%.2f' % (@me_result / 10 * @A_ME_result / 100) %> g </td>
+                        </tr>
                         <tr>
                           <td>Protein </td>
                           <td><%= '%.2f' % @Protein %> g/100g</td>
@@ -44,12 +70,37 @@
                         <tr>
                           <td>Carbohydrate </td>
                           <td> <%='%.2f' % (@CHO-@Dietaryfiber) %> g/100g </td>
+                        </tr>                                                                             
+                      </tbody>
+                    </table></div>
+      <div class="table-responsive col-md-5 ">
+        <table class="table table-bordered">
+                  <tbody>
+                      <tr><td><strong><center>Calorie Proportion</center></strong></td></tr>           
+                        <tr>
+                          <td>Total Calorie </td>
+                          <td><%='%.2f' % (@Totalweight * @Energy) %> KCal </td>
                         </tr>
-                        
+                        <tr>
+                          <td>Energy Density </td>
+                          <td><%='%.2f' % @Energy %> KCal/100g </td>
+                        </tr>
+                        <tr>
+                          <td>Protein</td>
+                          <td><%= '%.2f' %(@Protein*4.0/@Energy*100.00) %> % </td>
+                        </tr>
+                        <tr>
+                          <td>Fat</td>
+                          <td><%= '%.2f' %(@Fat*9.0/@Energy*100.0)%> % </td>
+                        </tr>
+                        <tr>
+                          <td>Carbohydrate </td>
+                          <td><%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %> % </td>
+                        </tr>
 
 
-                        <tr><td><strong><center>Nutrition Composition</center></strong></td></tr>           
-                        
+
+                         <tr><td><strong><center>Nutrition Composition</center></strong></td></tr>                   
                         <tr>
                           <td>Mositure</td>
                           <td><%= '%.2f' % (100-@Protein-@Fat-@CHO-@Ash) %> % </td>
@@ -73,55 +124,62 @@
                         <tr>
                           <td>Ash </td>
                           <td><%='%.2f' % @Ash %> % </td>
-                        </tr>
-                        
-                      </tbody>
-                    </table></div>
-      <div class="table-responsive col-md-5 ">
-        <table class="table table-bordered">
-                  <tbody>
-                    <tr><td><strong><center>Ingredients Composition</center></strong></td></tr>
-                        <tr>
-                          <td>Total Weight </td>
-                          <td><%='%.2f' % @Totalweight %> g </td>
-                        </tr>
-                        <tr>
-          
-                          <td>Meat</td>
-                          <td><%='%.2f' % (@Meatproportion + @Poultryproportion + @Fishshellfishproportion )  %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Cereal and Tubers</td>
-                          <td><%='%.2f' % ((@Cerealproportion + @Tubersproportion) * @Totalweight) %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Vegetable </td>
-                          <td><%='%.2f' % ((@Tubersproportion + @Rootvegetablesproportion + @Leguminousvegetablesproportion + @Solanaceousvegetablesproportion + @Leafyflowervegetablesproportion + @Aquaticproportion) * @Totalweight) %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Oil </td>
-                          <td><%='%.2f' % (@Seedfatoilproportion * @Totalweight) %> % </td>
-                        </tr>
-
-                    <tr><td><strong><center>Calorie Proportion</center></strong></td></tr>           
-                        
-                        <tr>
-                          <td>Protein</td>
-                          <td><%= '%.2f' %(@Protein*4.0/@Energy*100.00) %> % </td>
-                        </tr>
-                        <tr>
-                          <td>Fat</td>
-                          <td><%= '%.2f' %(@Fat*9.0/@Energy*100.0)%> % </td>
-                        </tr>
-                        <tr>
-                          <td>Carbohydrate </td>
-                          <td><%='%.2f' % (((@CHO-@Dietaryfiber)*4.0+@Dietaryfiber*2.0)/@Energy*100.0) %> % </td>
-                        </tr>
-
-                         
+                        </tr>                         
                         
                       </tbody></table></div></div></div>
-        <div align="center"><h1>Nutrient Analysis</h1></div>
+
+
+        <div align="center"><h1>Nutrients Comparison with Recommended</h1></div>
+        <div class='text-center'>
+<div style="width:1000px" id="ctn3" class='col-md-1 col-md-offset-1'><p>
+  
+ <p>
+  <strong>Actual Daily ME  (KCal):</strong>
+  <%='%.2f' % @A_ME_result %>
+  </p>
+ 
+<p>
+  <strong>Vitamin B1(mg):</strong>
+  <%='%.2f' % (@Vitamin_B1) %>
+  <strong>Recommended Vitamin B1(mg):</strong>
+  <%='%.2f' % (@A_ME_vitamin_b1) %>
+  </p>
+<p>
+  <strong>Vitamin E(mg):</strong>
+  <%='%.2f' % (@Vitamin_E) %>
+  <strong>Recommended Vitamin E(mg):</strong>
+  <%='%.2f' % (@A_ME_vitamin_e) %>
+  </p>
+<p>
+  <strong>Calcium(mg):</strong>
+  <%='%.2f' % (@Calcium) %>
+  <strong>Recommended Calcium(mg):</strong>
+  <%='%.2f' % (@A_ME_calcium) %>
+  </p>
+<p>
+  <strong>Phosphorous(mg):</strong>
+  <%='%.2f' % (@Phosphorous) %>
+  <strong>Recommended Phosphorous(mg):</strong>
+  <%='%.2f' % (@A_ME_phosphorous) %>
+  </p>
+<p>
+  <strong>Potassium(mg):</strong>
+  <%='%.2f' % (@Potassium) %>
+  <strong>Recommended Potassium(mg):</strong>
+  <%='%.2f' % (@A_ME_potassium) %>
+  </p>
+<p>
+  <strong>Sodium(mg):</strong>
+  <%='%.2f' % (@Sodium) %>
+  <strong>Recommended Sodium(mg):</strong>
+  <%='%.2f' % (@A_ME_sodium) %>
+  </p>
+<p>
+  <strong>Magnesium(mg):</strong>
+  <%='%.2f' % (@Magnesium) %>
+  <strong>Recommended Magnesium(mg):</strong>
+  <%='%.2f' % (@A_ME_magnesium) %>
+  </p>
         
 <%
 =begin %>           
@@ -231,55 +289,7 @@
 
 
  
-<div class='text-center'>
-<div style="width:1000px" id="ctn3" class='col-md-1 col-md-offset-1'><p>
-  
- <p>
-  <strong>Actual Daily ME  (KCal):</strong>
-  <%='%.2f' % @A_ME_result %>
-  </p>
-<p>
-  <strong>Vitamin B1(mg):</strong>
-  <%='%.2f' % (@Vitamin_B1) %>
-  <strong>Recommended Vitamin B1(mg):</strong>
-  <%='%.2f' % (@A_ME_vitamin_b1) %>
-  </p>
-<p>
-  <strong>Vitamin E(mg):</strong>
-  <%='%.2f' % (@Vitamin_E) %>
-  <strong>Recommended Vitamin E(mg):</strong>
-  <%='%.2f' % (@A_ME_vitamin_e) %>
-  </p>
-<p>
-  <strong>Calcium(mg):</strong>
-  <%='%.2f' % (@Calcium) %>
-  <strong>Recommended Calcium(mg):</strong>
-  <%='%.2f' % (@A_ME_calcium) %>
-  </p>
-<p>
-  <strong>Phosphorous(mg):</strong>
-  <%='%.2f' % (@Phosphorous) %>
-  <strong>Recommended Phosphorous(mg):</strong>
-  <%='%.2f' % (@A_ME_phosphorous) %>
-  </p>
-<p>
-  <strong>Potassium(mg):</strong>
-  <%='%.2f' % (@Potassium) %>
-  <strong>Recommended Potassium(mg):</strong>
-  <%='%.2f' % (@A_ME_potassium) %>
-  </p>
-<p>
-  <strong>Sodium(mg):</strong>
-  <%='%.2f' % (@Sodium) %>
-  <strong>Recommended Sodium(mg):</strong>
-  <%='%.2f' % (@A_ME_sodium) %>
-  </p>
-<p>
-  <strong>Magnesium(mg):</strong>
-  <%='%.2f' % (@Magnesium) %>
-  <strong>Recommended Magnesium(mg):</strong>
-  <%='%.2f' % (@A_ME_magnesium) %>
-  </p>
+
 <%
 =begin %>
 <p>
