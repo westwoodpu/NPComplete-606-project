@@ -9,6 +9,7 @@ class FoodsController < ApplicationController
     @recipes = Recipe.all
   @recipe=Recipe.new
   @pets=Pet.all
+
   end
 
   # GET /foods/1
@@ -149,10 +150,6 @@ class FoodsController < ApplicationController
 
     if params[:Food] == "aquatic_tuber vegetable"
     @food_data = Food.where(food_category: "aquatic_tuber vegetable")
-    end
-
-    if params[:Food] == "fungi&Algae"
-    @food_data = Food.where(food_category: "fungi&Algae")
     end
 
     
@@ -433,8 +430,6 @@ end
 @Vitamin_A=@Vitamin_A/@Totalweight
 @Vitamin_D=@Vitamin_D/@Totalweight
 @Zinc=@Zinc/@Totalweight
-
-@Methionine/@Totalweight
 
 @Energy=@Energy/@Totalweight
 @Protein=@Protein/@Totalweight
